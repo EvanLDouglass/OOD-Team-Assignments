@@ -1,0 +1,8 @@
+# folders
+.idea/
+out/
+docs/
+target/
+
+# file types
+*.iml
