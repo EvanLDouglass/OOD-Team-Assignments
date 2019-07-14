@@ -10,7 +10,7 @@ import java.util.List;
  * @author evandouglass
  */
 public abstract class AbstractFilmProfessional implements IFilmProfessional {
-
+  // TODO: Make single IFilmMedia list and then make class iterable. Use different iterators to get different types of media.
   private Name name;
   private List<Movie> movies;
   private List<TVSeries> series;
