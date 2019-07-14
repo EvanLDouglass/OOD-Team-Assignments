@@ -120,10 +120,12 @@ public class Name {
   @Override
   public String toString() {
     StringBuilder builder = new StringBuilder(firstName);
+    // Ignore middle name if null or empty
     if (middleNames != null && !middleNames.equals("")) {
       builder.append(" ");
       builder.append(middleNames);
     }
+    // Ignore last name is null or empty
     if (lastName != null && !lastName.equals("")) {
       builder.append(" ");
       builder.append(lastName);
