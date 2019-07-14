@@ -27,7 +27,7 @@ public abstract class AbstractFilmMedia implements IFilmMedia {
    * @throws NullObjectException if any of the parameters are null
    */
   public AbstractFilmMedia(String alias, String title, Integer yearOfRelease,
-      List<IDirector> directors, List<IActor> mainActors) throws NullObjectException {
+      List<Director> directors, List<Actor> mainActors) throws NullObjectException {
     validateConstructor(alias, title, yearOfRelease, directors, mainActors);
     this.alias = alias;
     this.title = title;
@@ -39,7 +39,7 @@ public abstract class AbstractFilmMedia implements IFilmMedia {
   /* Validators */
 
   private void validateConstructor(String alias, String title, Integer yearOfRelease,
-      List<IDirector> directors, List<IActor> mainActors) throws NullObjectException {
+      List<Director> directors, List<Actor> mainActors) throws NullObjectException {
     String notNull = "cannot be null";
     validateNotNull(alias, "alias " + notNull);
     validateNotNull(title, "title " + notNull);
@@ -153,7 +153,7 @@ public abstract class AbstractFilmMedia implements IFilmMedia {
    * @return a list of directors who worked on this media
    */
   @Override
-  public List<IDirector> getDirectors() {
+  public List<Director> getDirectors() {
     return directors;
   }
 
@@ -163,7 +163,7 @@ public abstract class AbstractFilmMedia implements IFilmMedia {
    * @return a list of the main actors who starred in this media
    */
   @Override
-  public List<IActor> getMainActors() {
+  public List<Actor> getMainActors() {
     return mainActors;
   }
 }

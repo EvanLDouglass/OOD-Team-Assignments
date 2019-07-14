@@ -45,12 +45,12 @@ public interface IFilmMedia {
    *
    * @return a list of directors who worked on this media
    */
-  List<IDirector> getDirectors();
+  List<Director> getDirectors();
 
   /**
    * Returns a list of the main actors who starred in this media.
    *
    * @return a list of the main actors who starred in this media
    */
-  List<IActor> getMainActors();
+  List<Actor> getMainActors();
 }

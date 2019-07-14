@@ -1,7 +1,5 @@
 package edu.neu.khoury.cs5004.assignment7.problem1;
 
-import static org.junit.Assert.*;
-
 import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
@@ -92,7 +90,7 @@ public class AbstractFilmMediaTest {
   private class ConcreteFilmMedia extends AbstractFilmMedia {
 
     public ConcreteFilmMedia(String alias, String title, Integer yearOfRelease,
-        List<IDirector> directors, List<IActor> mainActors) throws NullObjectException {
+        List<Director> directors, List<Actor> mainActors) throws NullObjectException {
       super(alias, title, yearOfRelease, directors, mainActors);
     }
   }
