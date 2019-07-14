@@ -11,7 +11,7 @@ import java.util.Map;
  *
  * @author evandouglass
  */
-public class AbstractMediaLibrary implements IMediaLibrary {
+public abstract class AbstractMediaLibrary implements IMediaLibrary {
 
   // Ideally, the information stored in these fields should be kept in a database
   private Map<String, IFilmMedia> aliasToMedia;
