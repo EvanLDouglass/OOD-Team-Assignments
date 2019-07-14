@@ -9,11 +9,9 @@ public interface IMediaLibrary {
 
   void add(IFilmMedia media) throws AliasAlreadyExistsException;
 
-  void add(Movie movie) throws AliasAlreadyExistsException;
-
-  void add(TVSeries series) throws AliasAlreadyExistsException;
-
   IFilmMedia getMediaFrom(Name directorName);
+
+  IFilmMedia getMostStreamed();
 
   Integer getTimesStreamed(String alias);
 }
