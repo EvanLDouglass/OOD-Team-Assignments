@@ -68,10 +68,10 @@ public class Name {
    * @throws EmptyNameException if the name is empty
    */
   private void validateFirstName(String name) throws NullObjectException, EmptyNameException {
-    if (isNameNull(firstName)) {
+    if (isNameNull(name)) {
       throw new NullObjectException("First name cannot be null");
     }
-    if (isNameEmpty(firstName)) {
+    if (isNameEmpty(name)) {
       throw new EmptyNameException("First name cannot be empty");
     }
   }
@@ -119,7 +119,16 @@ public class Name {
 
   @Override
   public String toString() {
-    return firstName + " " + middleNames + " " + lastName;
+    StringBuilder builder = new StringBuilder(firstName);
+    if (middleNames != null && !middleNames.equals("")) {
+      builder.append(" ");
+      builder.append(middleNames);
+    }
+    if (lastName != null && !lastName.equals("")) {
+      builder.append(" ");
+      builder.append(lastName);
+    }
+    return builder.toString();
   }
 
   /* Getters and Setters */
