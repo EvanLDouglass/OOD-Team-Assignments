@@ -1,5 +1,7 @@
 package edu.neu.khoury.cs5004.assignment7.problem1;
 
+import java.util.Objects;
+
 /**
  * Defines the characteristics of a name. Includes fields for first, middle and last names. It is
  * assumed that anything with a name cannot have an empty/null name. For things with a single name,
@@ -92,6 +94,32 @@ public class Name {
    */
   private Boolean isNameNull(String name) {
     return name == null;
+  }
+
+  /* Methods */
+
+  @Override
+  public boolean equals(Object obj) {
+    if (this == obj) {
+      return true;
+    }
+    if (obj == null || getClass() != obj.getClass()) {
+      return false;
+    }
+    Name name = (Name) obj;
+    return firstName.equals(name.firstName)
+        && Objects.equals(middleNames, name.middleNames)
+        && Objects.equals(lastName, name.lastName);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(firstName, middleNames, lastName);
+  }
+
+  @Override
+  public String toString() {
+    return firstName + " " + middleNames + " " + lastName;
   }
 
   /* Getters and Setters */
