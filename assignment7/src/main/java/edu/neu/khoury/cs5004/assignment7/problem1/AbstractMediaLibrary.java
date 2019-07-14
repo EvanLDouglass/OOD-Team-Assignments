@@ -1,6 +1,7 @@
 package edu.neu.khoury.cs5004.assignment7.problem1;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -34,7 +35,7 @@ public class AbstractMediaLibrary implements IMediaLibrary {
   }
 
   @Override
-  public IFilmMedia getMediaFrom(Name directorName) {
+  public List<IFilmMedia> getMediaFrom(Name directorName) {
     return null;
   }
 
@@ -49,7 +50,7 @@ public class AbstractMediaLibrary implements IMediaLibrary {
   }
 
   @Override
-  public void streamMedia(IFilmMedia media) {
+  public void streamMedia(String alias) {
 
   }
 }
