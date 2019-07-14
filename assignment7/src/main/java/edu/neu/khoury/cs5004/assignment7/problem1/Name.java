@@ -145,7 +145,7 @@ public class Name {
   }
 
   /**
-   * Sets a new, non-null, non-empty first name
+   * Sets a new, non-null, non-empty first name.
    *
    * @param firstName the new first name
    * @throws NullObjectException if the name is null
