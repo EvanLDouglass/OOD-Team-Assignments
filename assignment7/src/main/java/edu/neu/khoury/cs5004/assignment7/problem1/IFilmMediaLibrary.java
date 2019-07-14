@@ -7,7 +7,7 @@ import java.util.List;
  *
  * @author evandouglass
  */
-public interface IMediaLibrary {
+public interface IFilmMediaLibrary {
 
   /**
    * Adds an {@code IFilmMedia} object to the the media library.

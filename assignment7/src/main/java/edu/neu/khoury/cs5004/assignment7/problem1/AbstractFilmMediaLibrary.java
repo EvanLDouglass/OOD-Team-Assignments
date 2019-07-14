@@ -5,13 +5,13 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Implementation of the {@code IMediaLibrary} interface.
+ * Implementation of the {@code IFilmMediaLibrary} interface.
  *
  * Note: Currently only supports creation of an empty media library.
  *
  * @author evandouglass
  */
-public abstract class AbstractMediaLibrary implements IMediaLibrary {
+public abstract class AbstractFilmMediaLibrary implements IFilmMediaLibrary {
 
   // Ideally, the information stored in these fields should be kept in a database
   private Map<String, IFilmMedia> aliasToMedia;
@@ -19,9 +19,9 @@ public abstract class AbstractMediaLibrary implements IMediaLibrary {
   private Map<String, Integer> timesStreamed;
 
   /**
-   * Empty constructor for an {@code AbstractMediaLibrary}. Initializes fields to be non-null.
+   * Empty constructor for an {@code AbstractFilmMediaLibrary}. Initializes fields to be non-null.
    */
-  public AbstractMediaLibrary() {
+  public AbstractFilmMediaLibrary() {
     this.aliasToMedia = new HashMap<>();
     this.nameToDirector = new HashMap<>();
     this.timesStreamed = new HashMap<>();
