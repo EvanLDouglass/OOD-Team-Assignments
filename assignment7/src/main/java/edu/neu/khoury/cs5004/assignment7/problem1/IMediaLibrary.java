@@ -14,4 +14,6 @@ public interface IMediaLibrary {
   IFilmMedia getMostStreamed();
 
   Integer getTimesStreamed(String alias);
+
+  void streamMedia(IFilmMedia media);
 }
