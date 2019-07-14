@@ -7,7 +7,7 @@ import java.util.Map;
 /**
  * Implementation of the {@code IFilmMediaLibrary} interface.
  *
- * Note: Currently only supports creation of an empty media library.
+ * Note: Currently only supports creation of an empty media library, cannot import items.
  *
  * @author evandouglass
  */
