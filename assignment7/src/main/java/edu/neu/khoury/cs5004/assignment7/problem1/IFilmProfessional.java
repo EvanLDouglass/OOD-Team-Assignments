@@ -5,6 +5,8 @@ import java.util.List;
 /**
  * Describes the basic expected functionality of someone that works on film projects (i.e. movies, tv series)
  * for a living.
+ *
+ * @author evandouglass
  */
 public interface IFilmProfessional {
 
