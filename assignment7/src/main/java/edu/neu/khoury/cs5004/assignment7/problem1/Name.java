@@ -125,7 +125,7 @@ public class Name {
       builder.append(" ");
       builder.append(middleNames);
     }
-    // Ignore last name is null or empty
+    // Ignore last name if null or empty
     if (lastName != null && !lastName.equals("")) {
       builder.append(" ");
       builder.append(lastName);
