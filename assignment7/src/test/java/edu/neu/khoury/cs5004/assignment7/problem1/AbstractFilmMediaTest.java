@@ -45,6 +45,11 @@ public class AbstractFilmMediaTest {
   }
 
   @Test
+  public void toStringEmptyList() {
+
+  }
+
+  @Test
   public void equalsBasic() {
 
   }

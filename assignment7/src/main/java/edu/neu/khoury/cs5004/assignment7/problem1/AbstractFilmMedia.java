@@ -79,7 +79,30 @@ public abstract class AbstractFilmMedia implements IFilmMedia {
 
   @Override
   public String toString() {
-    return String.format("alias:'%s', title:'%s', released:%d, ");
+    return String.format("alias:'%s', title:'%s', released:%d, directors:%s, actors:%s",
+        alias, title, yearOfRelease, listToString(directors), listToString(mainActors));
+  }
+
+  /**
+   * Builds a string representing the items in a list.
+   *
+   * @param list the list to represent as a string
+   * @return a string representing the list
+   */
+  private String listToString(List<?> list) {
+    if (list.isEmpty()) {
+      return "[]";
+    }
+    // Add first element
+    StringBuilder builder = new StringBuilder();
+    builder.append('[');
+    builder.append(list.get(0).toString());
+    // Add rest of list if it exists w/ separating commas
+    for (int i = 1; i < list.size(); i++) {
+      builder.append(", ");
+      builder.append(list.get(i).toString());
+    }
+    return builder.toString();
   }
 
   /* Getters and Setters */
