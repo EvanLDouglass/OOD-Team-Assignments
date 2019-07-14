@@ -13,8 +13,8 @@ public abstract class AbstractFilmMedia implements IFilmMedia {
   private String alias;
   private String title;
   private Integer yearOfRelease;
-  private List<IDirector> directors;
-  private List<IActor> mainActors;
+  private List<Director> directors;
+  private List<Actor> mainActors;
 
   /**
    * Main constructor for {@code AbstractFilmMedia}.
