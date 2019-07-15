@@ -12,6 +12,7 @@ public abstract class AbstractFilmMedia implements IFilmMedia {
 
   private String alias;
   private String title;
+  // TODO: validate year is four digits
   private Integer yearOfRelease;
   private List<Director> directors;
   private List<Actor> mainActors;
@@ -38,6 +39,16 @@ public abstract class AbstractFilmMedia implements IFilmMedia {
 
   /* Validators */
 
+  /**
+   * Ensures no fields are null.
+   *
+   * @param alias an alias/nickname for the media
+   * @param title the media's title
+   * @param yearOfRelease the media's year of release
+   * @param directors a list of the directors who worked on the media
+   * @param mainActors a list of main actors who worked on the media
+   * @throws NullObjectException if any of the parameters are null
+   */
   private void validateConstructor(String alias, String title, Integer yearOfRelease,
       List<Director> directors, List<Actor> mainActors) throws NullObjectException {
     String notNull = "cannot be null";
@@ -48,11 +59,39 @@ public abstract class AbstractFilmMedia implements IFilmMedia {
     validateNotNull(mainActors, "actors list " + notNull);
   }
 
+  /**
+   * Ensures that a given object is not null.
+   *
+   * @param obj an object to test
+   * @param message a message to include in the exception if thrown
+   * @throws NullObjectException if the given object is null
+   */
   private void validateNotNull(Object obj, String message) throws NullObjectException {
     if (obj == null) {
       throw new NullObjectException(message);
     }
   }
+
+  /**
+   * Ensures that the given year is four digits.
+   *
+   * @param year a year to test
+   * @throws InvalidYearException if the given year is not four digits
+   */
+  private void validateYearFourDigits(Integer year) throws InvalidYearException {
+
+  }
+
+  /**
+   * Counts the number of digits in a given number. Ignores the sign of the given integer.
+   * @param num an integer
+   * @return the number of digits in the integer
+   */
+  private Integer countNumDigits(Integer num) {
+    return null;
+  }
+
+  // TODO: ensure year is in a reasonable range
 
   /* Methods */
 
@@ -90,6 +129,7 @@ public abstract class AbstractFilmMedia implements IFilmMedia {
    * @return a string representing the list
    */
   private String listToString(List<?> list) {
+    // Take care of empty list
     if (list.isEmpty()) {
       return "[]";
     }
@@ -102,6 +142,8 @@ public abstract class AbstractFilmMedia implements IFilmMedia {
       builder.append(", ");
       builder.append(list.get(i).toString());
     }
+    // Add last brace
+    builder.append(']');
     return builder.toString();
   }
 
@@ -121,9 +163,11 @@ public abstract class AbstractFilmMedia implements IFilmMedia {
    * Assigns a new alias for this media.
    *
    * @param alias the new alias for this media
+   * @throws NullObjectException if the given alias is null
    */
   @Override
-  public void setAlias(String alias) {
+  public void setAlias(String alias) throws NullObjectException {
+    validateNotNull(alias, "alias cannot be null");
     this.alias = alias;
   }
 

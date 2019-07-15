@@ -12,21 +12,17 @@ import java.util.List;
 public abstract class AbstractFilmProfessional implements IFilmProfessional {
   // TODO: Make single IFilmMedia list and then make class iterable. Use different iterators to get different types of media.
   private Name name;
-  private List<Movie> movies;
-  private List<TVSeries> series;
+  private List<IFilmMedia> media;
 
   /**
    * Constructor for an {@code AbstractFilmProfessional}.
    *
    * @param name the name of this professional
-   * @param movies a list of movies they have worked on
-   * @param series a list of tv series they have worked on
+   * @param media a list of movies and tv series they have worked on
    */
-  public AbstractFilmProfessional(Name name,
-      List<Movie> movies, List<TVSeries> series) {
+  public AbstractFilmProfessional(Name name, List<IFilmMedia> media) {
     this.name = name;
-    this.movies = movies;
-    this.series = series;
+    this.media = media;
   }
 
   /**
@@ -36,44 +32,20 @@ public abstract class AbstractFilmProfessional implements IFilmProfessional {
    * @param name the name of this professional
    */
   public AbstractFilmProfessional(Name name) {
-    this(name, new ArrayList<>(), new ArrayList<>());
+    this(name, new ArrayList<>());
   }
 
   /* Methods */
 
-  @Override
-  public void addMedia(Movie movie) {
-    addMovie(movie);
-  }
+  public void addMedia(IFilmMedia media) {
 
-  @Override
-  public void addMedia(TVSeries series) {
-    addTVSeries(series);
-  }
-
-  /**
-   * Adds a movie to the list of movies that this this person has worked on.
-   *
-   * @param movie the movie to add
-   */
-  public void addMovie(Movie movie) {
-    this.movies.add(movie);
-  }
-
-  /**
-   * Adds a TV series to the list of series that this person has worked on.
-   *
-   * @param series the TV series to add
-   */
-  public void addTVSeries(TVSeries series) {
-    this.series.add(series);
   }
 
   /* Getters */
 
   @Override
   public List<IFilmMedia> getMedia() {
-    // TODO: add together movie and tv lists, sort before return
+    // TODO: sort before return
     return null;
   }
 
@@ -84,15 +56,17 @@ public abstract class AbstractFilmProfessional implements IFilmProfessional {
 
   @Override
   public List<Movie> getMovies() {
-    // TODO: sort by year
-    return movies;
+    // TODO: sort by year, filter for movies
+    return null;
   }
 
   @Override
   public List<TVSeries> getTVSeries() {
-    // TODO: sort by year
-    return series;
+    // TODO: sort by year, filter for TVSeries
+    return null;
   }
+
+
 
   /* Comparator classes */
 

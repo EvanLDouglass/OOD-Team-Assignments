@@ -13,16 +13,9 @@ public interface IFilmProfessional {
   /**
    * Adds a {@code Movie} to this professional's resume.
    *
-   * @param movie the movie that this professional worked on
+   * @param media the movie that this professional worked on
    */
-  void addMedia(Movie movie);
-
-  /**
-   * Adds a {@code TVSeries} to this professional's resume.
-   *
-   * @param series the TV series that this professional worked on
-   */
-  void addMedia(TVSeries series);
+  void addMedia(IFilmMedia media);
 
   /**
    * Returns the name of this film professional.
