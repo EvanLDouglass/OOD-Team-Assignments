@@ -19,4 +19,11 @@ public class Movie extends AbstractFilmMedia {
       List<Name> mainActors) throws NullObjectException {
     super(alias, title, yearOfRelease, directors, mainActors);
   }
+
+  /* Methods */
+
+  @Override
+  public String toString() {
+    return "Movie{" + super.toString() + "}";
+  }
 }
