@@ -123,9 +123,10 @@ public abstract class AbstractFilmMedia implements IFilmMedia {
   }
 
   /**
-   * Builds a string representing the items in a list.
+   * Builds a string representing the items in a list. The implementation assumes that the
+   * elements in the given list can be represented as an {@code IFilmProfessional}.
    *
-   * @param list the list to represent as a string
+   * @param list the list of IFilmProfessionals to represent as a string
    * @return a string representing the list
    */
   private String listToString(List<?> list) {
@@ -136,11 +137,13 @@ public abstract class AbstractFilmMedia implements IFilmMedia {
     // Add first element
     StringBuilder builder = new StringBuilder();
     builder.append('[');
-    builder.append(list.get(0).toString());
+    IFilmProfessional prof = (IFilmProfessional) list.get(0);
+    builder.append(prof.getName().toString());
     // Add rest of list if it exists w/ separating commas
     for (int i = 1; i < list.size(); i++) {
       builder.append(", ");
-      builder.append(list.get(i).toString());
+      prof = (IFilmProfessional) list.get(i);
+      builder.append(prof.getName().toString());
     }
     // Add last brace
     builder.append(']');

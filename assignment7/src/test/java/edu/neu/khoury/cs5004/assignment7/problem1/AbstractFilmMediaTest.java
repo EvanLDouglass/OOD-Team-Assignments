@@ -60,17 +60,24 @@ public class AbstractFilmMediaTest {
 
   @Test
   public void toString1() {
-
+    String expected = "alias:'movie', title:'Movie Title', released:1990, directors:[Director], "
+      + "actors:[Actor Number 1, Actor Number 2]";
+    assertEquals(expected, media.toString());
   }
 
   @Test
-  public void toStringEmptyList() {
-
+  public void toStringEmptyList() throws NullObjectException {
+    media = new ConcreteFilmMedia("alias", "Title", 1990, new ArrayList<>(), actList);
+    String expected = "alias:'movie', title:'Movie Title', released:1990, directors:[], "
+        + "actors:[Actor Number 1, Actor Number 2]";
+    assertEquals(expected, media.toString());
   }
 
   @Test
-  public void equalsBasic() {
-
+  public void equalsBasic() throws NullObjectException {
+    assertEquals(media, media);
+    ConcreteFilmMedia media1 = new ConcreteFilmMedia("movie", "Movie Title", 1990, dirList, actList);
+    assertEquals(media1, media);
   }
 
   @Test
