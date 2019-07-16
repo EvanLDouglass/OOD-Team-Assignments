@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
+
 import static org.junit.Assert.*;
 
 public class AbstractFilmMediaTest {
@@ -61,7 +62,7 @@ public class AbstractFilmMediaTest {
   @Test
   public void toString1() {
     String expected = "alias:'movie', title:'Movie Title', released:1990, directors:[Director], "
-      + "actors:[Actor Number 1, Actor Number 2]";
+        + "actors:[Actor Number 1, Actor Number 2]";
     assertEquals(expected, media.toString());
   }
 
@@ -76,7 +77,8 @@ public class AbstractFilmMediaTest {
   @Test
   public void equalsBasic() throws NullObjectException {
     assertEquals(media, media);
-    ConcreteFilmMedia media1 = new ConcreteFilmMedia("movie", "Movie Title", 1990, dirList, actList);
+    ConcreteFilmMedia media1 = new ConcreteFilmMedia("movie", "Movie Title", 1990, dirList,
+        actList);
     assertEquals(media1, media);
   }
 
@@ -102,7 +104,8 @@ public class AbstractFilmMediaTest {
 
   @Test
   public void hashCodeEquals() throws NullObjectException {
-    ConcreteFilmMedia media1 = new ConcreteFilmMedia("movie", "Movie Title", 1990, dirList, actList);
+    ConcreteFilmMedia media1 = new ConcreteFilmMedia("movie", "Movie Title", 1990, dirList,
+        actList);
     assertEquals(media1.hashCode(), media.hashCode());
     assertEquals(media.hashCode(), media.hashCode());
   }
@@ -159,7 +162,7 @@ public class AbstractFilmMediaTest {
 
   private class ConcreteFilmMedia extends AbstractFilmMedia {
 
-    public ConcreteFilmMedia(String alias, String title, Integer yearOfRelease,
+    ConcreteFilmMedia(String alias, String title, Integer yearOfRelease,
         List<Director> directors, List<Actor> mainActors) throws NullObjectException {
       super(alias, title, yearOfRelease, directors, mainActors);
     }
