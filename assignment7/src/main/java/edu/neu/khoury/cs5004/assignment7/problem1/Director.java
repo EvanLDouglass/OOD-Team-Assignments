@@ -14,13 +14,10 @@ public class Director extends AbstractFilmProfessional {
    * Constructor for an {@code Director}.
    *
    * @param name the name of this director
-   * @param movies a list of movies they have worked on
-   * @param series a list of tv series they have worked on
+   * @param media a list of movies they have worked on
    */
-  public Director(Name name,
-      List<Movie> movies,
-      List<TVSeries> series) {
-    super(name, movies, series);
+  public Director(Name name, List<IFilmMedia> media) {
+    super(name, media);
   }
 
   /**

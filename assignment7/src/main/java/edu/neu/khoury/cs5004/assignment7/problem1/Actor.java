@@ -14,13 +14,10 @@ public class Actor extends AbstractFilmProfessional {
    * Constructor for an {@code Actor}.
    *
    * @param name the name of this actor
-   * @param movies a list of movies in which they have been a main actor
-   * @param series a list of TV series in which they have been a main actor
+   * @param media a list of movies in which they have been a main actor
    */
-  public Actor(Name name,
-      List<Movie> movies,
-      List<TVSeries> series) {
-    super(name, movies, series);
+  public Actor(Name name, List<IFilmMedia> media) {
+    super(name, media);
   }
 
   /**
