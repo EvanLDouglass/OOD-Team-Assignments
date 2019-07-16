@@ -10,28 +10,20 @@ import static org.junit.Assert.*;
 public class AbstractFilmMediaTest {
 
   private ConcreteFilmMedia media;
-  private List<Actor> actList;
-  private List<Director> dirList;
+  private List<Name> actList;
+  private List<Name> dirList;
 
   @Before
   public void setUp() throws Exception {
     // Make actors
-    Actor act1 = new Actor(new Name("Actor", "Number", "1"));
-    Actor act2 = new Actor(new Name("Actor", "Number", "2"));
     actList = new ArrayList<>();
-    actList.add(act1);
-    actList.add(act2);
+    actList.add(new Name("Actor", "Number", "1"));
+    actList.add(new Name("Actor", "Number", "2"));
     // Make director
-    Director director = new Director(new Name("Director"));
     dirList = new ArrayList<>();
-    dirList.add(director);
+    dirList.add(new Name("Director"));
     // Make film media
     media = new ConcreteFilmMedia("movie", "Movie Title", 1990, dirList, actList);
-
-    // Ensure data integrity
-    act1.addMedia(media);
-    act2.addMedia(media);
-    director.addMedia(media);
   }
 
   @Test(expected = NullObjectException.class)
@@ -163,7 +155,7 @@ public class AbstractFilmMediaTest {
   private class ConcreteFilmMedia extends AbstractFilmMedia {
 
     ConcreteFilmMedia(String alias, String title, Integer yearOfRelease,
-        List<Director> directors, List<Actor> mainActors) throws NullObjectException {
+        List<Name> directors, List<Name> mainActors) throws NullObjectException {
       super(alias, title, yearOfRelease, directors, mainActors);
     }
   }

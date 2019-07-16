@@ -41,16 +41,16 @@ public interface IFilmMedia {
   Integer getYearOfRelease();
 
   /**
-   * Returns a list of the directors who worked on this media.
+   * Returns a list of the directors who worked on this media, as {@code Name} objects.
    *
    * @return a list of directors who worked on this media
    */
-  List<Director> getDirectors();
+  List<Name> getDirectors();
 
   /**
-   * Returns a list of the main actors who starred in this media.
+   * Returns a list of the main actors who starred in this media, as {@code Name} objects.
    *
    * @return a list of the main actors who starred in this media
    */
-  List<Actor> getMainActors();
+  List<Name> getMainActors();
 }

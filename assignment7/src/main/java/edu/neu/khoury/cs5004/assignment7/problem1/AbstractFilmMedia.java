@@ -14,8 +14,8 @@ public abstract class AbstractFilmMedia implements IFilmMedia {
   private String title;
   // TODO: validate year is four digits
   private Integer yearOfRelease;
-  private List<Director> directors;
-  private List<Actor> mainActors;
+  private List<Name> directors;
+  private List<Name> mainActors;
 
   /**
    * Main constructor for {@code AbstractFilmMedia}.
@@ -28,7 +28,7 @@ public abstract class AbstractFilmMedia implements IFilmMedia {
    * @throws NullObjectException if any of the parameters are null
    */
   public AbstractFilmMedia(String alias, String title, Integer yearOfRelease,
-      List<Director> directors, List<Actor> mainActors) throws NullObjectException {
+      List<Name> directors, List<Name> mainActors) throws NullObjectException {
     validateConstructor(alias, title, yearOfRelease, directors, mainActors);
     this.alias = alias;
     this.title = title;
@@ -50,7 +50,7 @@ public abstract class AbstractFilmMedia implements IFilmMedia {
    * @throws NullObjectException if any of the parameters are null
    */
   private void validateConstructor(String alias, String title, Integer yearOfRelease,
-      List<Director> directors, List<Actor> mainActors) throws NullObjectException {
+      List<Name> directors, List<Name> mainActors) throws NullObjectException {
     String notNull = "cannot be null";
     validateNotNull(alias, "alias " + notNull);
     validateNotNull(title, "title " + notNull);
@@ -79,19 +79,21 @@ public abstract class AbstractFilmMedia implements IFilmMedia {
    * @throws InvalidYearException if the given year is not four digits
    */
   private void validateYearFourDigits(Integer year) throws InvalidYearException {
-
+    // TODO: Implement this
   }
 
   /**
    * Counts the number of digits in a given number. Ignores the sign of the given integer.
+   *
    * @param num an integer
    * @return the number of digits in the integer
    */
   private Integer countNumDigits(Integer num) {
+    // TODO: Implement this
     return null;
   }
 
-  // TODO: ensure year is in a reasonable range
+  // TODO: ensure year is in a reasonable range (i.e. from first film to current year)
 
   /* Methods */
 
@@ -123,13 +125,12 @@ public abstract class AbstractFilmMedia implements IFilmMedia {
   }
 
   /**
-   * Builds a string representing the items in a list. The implementation assumes that the
-   * elements in the given list can be represented as an {@code IFilmProfessional}.
+   * Builds a string representing the items in a list of {@code Name} objects.
    *
-   * @param list the list of IFilmProfessionals to represent as a string
+   * @param list the list of Names to represent as a string
    * @return a string representing the list
    */
-  private String listToString(List<?> list) {
+  private String listToString(List<Name> list) {
     // Take care of empty list
     if (list.isEmpty()) {
       return "[]";
@@ -137,13 +138,11 @@ public abstract class AbstractFilmMedia implements IFilmMedia {
     // Add first element
     StringBuilder builder = new StringBuilder();
     builder.append('[');
-    IFilmProfessional prof = (IFilmProfessional) list.get(0);
-    builder.append(prof.getName().toString());
+    builder.append(list.get(0).toString());
     // Add rest of list if it exists w/ separating commas
     for (int i = 1; i < list.size(); i++) {
       builder.append(", ");
-      prof = (IFilmProfessional) list.get(i);
-      builder.append(prof.getName().toString());
+      builder.append(list.get(i).toString());
     }
     // Add last brace
     builder.append(']');
@@ -200,7 +199,7 @@ public abstract class AbstractFilmMedia implements IFilmMedia {
    * @return a list of directors who worked on this media
    */
   @Override
-  public List<Director> getDirectors() {
+  public List<Name> getDirectors() {
     return directors;
   }
 
@@ -210,7 +209,7 @@ public abstract class AbstractFilmMedia implements IFilmMedia {
    * @return a list of the main actors who starred in this media
    */
   @Override
-  public List<Actor> getMainActors() {
+  public List<Name> getMainActors() {
     return mainActors;
   }
 }

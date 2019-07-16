@@ -15,8 +15,8 @@ public class Movie extends AbstractFilmMedia {
    * @throws NullObjectException if any of the parameters are null
    */
   public Movie(String alias, String title, Integer yearOfRelease,
-      List<Director> directors,
-      List<Actor> mainActors) throws NullObjectException {
+      List<Name> directors,
+      List<Name> mainActors) throws NullObjectException {
     super(alias, title, yearOfRelease, directors, mainActors);
   }
 }
