@@ -28,9 +28,9 @@ public class AbstractFilmMediaTest {
     media = new ConcreteFilmMedia("movie", "Movie Title", 1990, dirList, actList);
 
     // Ensure data integrity
-    act1.addMedia((IFilmMedia) this);
-    act2.addMedia((IFilmMedia) this);
-    director.addMedia((IFilmMedia) this);
+    act1.addMedia(media);
+    act2.addMedia(media);
+    director.addMedia(media);
   }
 
   @Test(expected = NullObjectException.class)
@@ -67,7 +67,7 @@ public class AbstractFilmMediaTest {
 
   @Test
   public void toStringEmptyList() throws NullObjectException {
-    media = new ConcreteFilmMedia("alias", "Title", 1990, new ArrayList<>(), actList);
+    media = new ConcreteFilmMedia("movie", "Movie Title", 1990, new ArrayList<>(), actList);
     String expected = "alias:'movie', title:'Movie Title', released:1990, directors:[], "
         + "actors:[Actor Number 1, Actor Number 2]";
     assertEquals(expected, media.toString());
@@ -81,18 +81,44 @@ public class AbstractFilmMediaTest {
   }
 
   @Test
-  public void equalsMain() {
-
+  public void notEqualsMain() throws NullObjectException {
+    ConcreteFilmMedia media1 = new ConcreteFilmMedia("M", "Movie Title", 1990, dirList, actList);
+    assertNotEquals(media1, media);
+    media1 = new ConcreteFilmMedia("movie", "Title", 1990, dirList, actList);
+    assertNotEquals(media1, media);
+    media1 = new ConcreteFilmMedia("movie", "Movie Title", 2019, dirList, actList);
+    assertNotEquals(media1, media);
+    media1 = new ConcreteFilmMedia("movie", "Movie Title", 1990, new ArrayList<>(), actList);
+    assertNotEquals(media1, media);
+    media1 = new ConcreteFilmMedia("movie", "Movie Title", 1990, dirList, new ArrayList<>());
+    assertNotEquals(media1, media);
   }
 
   @Test
   public void notEqualsBasic() {
-
+    assertNotEquals(null, media);
+    assertNotEquals("media", media);
   }
 
   @Test
-  public void hashCode1() {
+  public void hashCodeEquals() throws NullObjectException {
+    ConcreteFilmMedia media1 = new ConcreteFilmMedia("movie", "Movie Title", 1990, dirList, actList);
+    assertEquals(media1.hashCode(), media.hashCode());
+    assertEquals(media.hashCode(), media.hashCode());
+  }
 
+  @Test
+  public void hashCodeNotEquals() throws NullObjectException {
+    ConcreteFilmMedia media1 = new ConcreteFilmMedia("M", "Movie Title", 1990, dirList, actList);
+    assertNotEquals(media1.hashCode(), media.hashCode());
+    media1 = new ConcreteFilmMedia("movie", "Title", 1990, dirList, actList);
+    assertNotEquals(media1.hashCode(), media.hashCode());
+    media1 = new ConcreteFilmMedia("movie", "Movie Title", 2019, dirList, actList);
+    assertNotEquals(media1.hashCode(), media.hashCode());
+    media1 = new ConcreteFilmMedia("movie", "Movie Title", 1990, new ArrayList<>(), actList);
+    assertNotEquals(media1.hashCode(), media.hashCode());
+    media1 = new ConcreteFilmMedia("movie", "Movie Title", 1990, dirList, new ArrayList<>());
+    assertNotEquals(media1.hashCode(), media.hashCode());
   }
 
   @Test
