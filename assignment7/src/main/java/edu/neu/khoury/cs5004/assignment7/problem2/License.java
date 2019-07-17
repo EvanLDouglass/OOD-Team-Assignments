@@ -12,7 +12,7 @@ public class License {
 
   public License(int licenseNumber, Name driverName,
       Date driverBirthdate, String cuntryOrStateOfIssuance,
-      Date expirationDate, Date issuranceDate) {
+      Date expirationDate, Date issuanceDate) {
     this.licenseNumber = licenseNumber;
     this.driverName = driverName;
     this.driverBirthdate = driverBirthdate;

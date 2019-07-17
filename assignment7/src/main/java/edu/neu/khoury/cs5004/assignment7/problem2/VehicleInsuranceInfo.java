@@ -36,13 +36,24 @@ public class VehicleInsuranceInfo {
       return false;
     }
     VehicleInsuranceInfo that = (VehicleInsuranceInfo) o;
-    return Objects.equals(officialOwner, that.officialOwner) &&
-        Objects.equals(peopleCoverd, that.peopleCoverd) &&
+    return Objects.equals(officialOwner, that.officialOwner)
+        &&
+        Objects.equals(peopleCoverd, that.peopleCoverd)
+        &&
         Objects.equals(expirationDate, that.expirationDate);
   }
 
   @Override
   public int hashCode() {
     return Objects.hash(officialOwner, peopleCoverd, expirationDate);
+  }
+
+  @Override
+  public String toString() {
+    return "VehicleInsuranceInfo{" +
+        "officialOwner=" + officialOwner +
+        ", peopleCoverd=" + peopleCoverd +
+        ", expirationDate=" + expirationDate +
+        '}';
   }
 }

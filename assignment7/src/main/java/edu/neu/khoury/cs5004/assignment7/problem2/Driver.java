@@ -77,4 +77,17 @@ public class Driver {
     return Objects.hash(driverName, driverBirthday, driverLicenseInformation, vehicleInformation,
         vehicleInsuranceInformation, driverHistory, vehicleHistory);
   }
+
+  @Override
+  public String toString() {
+    return "Driver{" +
+        "driverName=" + driverName +
+        ", driverBirthday=" + driverBirthday +
+        ", driverLicenseInformation=" + driverLicenseInformation +
+        ", vehicleInformation=" + vehicleInformation +
+        ", vehicleInsuranceInformation=" + vehicleInsuranceInformation +
+        ", driverHistory=" + driverHistory +
+        ", vehicleHistory=" + vehicleHistory +
+        '}';
+  }
 }

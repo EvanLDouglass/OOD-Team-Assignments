@@ -30,6 +30,29 @@ public class Date {
     return duration;
   }
 
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    Date date = (Date) o;
+    return Objects.equals(localDate, date.localDate);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(localDate);
+  }
+
+  @Override
+  public String toString() {
+    return "Date{" +
+        "localDate=" + localDate +
+        '}';
+  }
 }
 
 
