@@ -57,8 +57,9 @@ public class LicenseTest {
 
   @Test
   public void toString1() {
-    assertEquals("License{licenseNumber=1, driverName=edu.neu.khoury.cs5004.assignment7.problem2.Name@fe2,"
-        + " driverBirthdate=Date{localDate=0001-01-01}, cuntryOrStateOfIssuance='US',"
-        + " expirationDate=Date{localDate=0001-01-01}, issuanceDate=Date{localDate=0001-01-01}}", license.toString());
+    assertEquals("License{licenseNumber=1, driverName=Name{firstName='a', lastName='b'},"
+        + " driverBirthdate=Date{localDate=0001-01-01},"
+        + " cuntryOrStateOfIssuance='US', expirationDate=Date{localDate=0001-01-01},"
+        + " issuanceDate=Date{localDate=0001-01-01}}", license.toString());
   }
 }

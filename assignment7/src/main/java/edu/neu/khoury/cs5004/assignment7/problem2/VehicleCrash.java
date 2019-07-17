@@ -3,11 +3,21 @@ package edu.neu.khoury.cs5004.assignment7.problem2;
 import java.util.HashSet;
 import java.util.Objects;
 
+/**
+ * The type Vehicle crash.
+ */
 public class VehicleCrash {
   private Name offendingDriver;
   private Date offendingDate;
   private Crash crash;
 
+  /**
+   * Instantiates a new Vehicle crash.
+   *
+   * @param offendingDriver the offending driver
+   * @param offendingDate the offending date
+   * @param crash the crash
+   */
   public VehicleCrash(Name offendingDriver,
       Date offendingDate, Crash crash) {
     this.offendingDriver = offendingDriver;
@@ -15,14 +25,29 @@ public class VehicleCrash {
     this.crash = crash;
   }
 
+  /**
+   * Gets offending driver.
+   *
+   * @return the offending driver
+   */
   public Name getOffendingDriver() {
     return offendingDriver;
   }
 
+  /**
+   * Gets offending date.
+   *
+   * @return the offending date
+   */
   public Date getOffendingDate() {
     return offendingDate;
   }
 
+  /**
+   * Gets crash.
+   *
+   * @return the crash
+   */
   public Crash getCrash() {
     return crash;
   }

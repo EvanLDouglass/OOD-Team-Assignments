@@ -2,10 +2,20 @@ package edu.neu.khoury.cs5004.assignment7.problem2;
 
 import java.util.Objects;
 
+/**
+ * The type Vehicle violation.
+ */
 public class VehicleViolation extends DriverViolation {
   private Name offendingDriver;
   private Date offendingDate;
 
+  /**
+   * Instantiates a new Vehicle violation.
+   *
+   * @param movingViolation the moving violation
+   * @param offendingDriver the offending driver
+   * @param offendingDate the offending date
+   */
   public VehicleViolation(MovingViolation movingViolation,
       Name offendingDriver, Date offendingDate) {
     super(movingViolation);
@@ -13,6 +23,13 @@ public class VehicleViolation extends DriverViolation {
     this.offendingDate = offendingDate;
   }
 
+  /**
+   * Instantiates a new Vehicle violation.
+   *
+   * @param nonMovingViolation the non moving violation
+   * @param offendingDriver the offending driver
+   * @param offendingDate the offending date
+   */
   public VehicleViolation(
       NonMovingViolation nonMovingViolation,
       Name offendingDriver, Date offendingDate) {
@@ -21,10 +38,20 @@ public class VehicleViolation extends DriverViolation {
     this.offendingDate = offendingDate;
   }
 
+  /**
+   * Gets offending driver.
+   *
+   * @return the offending driver
+   */
   public Name getOffendingDriver() {
     return offendingDriver;
   }
 
+  /**
+   * Gets offending date.
+   *
+   * @return the offending date
+   */
   public Date getOffendingDate() {
     return offendingDate;
   }

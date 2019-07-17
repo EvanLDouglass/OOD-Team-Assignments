@@ -3,12 +3,20 @@ package edu.neu.khoury.cs5004.assignment7.problem2;
 import java.util.HashSet;
 import java.util.Objects;
 
+/**
+ * The type Registration validator.
+ */
 public class RegistrationValidator {
   private static final int AGE_LIMITATION = 21;
   private static final int MONTH_LIMITATION = 6;
   private static final int VEHICLE_YEAR = 20;
   private HashSet<Driver> driversPool;
 
+  /**
+   * Instantiates a new Registration validator.
+   *
+   * @param driver the driver
+   */
   public RegistrationValidator(Driver driver) {
     if (checkAge(driver) && checkLicnese(driver) &&
     checkVehicleInfo(driver) && checkVehicleInsuranceInfo(driver) &&
@@ -77,6 +85,11 @@ public class RegistrationValidator {
     return true;
   }
 
+  /**
+   * Gets drivers pool.
+   *
+   * @return the drivers pool
+   */
   public HashSet<Driver> getDriversPool() {
     return driversPool;
   }

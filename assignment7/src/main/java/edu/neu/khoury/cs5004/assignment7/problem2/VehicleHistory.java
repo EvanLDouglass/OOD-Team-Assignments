@@ -3,10 +3,19 @@ package edu.neu.khoury.cs5004.assignment7.problem2;
 import java.util.HashSet;
 import java.util.Objects;
 
+/**
+ * The type Vehicle history.
+ */
 public class VehicleHistory {
  private HashSet<VehicleCrash> crashes;
  private HashSet<VehicleViolation> vehicleViolations;
 
+  /**
+   * Instantiates a new Vehicle history.
+   *
+   * @param crashes the crashes
+   * @param vehicleViolations the vehicle violations
+   */
   public VehicleHistory(
       HashSet<VehicleCrash> crashes,
       HashSet<VehicleViolation> vehicleViolations) {
@@ -14,10 +23,20 @@ public class VehicleHistory {
     this.vehicleViolations = vehicleViolations;
   }
 
+  /**
+   * Gets crashes.
+   *
+   * @return the crashes
+   */
   public HashSet<VehicleCrash> getCrashes() {
     return crashes;
   }
 
+  /**
+   * Gets vehicle violations.
+   *
+   * @return the vehicle violations
+   */
   public HashSet<VehicleViolation> getVehicleViolations() {
     return vehicleViolations;
   }

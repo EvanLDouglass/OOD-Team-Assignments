@@ -2,6 +2,9 @@ package edu.neu.khoury.cs5004.assignment7.problem2;
 
 import java.util.Objects;
 
+/**
+ * The type License.
+ */
 public class License {
   private int licenseNumber;
   private Name driverName;
@@ -10,6 +13,16 @@ public class License {
   private Date expirationDate;
   private Date issuanceDate;
 
+  /**
+   * Instantiates a new License.
+   *
+   * @param licenseNumber the license number
+   * @param driverName the driver name
+   * @param driverBirthdate the driver birthdate
+   * @param cuntryOrStateOfIssuance the cuntry or state of issuance
+   * @param expirationDate the expiration date
+   * @param issuanceDate the issuance date
+   */
   public License(int licenseNumber, Name driverName,
       Date driverBirthdate, String cuntryOrStateOfIssuance,
       Date expirationDate, Date issuanceDate) {
@@ -21,26 +34,56 @@ public class License {
     this.issuanceDate = issuanceDate;
   }
 
+  /**
+   * Gets license number.
+   *
+   * @return the license number
+   */
   public int getLicenseNumber() {
     return licenseNumber;
   }
 
+  /**
+   * Gets driver name.
+   *
+   * @return the driver name
+   */
   public Name getDriverName() {
     return driverName;
   }
 
+  /**
+   * Gets driver birthdate.
+   *
+   * @return the driver birthdate
+   */
   public Date getDriverBirthdate() {
     return driverBirthdate;
   }
 
+  /**
+   * Gets cuntry or state of issuance.
+   *
+   * @return the cuntry or state of issuance
+   */
   public String getCuntryOrStateOfIssuance() {
     return cuntryOrStateOfIssuance;
   }
 
+  /**
+   * Gets expiration date.
+   *
+   * @return the expiration date
+   */
   public Date getExpirationDate() {
     return expirationDate;
   }
 
+  /**
+   * Gets issuance date.
+   *
+   * @return the issuance date
+   */
   public Date getIssuanceDate() {
     return issuanceDate;
   }

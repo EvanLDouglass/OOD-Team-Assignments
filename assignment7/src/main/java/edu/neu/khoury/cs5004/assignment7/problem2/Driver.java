@@ -2,6 +2,9 @@ package edu.neu.khoury.cs5004.assignment7.problem2;
 
 import java.util.Objects;
 
+/**
+ * The type Driver.
+ */
 public class Driver {
   private Name driverName;
   private Date driverBirthday;
@@ -11,6 +14,17 @@ public class Driver {
   private DriverHistory driverHistory;
   private VehicleHistory vehicleHistory;
 
+  /**
+   * Instantiates a new Driver.
+   *
+   * @param driverName the driver name
+   * @param driverBirthday the driver birthday
+   * @param driverLicenseInformation the driver license information
+   * @param vehicleInformation the vehicle information
+   * @param vehicleInsuranceInformation the vehicle insurance information
+   * @param driverHistory the driver history
+   * @param vehicleHistory the vehicle history
+   */
   public Driver(Name driverName, Date driverBirthday,
       License driverLicenseInformation,
       VehicleInfo vehicleInformation,
@@ -26,30 +40,65 @@ public class Driver {
     this.vehicleHistory = vehicleHistory;
   }
 
+  /**
+   * Gets driver name.
+   *
+   * @return the driver name
+   */
   public Name getDriverName() {
     return driverName;
   }
 
+  /**
+   * Gets driver birthday.
+   *
+   * @return the driver birthday
+   */
   public Date getDriverBirthday() {
     return driverBirthday;
   }
 
+  /**
+   * Gets driver license information.
+   *
+   * @return the driver license information
+   */
   public License getDriverLicenseInformation() {
     return driverLicenseInformation;
   }
 
+  /**
+   * Gets vehicle information.
+   *
+   * @return the vehicle information
+   */
   public VehicleInfo getVehicleInformation() {
     return vehicleInformation;
   }
 
+  /**
+   * Gets vehicle insurance information.
+   *
+   * @return the vehicle insurance information
+   */
   public VehicleInsuranceInfo getVehicleInsuranceInformation() {
     return vehicleInsuranceInformation;
   }
 
+  /**
+   * Gets driver history.
+   *
+   * @return the driver history
+   */
   public DriverHistory getDriverHistory() {
     return driverHistory;
   }
 
+  /**
+   * Gets vehicle history.
+   *
+   * @return the vehicle history
+   */
   public VehicleHistory getVehicleHistory() {
     return vehicleHistory;
   }

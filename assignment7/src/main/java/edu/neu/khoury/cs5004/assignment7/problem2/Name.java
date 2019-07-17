@@ -2,19 +2,38 @@ package edu.neu.khoury.cs5004.assignment7.problem2;
 
 import java.util.Objects;
 
+/**
+ * The type Name.
+ */
 public class Name {
   private String firstName;
   private String lastName;
 
+  /**
+   * Instantiates a new Name.
+   *
+   * @param firstName the first name
+   * @param lastName the last name
+   */
   public Name(String firstName, String lastName) {
     this.firstName = firstName;
     this.lastName = lastName;
   }
 
+  /**
+   * Gets first name.
+   *
+   * @return the first name
+   */
   public String getFirstName() {
     return firstName;
   }
 
+  /**
+   * Gets last name.
+   *
+   * @return the last name
+   */
   public String getLastName() {
     return lastName;
   }

@@ -2,12 +2,23 @@ package edu.neu.khoury.cs5004.assignment7.problem2;
 
 import java.util.Objects;
 
+/**
+ * The type Vehicle info.
+ */
 public class VehicleInfo {
   private String make;
   private String model;
   private Date year;
   private Name officialOwner;
 
+  /**
+   * Instantiates a new Vehicle info.
+   *
+   * @param make the make
+   * @param model the model
+   * @param year the year
+   * @param officialOwner the official owner
+   */
   public VehicleInfo(String make, String model, Date year,
       Name officialOwner) {
     this.make = make;
@@ -16,18 +27,38 @@ public class VehicleInfo {
     this.officialOwner = officialOwner;
   }
 
+  /**
+   * Gets make.
+   *
+   * @return the make
+   */
   public String getMake() {
     return make;
   }
 
+  /**
+   * Gets model.
+   *
+   * @return the model
+   */
   public String getModel() {
     return model;
   }
 
+  /**
+   * Gets year.
+   *
+   * @return the year
+   */
   public Date getYear() {
     return year;
   }
 
+  /**
+   * Gets official owner.
+   *
+   * @return the official owner
+   */
   public Name getOfficialOwner() {
     return officialOwner;
   }
