@@ -27,12 +27,14 @@ public class DirectorTest {
 
     // Add media to director
     director.addMedia(movie1);
-    director.addMedia(movie2);
     director.addMedia(tv1);
+    director.addMedia(movie2);
     director.addMedia(tv2);
   }
 
   @Test
   public void toString1() {
+    String expected = "Director{Director Person, media:['Series Title, Season 2', 'Movie Title 2', 'Series Title', 'Movie Title']}";
+    assertEquals(expected, director.toString());
   }
 }
