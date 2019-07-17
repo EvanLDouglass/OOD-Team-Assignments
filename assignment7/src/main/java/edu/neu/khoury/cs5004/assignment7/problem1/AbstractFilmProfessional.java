@@ -1,16 +1,17 @@
 package edu.neu.khoury.cs5004.assignment7.problem1;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
+import java.util.Objects;
 
 /**
- * Implements the {@code IFilmProfessional} interface.
+ * Implements the {@code IFilmProfessional} interface. This class is optimized for returning a
+ * sorted list of media they have worked on (insertion sort applied when media is added).
  *
  * @author evandouglass
  */
 public abstract class AbstractFilmProfessional implements IFilmProfessional {
-  // TODO: Make single IFilmMedia list and then make class iterable. Use different iterators to get different types of media.
+
   private Name name;
   private List<IFilmMedia> media;
 
@@ -26,8 +27,7 @@ public abstract class AbstractFilmProfessional implements IFilmProfessional {
   }
 
   /**
-   * Basic constructor for {@code AbstractFilmProfessional} with only a name parameter. Initializes
-   * the movies and tv series as empty {@code ArrayList}s.
+   * Basic constructor for {@code AbstractFilmProfessional} with only a name parameter.
    *
    * @param name the name of this professional
    */
@@ -37,69 +37,102 @@ public abstract class AbstractFilmProfessional implements IFilmProfessional {
 
   /* Methods */
 
+  @Override
   public void addMedia(IFilmMedia media) {
+    Integer index = findInsertionIndex(media);
+    if (index == this.media.size()) {
+      // Add to end if this had the earliest year
+      this.media.add(media);
+      return;
+    }
+    this.media.add(index, media);
+  }
 
+  /**
+   * Determines the index at which the given {@code IFilmMedia} object should be inserted into the
+   * media list in order to maintain a descending order of release year.
+   *
+   * @param media the media to add
+   * @return the index at which to insert the given media
+   */
+  private Integer findInsertionIndex(IFilmMedia media) {
+    Integer len = this.media.size();
+    // For empty lists
+    if (len == 0) {
+      return 0;
+    }
+    // For non-empty lists
+    Integer yearNew = media.getYearOfRelease();
+    for (int i = 0; i < len; i++) {
+      Integer yearOld = this.media.get(i).getYearOfRelease();
+      if (yearNew > yearOld) {
+        return i;
+      }
+    }
+    return len;
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (this == obj) {
+      return true;
+    }
+    if (obj == null || getClass() != obj.getClass()) {
+      return false;
+    }
+    AbstractFilmProfessional that = (AbstractFilmProfessional) obj;
+    return name.equals(that.name)
+        && media.equals(that.media);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(name, media);
+  }
+
+  @Override
+  public String toString() {
+    return name.toString() + ", media:" + mediaListToString();
+  }
+
+  /**
+   * Creates a string to represent a list of film. Media are represented based on their titles.
+   * At this time, there is no distinction between sub-classes of {@code IFilmMedia}.
+   *
+   * @return a string representing a list of film media
+   */
+  private String mediaListToString() {
+    // For empty
+    if (media.isEmpty()) {
+      return "[]";
+    }
+    // For non-empty
+    StringBuilder builder = new StringBuilder();
+    builder.append('[');
+    // first
+    builder.append("'");
+    builder.append(media.get(0).getTitle());
+    builder.append("'");
+    // rest
+    for (int i = 1; i < media.size(); i++) {
+      builder.append(", '");
+      builder.append(media.get(i).getTitle());
+      builder.append("'");
+    }
+    // closing brace
+    builder.append(']');
+    return builder.toString();
   }
 
   /* Getters */
 
   @Override
   public List<IFilmMedia> getMedia() {
-    // TODO: sort before return
-    return null;
+    return media;
   }
 
   @Override
   public Name getName() {
     return name;
-  }
-
-  @Override
-  public List<Movie> getMovies() {
-    // TODO: sort by year, filter for movies
-    return null;
-  }
-
-  @Override
-  public List<TVSeries> getTVSeries() {
-    // TODO: sort by year, filter for TVSeries
-    return null;
-  }
-
-
-
-  /* Comparator classes */
-
-  /**
-   * A simple class used to compare two {@code IFilmMedia} objects by their year of release. Note
-   * that {@code IFilmMedia} objects are not {@code Comparable}. This is because there is no clear
-   * way to order these objects in a way that will be consistent with {@code equals}. It is more
-   * appropriate to instead make a {@code Comparator} class in order to compare two of these objects
-   * by individual fields.
-   */
-  private class CompareByYear implements Comparator<IFilmMedia> {
-
-    /**
-     * Compares its two arguments for order.  Returns a negative integer, zero, or a positive
-     * integer as the first argument is less than, equal to, or greater than the second.<p>
-     *
-     * Note: this comparator imposes orderings that are inconsistent with equals. It is intended to
-     * order only by the year of release of some film media.
-     *
-     * @param media1 the first object to be compared.
-     * @param media2 the second object to be compared.
-     * @return a negative integer, zero, or a positive integer as the first argument is less than,
-     * equal to, or greater than the second.
-     * @throws NullPointerException if an argument is null and this comparator does not permit null
-     * arguments
-     * @throws ClassCastException if the arguments' types prevent them from being compared by this
-     * comparator.
-     */
-    @Override
-    public int compare(IFilmMedia media1, IFilmMedia media2) {
-      Integer year1 = media1.getYearOfRelease();
-      Integer year2 = media2.getYearOfRelease();
-      return year1.compareTo(year2);
-    }
   }
 }
