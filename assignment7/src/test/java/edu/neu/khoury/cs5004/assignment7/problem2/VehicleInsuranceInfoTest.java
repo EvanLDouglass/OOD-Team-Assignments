@@ -45,11 +45,6 @@ public class VehicleInsuranceInfoTest {
   }
 
   @Test
-  public void hashCode1() {
-    assertEquals(8001663, vehicleInsuranceInfo.hashCode());
-  }
-
-  @Test
   public void toString1() {
     assertEquals("VehicleInsuranceInfo{officialOwner=Name{firstName='a', lastName='a'},"
         + " peopleCoverd=[Name{firstName='a', lastName='a'}, Name{firstName='b', lastName='b'}],"

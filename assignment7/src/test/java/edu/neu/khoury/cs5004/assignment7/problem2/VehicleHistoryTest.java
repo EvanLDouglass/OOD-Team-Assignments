@@ -40,10 +40,7 @@ public class VehicleHistoryTest {
     assertFalse(vehicleHistory.equals(null));
   }
 
-  @Test
-  public void hashCode1() {
-    assertEquals(1440717794, vehicleHistory.hashCode());
-  }
+
 
   @Test
   public void toString1() {

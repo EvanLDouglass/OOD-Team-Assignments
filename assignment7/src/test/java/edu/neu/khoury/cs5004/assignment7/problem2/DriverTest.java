@@ -104,11 +104,6 @@ public class DriverTest {
   }
 
   @Test
-  public void hashCode1() {
-    assertEquals(-908604137, driver.hashCode());
-  }
-
-  @Test
   public void toString1() {
     assertEquals("Driver{driverName=Name{firstName='a', lastName='a'},"
         + " driverBirthday=Date{localDate=0001-01-01},"

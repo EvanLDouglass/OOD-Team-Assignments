@@ -35,11 +35,6 @@ public class VehicleCrashTest {
   }
 
   @Test
-  public void hashCode1() {
-    assertEquals(853592608, vehicleCrash.hashCode());
-  }
-
-  @Test
   public void toString1() {
     assertEquals("VehicleCrash{offendingDriver=Name{firstName='a', lastName='a'},"
         + " offendingDate=Date{localDate=0003-02-01}, crash=CRASHWITHIINJURIES}", vehicleCrash.toString());

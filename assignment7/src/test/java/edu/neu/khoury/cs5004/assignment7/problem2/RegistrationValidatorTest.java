@@ -76,12 +76,6 @@ public class RegistrationValidatorTest {
     assertTrue(registrationValidator.equals(registrationValidator));
     assertFalse(registrationValidator.equals(null));
   }
-
-  @Test
-  public void hashCode1() {
-    assertEquals(31, registrationValidator.hashCode());
-  }
-
   @Test
   public void toString1() {
     assertEquals("RegistrationValidator{driversPool=null}",registrationValidator.toString());

@@ -30,13 +30,10 @@ public class DriverHistoryTest {
     assertFalse(driverHistory.equals(null));
   }
 
-  @Test
-  public void hashCode1() {
-    assertEquals(-1866787525, driverHistory.hashCode());
-  }
 
   @Test
   public void toString1() {
-    assertEquals("DriverHistory{violations=[DriverViolation{movingViolation=SPEEDING, nonMovingViolation=null}]}", driverHistory.toString());
+    assertEquals("DriverHistory{violations=[DriverViolation{movingViolation=SPEEDING,"
+        + " nonMovingViolation=null}]}", driverHistory.toString());
   }
 }

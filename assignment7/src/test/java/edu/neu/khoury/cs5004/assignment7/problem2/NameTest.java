@@ -29,10 +29,7 @@ public class NameTest {
     assertFalse(name.equals(null));
   }
 
-  @Test
-  public void hashCode1() {
-    assertEquals(4066, name.hashCode());
-  }
+
 
   @Test
   public void toString1() {

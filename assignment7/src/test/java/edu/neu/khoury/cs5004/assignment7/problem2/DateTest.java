@@ -11,17 +11,17 @@ public class DateTest {
 
   @Before
   public void setUp() throws Exception {
-    date = new Date(1, 2, 2019);
+    date = new Date(1, 1, 2019);
   }
 
   @Test
   public void getLocalDate() {
-    assertEquals(LocalDate.of(2019,2,1), date.getLocalDate());
+    assertEquals(LocalDate.of(2019,1,1), date.getLocalDate());
   }
 
   @Test
   public void getMonthDuration() {
-    assertEquals(5, date.getMonthDuration());
+    assertEquals(6, date.getMonthDuration());
   }
 
   @Test
@@ -31,7 +31,7 @@ public class DateTest {
 
   @Test
   public void getDayDuration() {
-    assertEquals(165, date.getDayDuration());
+    assertEquals(LocalDate.now().getDayOfYear() - 1, date.getDayDuration());
   }
 
   @Test
@@ -40,13 +40,10 @@ public class DateTest {
     assertFalse(date.equals(null));
   }
 
-  @Test
-  public void hashCode1() {
-    assertEquals(4135072, date.hashCode());
-  }
+
 
   @Test
   public void toString1() {
-    assertEquals("Date{localDate=2019-02-01}", date.toString());
+    assertEquals("Date{localDate=2019-01-01}", date.toString());
   }
 }

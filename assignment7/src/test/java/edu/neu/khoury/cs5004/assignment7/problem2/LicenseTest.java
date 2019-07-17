@@ -51,11 +51,6 @@ public class LicenseTest {
   }
 
   @Test
-  public void hashCode1() {
-    assertEquals(442754432, license.hashCode());
-  }
-
-  @Test
   public void toString1() {
     assertEquals("License{licenseNumber=1, driverName=Name{firstName='a', lastName='b'},"
         + " driverBirthdate=Date{localDate=0001-01-01},"

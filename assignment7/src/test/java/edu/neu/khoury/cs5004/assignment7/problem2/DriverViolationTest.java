@@ -32,12 +32,6 @@ public class DriverViolationTest {
   }
 
   @Test
-  public void hashCode1() {
-    assertEquals(563485953, driverViolation1.hashCode());
-    assertEquals(580025922, driverViolation2.hashCode());
-  }
-
-  @Test
   public void toString1() {
     assertEquals("DriverViolation{movingViolation=SPEEDING, nonMovingViolation=null}", driverViolation1.toString());
     assertEquals("DriverViolation{movingViolation=SPEEDING, nonMovingViolation=null}", driverViolation1.toString());
