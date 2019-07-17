@@ -29,4 +29,9 @@ public class Director extends AbstractFilmProfessional {
   public Director(Name name) {
     super(name);
   }
+
+  @Override
+  public String toString() {
+    return "Director{" + super.toString() + "}";
+  }
 }
