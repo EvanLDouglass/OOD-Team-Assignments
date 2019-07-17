@@ -29,4 +29,9 @@ public class Actor extends AbstractFilmProfessional {
   public Actor(Name name) {
     super(name);
   }
+
+  @Override
+  public String toString() {
+    return "Actor{" + super.toString() + "}";
+  }
 }
