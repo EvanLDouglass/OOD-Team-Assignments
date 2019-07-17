@@ -18,44 +18,14 @@ public class AbstractFilmProfessionalTest {
 
   @Test
   public void addAndGetMedia() throws NullObjectException, EmptyNameException {
-    // Make actors
+    // Make professionals lists
     List<Name> actList = new ArrayList<>();
-    actList.add(new Name("Actor", "Number", "1"));
-    actList.add(new Name("Actor", "Number", "2"));
-    // Make director
     List<Name> dirList = new ArrayList<>();
-    dirList.add(new Name("Director"));
+
     // Make film media
     IFilmMedia media1990 = new Movie("movie", "Movie Title", 1990, dirList, actList);
-
-    // Make actors
-    List<Name> actList1 = new ArrayList<>();
-    actList1.add(new Name("Actor", "Number", "1"));
-    actList1.add(new Name("Actor", "Number", "2"));
-    // Make director
-    List<Name> dirList1 = new ArrayList<>();
-    dirList1.add(new Name("Director"));
-    // Make film media
     IFilmMedia media1995 = new Movie("movie", "Movie Title", 1995, dirList, actList);
-
-    // Make actors
-    List<Name> actList2 = new ArrayList<>();
-    actList2.add(new Name("Actor", "Number", "1"));
-    actList2.add(new Name("Actor", "Number", "2"));
-    // Make director
-    List<Name> dirList2 = new ArrayList<>();
-    dirList2.add(new Name("Director"));
-    // Make film media
     IFilmMedia media2000 = new Movie("movie", "Movie Title", 2000, dirList, actList);
-
-    // Make actors
-    List<Name> actList3 = new ArrayList<>();
-    actList3.add(new Name("Actor", "Number", "1"));
-    actList3.add(new Name("Actor", "Number", "2"));
-    // Make director
-    List<Name> dirList3 = new ArrayList<>();
-    dirList3.add(new Name("Director"));
-    // Make film media
     IFilmMedia media2005 = new Movie("movie", "Movie Title", 2005, dirList, actList);
 
     prof.addMedia(media1995);
@@ -83,10 +53,7 @@ public class AbstractFilmProfessionalTest {
 
     // Make a media object
     List<Name> actList = new ArrayList<>();
-    actList.add(new Name("Actor", "Number", "1"));
-    actList.add(new Name("Actor", "Number", "2"));
     List<Name> dirList = new ArrayList<>();
-    dirList.add(new Name("Director"));
     IFilmMedia movie = new Movie("movie", "Movie Title", 1990, dirList, actList);
 
     // add to both
@@ -103,10 +70,7 @@ public class AbstractFilmProfessionalTest {
     ConcreteFilmProfessional prof1 = new ConcreteFilmProfessional(new Name("Works", "In", "Film"));
     // Make a media object
     List<Name> actList = new ArrayList<>();
-    actList.add(new Name("Actor", "Number", "1"));
-    actList.add(new Name("Actor", "Number", "2"));
     List<Name> dirList = new ArrayList<>();
-    dirList.add(new Name("Director"));
     IFilmMedia movie = new Movie("movie", "Movie Title", 1990, dirList, actList);
     // add to prof1
     prof1.addMedia(movie);
@@ -124,10 +88,7 @@ public class AbstractFilmProfessionalTest {
 
     // Make a media object
     List<Name> actList = new ArrayList<>();
-    actList.add(new Name("Actor", "Number", "1"));
-    actList.add(new Name("Actor", "Number", "2"));
     List<Name> dirList = new ArrayList<>();
-    dirList.add(new Name("Director"));
     IFilmMedia movie = new Movie("movie", "Movie Title", 1990, dirList, actList);
 
     // add to both
@@ -141,10 +102,7 @@ public class AbstractFilmProfessionalTest {
     ConcreteFilmProfessional prof1 = new ConcreteFilmProfessional(new Name("Works", "In", "Film"));
     // Make a media object
     List<Name> actList = new ArrayList<>();
-    actList.add(new Name("Actor", "Number", "1"));
-    actList.add(new Name("Actor", "Number", "2"));
     List<Name> dirList = new ArrayList<>();
-    dirList.add(new Name("Director"));
     IFilmMedia movie = new Movie("movie", "Movie Title", 1990, dirList, actList);
     // add to prof1
     prof1.addMedia(movie);
@@ -156,44 +114,13 @@ public class AbstractFilmProfessionalTest {
 
   @Test
   public void toStringMain() throws NullObjectException, EmptyNameException {
-    // Make actors
     List<Name> actList = new ArrayList<>();
-    actList.add(new Name("Actor", "Number", "1"));
-    actList.add(new Name("Actor", "Number", "2"));
-    // Make director
     List<Name> dirList = new ArrayList<>();
-    dirList.add(new Name("Director"));
+
     // Make film media
     IFilmMedia movie1 = new Movie("movie1", "Movie Title", 1990, dirList, actList);
-
-    // Make actors
-    List<Name> actList1 = new ArrayList<>();
-    actList1.add(new Name("Actor", "Number", "1"));
-    actList1.add(new Name("Actor", "Number", "2"));
-    // Make director
-    List<Name> dirList1 = new ArrayList<>();
-    dirList1.add(new Name("Director"));
-    // Make film media
     IFilmMedia tv1 = new TVSeries("tv1", "Series Title", 1995, dirList, actList);
-
-    // Make actors
-    List<Name> actList2 = new ArrayList<>();
-    actList2.add(new Name("Actor", "Number", "1"));
-    actList2.add(new Name("Actor", "Number", "2"));
-    // Make director
-    List<Name> dirList2 = new ArrayList<>();
-    dirList2.add(new Name("Director"));
-    // Make film media
     IFilmMedia movie2 = new Movie("movie2", "Movie Title 2", 2000, dirList, actList);
-
-    // Make actors
-    List<Name> actList3 = new ArrayList<>();
-    actList3.add(new Name("Actor", "Number", "1"));
-    actList3.add(new Name("Actor", "Number", "2"));
-    // Make director
-    List<Name> dirList3 = new ArrayList<>();
-    dirList3.add(new Name("Director"));
-    // Make film media
     IFilmMedia tv2 = new Movie("tv2", "Series Title, Season 2", 2005, dirList, actList);
 
     prof.addMedia(movie1);
