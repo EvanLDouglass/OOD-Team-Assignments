@@ -16,6 +16,7 @@ public abstract class AbstractFilmMedia implements IFilmMedia {
   private Integer yearOfRelease;
   private List<Name> directors;
   private List<Name> mainActors;
+  // TODO: Add times streamed field
 
   /**
    * Main constructor for {@code AbstractFilmMedia}.
