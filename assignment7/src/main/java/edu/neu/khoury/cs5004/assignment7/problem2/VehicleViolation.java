@@ -57,18 +57,19 @@ public class VehicleViolation extends DriverViolation {
   }
 
   @Override
-  public boolean equals(Object o) {
-    if (this == o) {
+  public boolean equals(Object other) {
+    if (this == other) {
       return true;
     }
-    if (o == null || getClass() != o.getClass()) {
+    if (other == null || getClass() != other.getClass()) {
       return false;
     }
-    if (!super.equals(o)) {
+    if (!super.equals(other)) {
       return false;
     }
-    VehicleViolation that = (VehicleViolation) o;
-    return Objects.equals(offendingDriver, that.offendingDriver) &&
+    VehicleViolation that = (VehicleViolation) other;
+    return Objects.equals(offendingDriver, that.offendingDriver)
+        &&
         Objects.equals(offendingDate, that.offendingDate);
   }
 
@@ -79,9 +80,14 @@ public class VehicleViolation extends DriverViolation {
 
   @Override
   public String toString() {
-    return "VehicleViolation{" +
-        "offendingDriver=" + offendingDriver +
-        ", offendingDate=" + offendingDate +
+    return "VehicleViolation{"
+        +
+        "offendingDriver="
+        + offendingDriver
+        +
+        ", offendingDate="
+        + offendingDate
+        +
         '}';
   }
 }

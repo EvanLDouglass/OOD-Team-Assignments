@@ -61,14 +61,14 @@ public class Date {
   }
 
   @Override
-  public boolean equals(Object o) {
-    if (this == o) {
+  public boolean equals(Object other) {
+    if (this == other) {
       return true;
     }
-    if (o == null || getClass() != o.getClass()) {
+    if (other == null || getClass() != other.getClass()) {
       return false;
     }
-    Date date = (Date) o;
+    Date date = (Date) other;
     return Objects.equals(localDate, date.localDate);
   }
 
@@ -79,8 +79,11 @@ public class Date {
 
   @Override
   public String toString() {
-    return "Date{" +
-        "localDate=" + localDate +
+    return "Date{"
+        +
+        "localDate="
+        + localDate
+        +
         '}';
   }
 }

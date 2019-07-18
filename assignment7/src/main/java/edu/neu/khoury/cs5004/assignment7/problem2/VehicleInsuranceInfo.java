@@ -53,14 +53,14 @@ public class VehicleInsuranceInfo {
   }
 
   @Override
-  public boolean equals(Object o) {
-    if (this == o) {
+  public boolean equals(Object other) {
+    if (this == other) {
       return true;
     }
-    if (o == null || getClass() != o.getClass()) {
+    if (other == null || getClass() != other.getClass()) {
       return false;
     }
-    VehicleInsuranceInfo that = (VehicleInsuranceInfo) o;
+    VehicleInsuranceInfo that = (VehicleInsuranceInfo) other;
     return Objects.equals(officialOwner, that.officialOwner)
         &&
         Objects.equals(peopleCoverd, that.peopleCoverd)
@@ -75,10 +75,17 @@ public class VehicleInsuranceInfo {
 
   @Override
   public String toString() {
-    return "VehicleInsuranceInfo{" +
-        "officialOwner=" + officialOwner +
-        ", peopleCoverd=" + peopleCoverd +
-        ", expirationDate=" + expirationDate +
+    return "VehicleInsuranceInfo{"
+        +
+        "officialOwner="
+        + officialOwner
+        +
+        ", peopleCoverd="
+        + peopleCoverd
+        +
+        ", expirationDate="
+        + expirationDate
+        +
         '}';
   }
 }

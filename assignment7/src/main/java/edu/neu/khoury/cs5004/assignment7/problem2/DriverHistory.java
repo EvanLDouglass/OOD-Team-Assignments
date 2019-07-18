@@ -7,6 +7,7 @@ import java.util.Objects;
  * The type Driver history.
  */
 public class DriverHistory {
+
   private HashSet<DriverViolation> violations;
 
   /**
@@ -30,14 +31,14 @@ public class DriverHistory {
 
 
   @Override
-  public boolean equals(Object o) {
-    if (this == o) {
+  public boolean equals(Object other) {
+    if (this == other) {
       return true;
     }
-    if (o == null || getClass() != o.getClass()) {
+    if (other == null || getClass() != other.getClass()) {
       return false;
     }
-    DriverHistory that = (DriverHistory) o;
+    DriverHistory that = (DriverHistory) other;
     return Objects.equals(violations, that.violations);
   }
 
@@ -48,8 +49,11 @@ public class DriverHistory {
 
   @Override
   public String toString() {
-    return "DriverHistory{" +
-        "violations=" + violations +
+    return "DriverHistory{"
+        +
+        "violations="
+        + violations
+        +
         '}';
   }
 }

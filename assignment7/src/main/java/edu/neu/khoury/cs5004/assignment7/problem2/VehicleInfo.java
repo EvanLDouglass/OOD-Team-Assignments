@@ -64,17 +64,20 @@ public class VehicleInfo {
   }
 
   @Override
-  public boolean equals(Object o) {
-    if (this == o) {
+  public boolean equals(Object other) {
+    if (this == other) {
       return true;
     }
-    if (o == null || getClass() != o.getClass()) {
+    if (other == null || getClass() != other.getClass()) {
       return false;
     }
-    VehicleInfo that = (VehicleInfo) o;
-    return Objects.equals(make, that.make) &&
-        Objects.equals(model, that.model) &&
-        Objects.equals(year, that.year) &&
+    VehicleInfo that = (VehicleInfo) other;
+    return Objects.equals(make, that.make)
+        &&
+        Objects.equals(model, that.model)
+        &&
+        Objects.equals(year, that.year)
+        &&
         Objects.equals(officialOwner, that.officialOwner);
   }
 
@@ -85,11 +88,22 @@ public class VehicleInfo {
 
   @Override
   public String toString() {
-    return "VehicleInfo{" +
-        "make='" + make + '\'' +
-        ", model='" + model + '\'' +
-        ", year=" + year +
-        ", officialOwner=" + officialOwner +
+    return "VehicleInfo{"
+        +
+        "make='"
+        + make
+        + '\''
+        +
+        ", model='"
+        + model
+        + '\''
+        +
+        ", year="
+        + year
+        +
+        ", officialOwner="
+        + officialOwner
+        +
         '}';
   }
 }

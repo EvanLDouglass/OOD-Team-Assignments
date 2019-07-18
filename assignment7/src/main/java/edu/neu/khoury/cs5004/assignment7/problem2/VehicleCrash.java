@@ -53,16 +53,18 @@ public class VehicleCrash {
   }
 
   @Override
-  public boolean equals(Object o) {
-    if (this == o) {
+  public boolean equals(Object other) {
+    if (this == other) {
       return true;
     }
-    if (o == null || getClass() != o.getClass()) {
+    if (other == null || getClass() != other.getClass()) {
       return false;
     }
-    VehicleCrash that = (VehicleCrash) o;
-    return Objects.equals(offendingDriver, that.offendingDriver) &&
-        Objects.equals(offendingDate, that.offendingDate) &&
+    VehicleCrash that = (VehicleCrash) other;
+    return Objects.equals(offendingDriver, that.offendingDriver)
+        &&
+        Objects.equals(offendingDate, that.offendingDate)
+        &&
         crash == that.crash;
   }
 
@@ -73,10 +75,17 @@ public class VehicleCrash {
 
   @Override
   public String toString() {
-    return "VehicleCrash{" +
-        "offendingDriver=" + offendingDriver +
-        ", offendingDate=" + offendingDate +
-        ", crash=" + crash +
+    return "VehicleCrash{"
+        +
+        "offendingDriver="
+        + offendingDriver
+        +
+        ", offendingDate="
+        + offendingDate
+        +
+        ", crash="
+        + crash
+        +
         '}';
   }
 }

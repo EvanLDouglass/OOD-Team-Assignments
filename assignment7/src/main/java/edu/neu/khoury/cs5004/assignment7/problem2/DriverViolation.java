@@ -47,15 +47,16 @@ public class DriverViolation {
   }
 
   @Override
-  public boolean equals(Object o) {
-    if (this == o) {
+  public boolean equals(Object other) {
+    if (this == other) {
       return true;
     }
-    if (o == null || getClass() != o.getClass()) {
+    if (other == null || getClass() != other.getClass()) {
       return false;
     }
-    DriverViolation that = (DriverViolation) o;
-    return movingViolation == that.movingViolation &&
+    DriverViolation that = (DriverViolation) other;
+    return movingViolation == that.movingViolation
+        &&
         nonMovingViolation == that.nonMovingViolation;
   }
 
@@ -66,9 +67,14 @@ public class DriverViolation {
 
   @Override
   public String toString() {
-    return "DriverViolation{" +
-        "movingViolation=" + movingViolation +
-        ", nonMovingViolation=" + nonMovingViolation +
+    return "DriverViolation{"
+        +
+        "movingViolation="
+        + movingViolation
+        +
+        ", nonMovingViolation="
+        + nonMovingViolation
+        +
         '}';
   }
 }

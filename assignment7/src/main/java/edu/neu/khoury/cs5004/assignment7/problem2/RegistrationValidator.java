@@ -18,9 +18,10 @@ public class RegistrationValidator {
    * @param driver the driver
    */
   public RegistrationValidator(Driver driver) {
-    if (checkAge(driver) && checkLicnese(driver) &&
-    checkVehicleInfo(driver) && checkVehicleInsuranceInfo(driver) &&
-    checkDriverHistory(driver)) {
+    if (checkAge(driver) && checkLicnese(driver)
+        && checkVehicleInfo(driver)
+        && checkVehicleInsuranceInfo(driver)
+        && checkDriverHistory(driver)) {
       driversPool.add(driver);
     }
   }
@@ -32,18 +33,22 @@ public class RegistrationValidator {
     return true;
   }
 
-  private boolean checkLicnese(Driver driver){
-    if (driver.getDriverName().equals(driver.getDriverLicenseInformation().getDriverName()) ||
-        driver.getDriverBirthday().equals(driver.getDriverLicenseInformation().getDriverBirthdate()) ||
-        driver.getDriverLicenseInformation().getCuntryOrStateOfIssuance() == "US" ||
-        driver.getDriverLicenseInformation().getIssuanceDate().getMonthDuration() > MONTH_LIMITATION ||
+  private boolean checkLicnese(Driver driver) {
+    if (driver.getDriverName().equals(driver.getDriverLicenseInformation().getDriverName())
+        ||
+        driver.getDriverBirthday().equals(driver.getDriverLicenseInformation().getDriverBirthdate())
+        ||
+        driver.getDriverLicenseInformation().getCuntryOrStateOfIssuance() == "US"
+        ||
+        driver.getDriverLicenseInformation().getIssuanceDate().getMonthDuration() > MONTH_LIMITATION
+        ||
         driver.getDriverLicenseInformation().getExpirationDate().getDayDuration() > 0) {
       return true;
     }
     return false;
   }
 
-  private boolean checkVehicleInfo(Driver driver){
+  private boolean checkVehicleInfo(Driver driver) {
     if (driver.getVehicleInformation().getYear().getDayDuration() > VEHICLE_YEAR) {
       return false;
     }
@@ -51,9 +56,10 @@ public class RegistrationValidator {
   }
 
   private boolean checkVehicleInsuranceInfo(Driver driver) {
-    if ((driver.getVehicleInformation().getOfficialOwner().equals(driver.getDriverName()) ||
-        driver.getVehicleInsuranceInformation().getPeopleCoverd().contains(
-            driver.getDriverName())) && driver.getVehicleInsuranceInformation().getExpirationDate().getDayDuration() > 0) {
+    if ((driver.getVehicleInformation().getOfficialOwner().equals(driver.getDriverName())
+        || driver.getVehicleInsuranceInformation().getPeopleCoverd()
+        .contains(driver.getDriverName()))
+        && driver.getVehicleInsuranceInformation().getExpirationDate().getDayDuration() > 0) {
       return true;
     }
     return false;
@@ -61,10 +67,10 @@ public class RegistrationValidator {
 
   private boolean checkDriverHistory(Driver driver) {
     for (DriverViolation temp : driver.getDriverHistory().getViolations()) {
-      if (temp.equals(MovingViolation.RECKLESSDRIVING) ||
-      temp.equals(MovingViolation.SPEEDING) ||
-      temp.equals(MovingViolation.DRIVINGNUMBERINFLUENCE)||
-      temp.equals(MovingViolation.DRIVINGWITHOUTAVALIDLICENSEANDORINSURANCE)) {
+      if (temp.equals(MovingViolation.RECKLESSDRIVING)
+          || temp.equals(MovingViolation.SPEEDING)
+          || temp.equals(MovingViolation.DRIVINGNUMBERINFLUENCE)
+          || temp.equals(MovingViolation.DRIVINGWITHOUTAVALIDLICENSEANDORINSURANCE)) {
         return false;
       }
     }
@@ -72,12 +78,12 @@ public class RegistrationValidator {
   }
 
   private boolean checkVehicleHistory(Driver driver) {
-    for (VehicleViolation temp : driver.getVehicleHistory().getVehicleViolations()){
+    for (VehicleViolation temp : driver.getVehicleHistory().getVehicleViolations()) {
       if (temp.getOffendingDate().getMonthDuration() < MONTH_LIMITATION) {
         return false;
       }
     }
-    for (VehicleCrash temp : driver.getVehicleHistory().getCrashes()){
+    for (VehicleCrash temp : driver.getVehicleHistory().getCrashes()) {
       if (temp.getOffendingDate().getMonthDuration() < MONTH_LIMITATION) {
         return false;
       }
@@ -95,14 +101,14 @@ public class RegistrationValidator {
   }
 
   @Override
-  public boolean equals(Object o) {
-    if (this == o) {
+  public boolean equals(Object other) {
+    if (this == other) {
       return true;
     }
-    if (o == null || getClass() != o.getClass()) {
+    if (other == null || getClass() != other.getClass()) {
       return false;
     }
-    RegistrationValidator that = (RegistrationValidator) o;
+    RegistrationValidator that = (RegistrationValidator) other;
     return Objects.equals(driversPool, that.driversPool);
   }
 
@@ -113,8 +119,11 @@ public class RegistrationValidator {
 
   @Override
   public String toString() {
-    return "RegistrationValidator{" +
-        "driversPool=" + driversPool +
+    return "RegistrationValidator{"
+        +
+        "driversPool="
+        + driversPool
+        +
         '}';
   }
 }

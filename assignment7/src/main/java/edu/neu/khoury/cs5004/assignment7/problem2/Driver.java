@@ -104,20 +104,26 @@ public class Driver {
   }
 
   @Override
-  public boolean equals(Object o) {
-    if (this == o) {
+  public boolean equals(Object other) {
+    if (this == other) {
       return true;
     }
-    if (o == null || getClass() != o.getClass()) {
+    if (other == null || getClass() != other.getClass()) {
       return false;
     }
-    Driver driver = (Driver) o;
-    return Objects.equals(driverName, driver.driverName) &&
-        Objects.equals(driverBirthday, driver.driverBirthday) &&
-        Objects.equals(driverLicenseInformation, driver.driverLicenseInformation) &&
-        Objects.equals(vehicleInformation, driver.vehicleInformation) &&
-        Objects.equals(vehicleInsuranceInformation, driver.vehicleInsuranceInformation) &&
-        Objects.equals(driverHistory, driver.driverHistory) &&
+    Driver driver = (Driver) other;
+    return Objects.equals(driverName, driver.driverName)
+        &&
+        Objects.equals(driverBirthday, driver.driverBirthday)
+        &&
+        Objects.equals(driverLicenseInformation, driver.driverLicenseInformation)
+        &&
+        Objects.equals(vehicleInformation, driver.vehicleInformation)
+        &&
+        Objects.equals(vehicleInsuranceInformation, driver.vehicleInsuranceInformation)
+        &&
+        Objects.equals(driverHistory, driver.driverHistory)
+        &&
         Objects.equals(vehicleHistory, driver.vehicleHistory);
   }
 
@@ -129,14 +135,29 @@ public class Driver {
 
   @Override
   public String toString() {
-    return "Driver{" +
-        "driverName=" + driverName +
-        ", driverBirthday=" + driverBirthday +
-        ", driverLicenseInformation=" + driverLicenseInformation +
-        ", vehicleInformation=" + vehicleInformation +
-        ", vehicleInsuranceInformation=" + vehicleInsuranceInformation +
-        ", driverHistory=" + driverHistory +
-        ", vehicleHistory=" + vehicleHistory +
+    return "Driver{"
+        +
+        "driverName="
+        + driverName
+        +
+        ", driverBirthday="
+        + driverBirthday
+        +
+        ", driverLicenseInformation="
+        + driverLicenseInformation
+        +
+        ", vehicleInformation="
+        + vehicleInformation
+        +
+        ", vehicleInsuranceInformation="
+        + vehicleInsuranceInformation
+        +
+        ", driverHistory="
+        + driverHistory
+        +
+        ", vehicleHistory="
+        + vehicleHistory
+        +
         '}';
   }
 }

@@ -39,15 +39,16 @@ public class Name {
   }
 
   @Override
-  public boolean equals(Object o) {
-    if (this == o) {
+  public boolean equals(Object other) {
+    if (this == other) {
       return true;
     }
-    if (o == null || getClass() != o.getClass()) {
+    if (other == null || getClass() != other.getClass()) {
       return false;
     }
-    Name name = (Name) o;
-    return Objects.equals(firstName, name.firstName) &&
+    Name name = (Name) other;
+    return Objects.equals(firstName, name.firstName)
+        &&
         Objects.equals(lastName, name.lastName);
   }
 
@@ -58,9 +59,16 @@ public class Name {
 
   @Override
   public String toString() {
-    return "Name{" +
-        "firstName='" + firstName + '\'' +
-        ", lastName='" + lastName + '\'' +
+    return "Name{"
+        +
+        "firstName='"
+        + firstName
+        + '\''
+        +
+        ", lastName='"
+        + lastName
+        + '\''
+        +
         '}';
   }
 }

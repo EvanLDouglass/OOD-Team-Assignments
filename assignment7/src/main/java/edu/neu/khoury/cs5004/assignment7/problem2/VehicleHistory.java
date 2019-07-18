@@ -7,8 +7,9 @@ import java.util.Objects;
  * The type Vehicle history.
  */
 public class VehicleHistory {
- private HashSet<VehicleCrash> crashes;
- private HashSet<VehicleViolation> vehicleViolations;
+
+  private HashSet<VehicleCrash> crashes;
+  private HashSet<VehicleViolation> vehicleViolations;
 
   /**
    * Instantiates a new Vehicle history.
@@ -42,15 +43,16 @@ public class VehicleHistory {
   }
 
   @Override
-  public boolean equals(Object o) {
-    if (this == o) {
+  public boolean equals(Object other) {
+    if (this == other) {
       return true;
     }
-    if (o == null || getClass() != o.getClass()) {
+    if (other == null || getClass() != other.getClass()) {
       return false;
     }
-    VehicleHistory that = (VehicleHistory) o;
-    return Objects.equals(crashes, that.crashes) &&
+    VehicleHistory that = (VehicleHistory) other;
+    return Objects.equals(crashes, that.crashes)
+        &&
         Objects.equals(vehicleViolations, that.vehicleViolations);
   }
 
@@ -61,9 +63,14 @@ public class VehicleHistory {
 
   @Override
   public String toString() {
-    return "VehicleHistory{" +
-        "crashes=" + crashes +
-        ", vehicleViolations=" + vehicleViolations +
+    return "VehicleHistory{"
+        +
+        "crashes="
+        + crashes
+        +
+        ", vehicleViolations="
+        + vehicleViolations
+        +
         '}';
   }
 }

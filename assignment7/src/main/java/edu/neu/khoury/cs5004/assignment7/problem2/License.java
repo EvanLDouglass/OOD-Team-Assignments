@@ -89,19 +89,24 @@ public class License {
   }
 
   @Override
-  public boolean equals(Object o) {
-    if (this == o) {
+  public boolean equals(Object other) {
+    if (this == other) {
       return true;
     }
-    if (o == null || getClass() != o.getClass()) {
+    if (other == null || getClass() != other.getClass()) {
       return false;
     }
-    License license = (License) o;
-    return licenseNumber == license.licenseNumber &&
-        Objects.equals(driverName, license.driverName) &&
-        Objects.equals(driverBirthdate, license.driverBirthdate) &&
-        Objects.equals(cuntryOrStateOfIssuance, license.cuntryOrStateOfIssuance) &&
-        Objects.equals(expirationDate, license.expirationDate) &&
+    License license = (License) other;
+    return licenseNumber == license.licenseNumber
+        &&
+        Objects.equals(driverName, license.driverName)
+        &&
+        Objects.equals(driverBirthdate, license.driverBirthdate)
+        &&
+        Objects.equals(cuntryOrStateOfIssuance, license.cuntryOrStateOfIssuance)
+        &&
+        Objects.equals(expirationDate, license.expirationDate)
+        &&
         Objects.equals(issuanceDate, license.issuanceDate);
   }
 
@@ -114,13 +119,27 @@ public class License {
 
   @Override
   public String toString() {
-    return "License{" +
-        "licenseNumber=" + licenseNumber +
-        ", driverName=" + driverName +
-        ", driverBirthdate=" + driverBirthdate +
-        ", cuntryOrStateOfIssuance='" + cuntryOrStateOfIssuance + '\'' +
-        ", expirationDate=" + expirationDate +
-        ", issuanceDate=" + issuanceDate +
+    return "License{"
+        +
+        "licenseNumber="
+        + licenseNumber
+        +
+        ", driverName="
+        + driverName
+        +
+        ", driverBirthdate="
+        + driverBirthdate
+        +
+        ", cuntryOrStateOfIssuance='"
+        + cuntryOrStateOfIssuance
+        + '\''
+        +
+        ", expirationDate="
+        + expirationDate
+        +
+        ", issuanceDate="
+        + issuanceDate
+        +
         '}';
   }
 }
