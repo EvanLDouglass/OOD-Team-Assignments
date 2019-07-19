@@ -10,7 +10,7 @@ import java.util.List;
  *
  * @author evandouglass
  */
-public interface IFilmMedia {
+public interface IFilmMedia extends Comparable<IFilmMedia> {
 
   /**
    * Returns an alias that has been assigned to this media.
@@ -46,4 +46,16 @@ public interface IFilmMedia {
    * @return a list of the main actors who starred in this media
    */
   List<Name> getMainActors();
+
+  /**
+   * Returns the number of times this media was streamed.
+   *
+   * @return the number of times this media was streamed
+   */
+  Integer getTimesStreamed();
+
+  /**
+   * Increments the number of times this media was streamed by one.
+   */
+  void incrementTimesStreamed();
 }
