@@ -56,10 +56,7 @@ public class VehicleHistory {
         Objects.equals(vehicleViolations, that.vehicleViolations);
   }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(crashes, vehicleViolations);
-  }
+
 
   @Override
   public String toString() {

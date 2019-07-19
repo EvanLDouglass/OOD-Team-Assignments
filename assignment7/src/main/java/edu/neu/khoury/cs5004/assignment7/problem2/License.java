@@ -111,13 +111,6 @@ public class License {
   }
 
   @Override
-  public int hashCode() {
-    return Objects
-        .hash(licenseNumber, driverName, driverBirthdate, cuntryOrStateOfIssuance, expirationDate,
-            issuanceDate);
-  }
-
-  @Override
   public String toString() {
     return "License{"
         +

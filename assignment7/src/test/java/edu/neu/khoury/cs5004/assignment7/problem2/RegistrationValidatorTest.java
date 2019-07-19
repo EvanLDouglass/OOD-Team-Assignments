@@ -35,7 +35,7 @@ public class RegistrationValidatorTest {
     driverBirthday = new Date(1,1,1990);
     driverLicenseInformation = new License(1, new Name("a", "a"),
         new Date(1, 1,1990), "US",
-        new Date(1, 1, 2010), new Date(1,1,2022));
+        new Date(1, 1, 2022), new Date(1,1,2010));
     vehicleInformation = new VehicleInfo("a", "a",
         new Date(1,1,2010), new Name("a", "a"));
     name1 = new Name("a", "a");
@@ -61,14 +61,15 @@ public class RegistrationValidatorTest {
         vehicleInsuranceInformation,
         driverHistory,
         vehicleHistory);
-    registrationValidator = new RegistrationValidator(driver);
+    driversPool = new HashSet<Driver>();
+    registrationValidator = new RegistrationValidator(driver, driversPool);
     driversPool = new HashSet<>();
     driversPool.add(driver);
   }
 
   @Test
   public void getDriversPool() {
-    assertEquals(null, registrationValidator.getDriversPool());
+    assertEquals(driversPool, registrationValidator.getDriversPool());
   }
 
   @Test
@@ -78,7 +79,20 @@ public class RegistrationValidatorTest {
   }
   @Test
   public void toString1() {
-    assertEquals("RegistrationValidator{driversPool=null}",registrationValidator.toString());
+    assertEquals("RegistrationValidator{driversPool=[Driver{driverName=Name{firstName='a', lastName='a'},"
+            + " driverBirthday=Date{localDate=1990-01-01},"
+            + " driverLicenseInformation=License{licenseNumber=1, driverName=Name{firstName='a', lastName='a'},"
+            + " driverBirthdate=Date{localDate=1990-01-01}, cuntryOrStateOfIssuance='US', expirationDate=Date{localDate=2022-01-01},"
+            + " issuanceDate=Date{localDate=2010-01-01}}, vehicleInformation=VehicleInfo{make='a', model='a', year=Date{localDate=2010-01-01},"
+            + " officialOwner=Name{firstName='a', lastName='a'}},"
+            + " vehicleInsuranceInformation=VehicleInsuranceInfo{officialOwner=Name{firstName='a', lastName='a'},"
+            + " peopleCoverd=[Name{firstName='a', lastName='a'}, Name{firstName='a', lastName='a'}], expirationDate=Date{localDate=2022-01-01}},"
+            + " driverHistory=DriverHistory{violations=[DriverViolation{movingViolation=SPEEDING, nonMovingViolation=null}]},"
+            + " vehicleHistory=VehicleHistory{crashes=[VehicleCrash{offendingDriver=Name{firstName='a', lastName='a'},"
+            + " offendingDate=Date{localDate=2010-01-01}, crash=CRASHWITHIINJURIES}],"
+            + " vehicleViolations=[VehicleViolation{offendingDriver=Name{firstName='a', lastName='a'},"
+            + " offendingDate=Date{localDate=0001-01-01}}]}}]}"
+        ,registrationValidator.toString());
   }
 
 

@@ -17,12 +17,14 @@ public class RegistrationValidator {
    *
    * @param driver the driver
    */
-  public RegistrationValidator(Driver driver) {
+  public RegistrationValidator(Driver driver, HashSet<Driver> driversPool) {
+    this.driversPool = driversPool;
     if (checkAge(driver) && checkLicnese(driver)
         && checkVehicleInfo(driver)
         && checkVehicleInsuranceInfo(driver)
-        && checkDriverHistory(driver)) {
-      driversPool.add(driver);
+        && checkDriverHistory(driver)
+        && checkVehicleHistory(driver)) {
+      this.driversPool.add(driver);
     }
   }
 
@@ -35,21 +37,21 @@ public class RegistrationValidator {
 
   private boolean checkLicnese(Driver driver) {
     if (driver.getDriverName().equals(driver.getDriverLicenseInformation().getDriverName())
-        ||
+        &&
         driver.getDriverBirthday().equals(driver.getDriverLicenseInformation().getDriverBirthdate())
-        ||
+        &&
         driver.getDriverLicenseInformation().getCuntryOrStateOfIssuance() == "US"
-        ||
+        &&
         driver.getDriverLicenseInformation().getIssuanceDate().getMonthDuration() > MONTH_LIMITATION
-        ||
-        driver.getDriverLicenseInformation().getExpirationDate().getDayDuration() > 0) {
+        &&
+        driver.getDriverLicenseInformation().getExpirationDate().getDayDuration() < 0) {
       return true;
     }
     return false;
   }
 
   private boolean checkVehicleInfo(Driver driver) {
-    if (driver.getVehicleInformation().getYear().getDayDuration() > VEHICLE_YEAR) {
+    if (driver.getVehicleInformation().getYear().getYearDuration() > VEHICLE_YEAR) {
       return false;
     }
     return true;
@@ -59,7 +61,7 @@ public class RegistrationValidator {
     if ((driver.getVehicleInformation().getOfficialOwner().equals(driver.getDriverName())
         || driver.getVehicleInsuranceInformation().getPeopleCoverd()
         .contains(driver.getDriverName()))
-        && driver.getVehicleInsuranceInformation().getExpirationDate().getDayDuration() > 0) {
+        && driver.getVehicleInsuranceInformation().getExpirationDate().getDayDuration() < 0) {
       return true;
     }
     return false;
@@ -97,7 +99,7 @@ public class RegistrationValidator {
    * @return the drivers pool
    */
   public HashSet<Driver> getDriversPool() {
-    return driversPool;
+    return this.driversPool;
   }
 
   @Override
