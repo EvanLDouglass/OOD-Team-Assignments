@@ -1,5 +1,7 @@
 package edu.neu.khoury.cs5004.assignment7.problem1;
 
+import static edu.neu.khoury.cs5004.assignment7.problem1.Validator.validateNotNull;
+
 import edu.neu.khoury.cs5004.assignment7.problem1.exceptions.InvalidYearException;
 import edu.neu.khoury.cs5004.assignment7.problem1.exceptions.NullObjectException;
 
@@ -62,19 +64,6 @@ public abstract class AbstractFilmMedia implements IFilmMedia {
     validateNotNull(yearOfRelease, "year of release " + notNull);
     validateNotNull(directors, "directors list " + notNull);
     validateNotNull(mainActors, "actors list " + notNull);
-  }
-
-  /**
-   * Ensures that a given object is not null.
-   *
-   * @param obj an object to test
-   * @param message a message to include in the exception if thrown
-   * @throws NullObjectException if the given object is null
-   */
-  private void validateNotNull(Object obj, String message) throws NullObjectException {
-    if (obj == null) {
-      throw new NullObjectException(message);
-    }
   }
 
   /**
