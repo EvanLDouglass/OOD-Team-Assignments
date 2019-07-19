@@ -1,6 +1,6 @@
 package edu.neu.khoury.cs5004.assignment7.problem1;
 
-import edu.neu.khoury.cs5004.assignment7.problem1.Exceptions.NullObjectException;
+import edu.neu.khoury.cs5004.assignment7.problem1.exceptions.NullObjectException;
 import java.util.ArrayList;
 import java.util.List;
 import org.junit.Before;

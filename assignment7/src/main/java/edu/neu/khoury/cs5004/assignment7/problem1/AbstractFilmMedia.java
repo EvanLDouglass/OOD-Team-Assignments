@@ -1,7 +1,7 @@
 package edu.neu.khoury.cs5004.assignment7.problem1;
 
-import edu.neu.khoury.cs5004.assignment7.problem1.Exceptions.InvalidYearException;
-import edu.neu.khoury.cs5004.assignment7.problem1.Exceptions.NullObjectException;
+import edu.neu.khoury.cs5004.assignment7.problem1.exceptions.InvalidYearException;
+import edu.neu.khoury.cs5004.assignment7.problem1.exceptions.NullObjectException;
 import java.util.List;
 import java.util.Objects;
 

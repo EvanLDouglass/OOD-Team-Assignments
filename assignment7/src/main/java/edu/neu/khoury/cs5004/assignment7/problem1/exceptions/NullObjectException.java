@@ -1,6 +1,6 @@
-package edu.neu.khoury.cs5004.assignment7.problem1.Exceptions;
+package edu.neu.khoury.cs5004.assignment7.problem1.exceptions;
 
-public class InvalidYearException extends Exception {
+public class NullObjectException extends Exception {
 
   /**
    * Constructs a new exception with the specified detail message.  The cause is not initialized,
@@ -9,7 +9,7 @@ public class InvalidYearException extends Exception {
    * @param message the detail message. The detail message is saved for later retrieval by the
    * {@link #getMessage()} method.
    */
-  public InvalidYearException(String message) {
+  public NullObjectException(String message) {
     super(message);
   }
 }
