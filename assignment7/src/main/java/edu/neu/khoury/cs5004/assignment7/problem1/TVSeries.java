@@ -1,5 +1,6 @@
 package edu.neu.khoury.cs5004.assignment7.problem1;
 
+import edu.neu.khoury.cs5004.assignment7.problem1.Exceptions.NullObjectException;
 import java.util.List;
 
 public class TVSeries extends AbstractFilmMedia {
