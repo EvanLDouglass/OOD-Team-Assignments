@@ -122,17 +122,6 @@ public class AbstractFilmMediaTest {
   }
 
   @Test
-  public void setAliasValid() throws NullObjectException {
-    media.setAlias("another movie");
-    assertEquals("another movie", media.getAlias());
-  }
-
-  @Test(expected = NullObjectException.class)
-  public void setAliasNull() throws NullObjectException {
-    media.setAlias(null);
-  }
-
-  @Test
   public void getTitle() {
     assertEquals("Movie Title", media.getTitle());
   }
