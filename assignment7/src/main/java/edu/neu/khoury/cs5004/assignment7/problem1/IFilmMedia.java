@@ -20,13 +20,6 @@ public interface IFilmMedia {
   String getAlias();
 
   /**
-   * Assigns a new alias for this media.
-   *
-   * @param alias the new alias for this media
-   */
-  void setAlias(String alias) throws NullObjectException;
-
-  /**
    * Returns the title of this media.
    *
    * @return the title of this media

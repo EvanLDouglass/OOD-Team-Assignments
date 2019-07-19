@@ -163,18 +163,6 @@ public abstract class AbstractFilmMedia implements IFilmMedia {
   }
 
   /**
-   * Assigns a new alias for this media.
-   *
-   * @param alias the new alias for this media
-   * @throws NullObjectException if the given alias is null
-   */
-  @Override
-  public void setAlias(String alias) throws NullObjectException {
-    validateNotNull(alias, "alias cannot be null");
-    this.alias = alias;
-  }
-
-  /**
    * Returns the title of this media.
    *
    * @return the title of this media
