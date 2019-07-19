@@ -1,4 +1,4 @@
-package edu.neu.khoury.cs5004.assignment7.problem1;
+package edu.neu.khoury.cs5004.assignment7.problem1.Exceptions;
 // TODO: Move exceptions to own package
 public class AliasAlreadyExistsException extends Exception {
 

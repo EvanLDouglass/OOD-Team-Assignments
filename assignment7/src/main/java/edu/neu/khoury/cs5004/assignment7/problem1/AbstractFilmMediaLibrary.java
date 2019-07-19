@@ -1,5 +1,6 @@
 package edu.neu.khoury.cs5004.assignment7.problem1;
 
+import edu.neu.khoury.cs5004.assignment7.problem1.Exceptions.AliasAlreadyExistsException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;

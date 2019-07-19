@@ -2,6 +2,8 @@ package edu.neu.khoury.cs5004.assignment7.problem1;
 
 import static org.junit.Assert.*;
 
+import edu.neu.khoury.cs5004.assignment7.problem1.Exceptions.EmptyNameException;
+import edu.neu.khoury.cs5004.assignment7.problem1.Exceptions.NullObjectException;
 import org.junit.Before;
 import org.junit.Test;
 
