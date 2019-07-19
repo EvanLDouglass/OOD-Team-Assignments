@@ -1,6 +1,8 @@
 package edu.neu.khoury.cs5004.assignment7.problem1;
 
+import edu.neu.khoury.cs5004.assignment7.problem1.exceptions.EmptyNameException;
 import edu.neu.khoury.cs5004.assignment7.problem1.exceptions.NullObjectException;
+
 import java.util.ArrayList;
 import java.util.List;
 import org.junit.Before;
@@ -53,6 +55,41 @@ public class AbstractFilmMediaTest {
   }
 
   @Test
+  public void compareTo() throws NullObjectException, EmptyNameException {
+    // Make actors
+    actList = new ArrayList<>();
+    actList.add(new Name("Actor", "Number", "1"));
+    actList.add(new Name("Actor", "Number", "2"));
+    // Make director
+    dirList = new ArrayList<>();
+    dirList.add(new Name("Director"));
+    // Make film media
+    ConcreteFilmMedia media1 = new ConcreteFilmMedia("movie", "Movie Title", 1980, dirList,
+        actList);
+    // More recent are lesser
+    assertTrue(0 > media.compareTo(media1));
+    // Older are larger
+    assertTrue(0 < media1.compareTo(media));
+  }
+
+  @Test
+  public void compareToSameYear() throws NullObjectException, EmptyNameException {
+    // Shows that in this case, media object does not have to be equal, just the year
+    // Make actors
+    actList = new ArrayList<>();
+    actList.add(new Name("Act", "Number", "1"));
+    actList.add(new Name("Actor", "Num", "2"));
+    // Make director
+    dirList = new ArrayList<>();
+    dirList.add(new Name("Director", "Person"));
+    // Make film media
+    ConcreteFilmMedia media1 = new ConcreteFilmMedia("movie2", "Different Movie Title", 1990,
+        dirList, actList);
+    assertEquals(0, media.compareTo(media1));
+    assertEquals(0, media1.compareTo(media));
+  }
+
+  @Test
   public void toString1() {
     String expected = "alias:'movie', title:'Movie Title', released:1990, directors:[Director], "
         + "actors:[Actor Number 1, Actor Number 2]";
@@ -90,9 +127,9 @@ public class AbstractFilmMediaTest {
   }
 
   @Test
-  public void notEqualsBasic() {
+  public void notEqualsBasic() throws NullObjectException, EmptyNameException {
     assertNotEquals(null, media);
-    assertNotEquals("media", media);
+    assertNotEquals(new Name("media"), media);
   }
 
   @Test
@@ -130,6 +167,21 @@ public class AbstractFilmMediaTest {
   @Test
   public void getYearOfRelease() {
     assertEquals(1990, (int) media.getYearOfRelease());
+  }
+
+  @Test
+  public void getNumberOfStreams() {
+    assertEquals(0, (int) media.getTimesStreamed());
+  }
+
+  @Test
+  public void incrementTimesStreamed() {
+    media.incrementTimesStreamed();
+    assertEquals(1, (int) media.getTimesStreamed());
+    media.incrementTimesStreamed();
+    media.incrementTimesStreamed();
+    media.incrementTimesStreamed();
+    assertEquals(4, (int) media.getTimesStreamed());
   }
 
   @Test
