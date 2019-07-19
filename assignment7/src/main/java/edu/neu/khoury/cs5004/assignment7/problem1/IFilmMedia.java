@@ -5,8 +5,7 @@ import java.util.List;
 /**
  * Describes the general behavior of some film media such as a movie or TV series. It is assumed the
  * film media is a finished work with a title, year of release, director(s) and actor(s), which
- * cannot change. {@code IFilmMedia} does allow for a mutable "alias" filed in which users can set
- * their own alias, or nickname, for the media.
+ * cannot change.
  *
  * @author evandouglass
  */

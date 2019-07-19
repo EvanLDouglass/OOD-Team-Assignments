@@ -20,6 +20,14 @@ public interface IFilmMediaLibrary {
   void add(IFilmMedia media) throws AliasAlreadyExistsException;
 
   /**
+   * Streams an {@code IFilmMedia} object. At this time, {@code streamMedia} only increments the
+   * recorded number of times that something was streamed.
+   *
+   * @param alias the alias for a movie or tv show to stream
+   */
+  void streamMedia(String alias);
+
+  /**
    * Given a director's name, returns a list of the {@code IFilmMedia} objects that were directed by
    * that director.
    *
@@ -34,12 +42,4 @@ public interface IFilmMediaLibrary {
    * @return the most streamed movie or tv show in this media library
    */
   IFilmMedia getMostStreamed();
-
-  /**
-   * Streams an {@code IFilmMedia} object. At this time, {@code streamMedia} only increments the
-   * recorded number of times that something was streamed.
-   *
-   * @param alias the alias for a movie or tv show to stream
-   */
-  void streamMedia(String alias);
 }
