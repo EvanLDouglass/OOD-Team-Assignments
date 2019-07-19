@@ -14,27 +14,11 @@ public class DirectorTest {
   @Before
   public void setUp() throws Exception {
     director = new Director(new Name("Director", "Person"));
-
-    List<Name> actList = new ArrayList<>();
-    List<Name> dirList = new ArrayList<>();
-    dirList.add(director.getName());
-
-    // Make film media
-    IFilmMedia movie1 = new Movie("movie1", "Movie Title", 1990, dirList, actList);
-    IFilmMedia tv1 = new TVSeries("tv1", "Series Title", 1995, dirList, actList);
-    IFilmMedia movie2 = new Movie("movie2", "Movie Title 2", 2000, dirList, actList);
-    IFilmMedia tv2 = new Movie("tv2", "Series Title, Season 2", 2005, dirList, actList);
-
-    // Add media to director
-    director.addMedia(movie1);
-    director.addMedia(tv1);
-    director.addMedia(movie2);
-    director.addMedia(tv2);
   }
 
   @Test
   public void toString1() {
-    String expected = "Director{Director Person, media:['Series Title, Season 2', 'Movie Title 2', 'Series Title', 'Movie Title']}";
+    String expected = "Director{Director Person}";
     assertEquals(expected, director.toString());
   }
 }
