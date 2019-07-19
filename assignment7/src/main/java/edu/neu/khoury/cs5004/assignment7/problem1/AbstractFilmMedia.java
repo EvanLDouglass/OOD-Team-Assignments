@@ -16,9 +16,9 @@ public abstract class AbstractFilmMedia implements IFilmMedia {
   private String title;
   // TODO: validate year is four digits
   private Integer yearOfRelease;
+  private Integer timesStreamed;
   private List<Name> directors;
   private List<Name> mainActors;
-  // TODO: Add times streamed field
 
   /**
    * Main constructor for {@code AbstractFilmMedia}.
@@ -38,6 +38,7 @@ public abstract class AbstractFilmMedia implements IFilmMedia {
     this.yearOfRelease = yearOfRelease;
     this.directors = directors;
     this.mainActors = mainActors;
+    this.timesStreamed = 0;  // can't have been streamed before creation
   }
 
   /* Validators */
@@ -99,6 +100,27 @@ public abstract class AbstractFilmMedia implements IFilmMedia {
   // TODO: ensure year is in a reasonable range (i.e. from first film to current year)
 
   /* Methods */
+
+  /**
+   * Compares this object with the specified object for order.  Returns a negative integer, zero, or
+   * a positive integer as this object is less than, equal to, or greater than the specified
+   * object.
+   * Note: this class has a natural ordering that is inconsistent with equals. It is based on the
+   * release date of the movie, with more recent release dates classified as less than others.
+   *
+   * @param other the object to be compared.
+   * @return a negative integer, zero, or a positive integer as this object is less than, equal to,
+   * or greater than the specified object.
+   * @throws NullPointerException if the specified object is null
+   * @throws ClassCastException if the specified object's type prevents it from being compared to
+   * this object.
+   */
+  @Override
+  public int compareTo(IFilmMedia other) {
+    Integer thisReleaseYear = yearOfRelease;
+    Integer otherReleaseYear = other.getYearOfRelease();
+    return otherReleaseYear - thisReleaseYear;  // if other is older, this classified as lesser
+  }
 
   @Override
   public boolean equals(Object obj) {
@@ -202,5 +224,15 @@ public abstract class AbstractFilmMedia implements IFilmMedia {
   @Override
   public List<Name> getMainActors() {
     return mainActors;
+  }
+
+  @Override
+  public Integer getTimesStreamed() {
+    return timesStreamed;
+  }
+
+  @Override
+  public void incrementTimesStreamed() {
+    this.timesStreamed++;
   }
 }
