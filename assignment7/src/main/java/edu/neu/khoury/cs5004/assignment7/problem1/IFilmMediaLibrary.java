@@ -26,7 +26,7 @@ public interface IFilmMediaLibrary {
    * @param directorName the Name of a director to search for
    * @return a list of the movies and tv shows that were directed by the given director
    */
-  List<IFilmMedia> getMediaFrom(Name directorName);
+  List<IFilmMedia> getMediaFromDirector(Name directorName);
 
   /**
    * Returns the most streamed {@code IFilmMedia} object in this media library.
@@ -34,15 +34,6 @@ public interface IFilmMediaLibrary {
    * @return the most streamed movie or tv show in this media library
    */
   IFilmMedia getMostStreamed();
-
-  /**
-   * Given an alias for an {@code IFIlmMedia}, returns the number of times that media has been
-   * streamed from this media library.
-   *
-   * @param alias the alias for a movie or tv show
-   * @return the number of times that the given media or tv show has been streamed
-   */
-  Integer getTimesStreamed(String alias);
 
   /**
    * Streams an {@code IFilmMedia} object. At this time, {@code streamMedia} only increments the
