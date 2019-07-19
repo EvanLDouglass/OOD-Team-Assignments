@@ -3,8 +3,7 @@ package edu.neu.khoury.cs5004.assignment7.problem1;
 import java.util.List;
 
 /**
- * Represents a film director. Includes fields for their name and lists of movies and tv series that
- * they have directed.
+ * Represents a film director.
  *
  * @author evandouglass
  */
@@ -14,10 +13,9 @@ public class Director extends AbstractFilmProfessional {
    * Constructor for an {@code Director}.
    *
    * @param name the name of this director
-   * @param media a list of movies they have worked on
    */
   public Director(Name name, List<IFilmMedia> media) {
-    super(name, media);
+    super(name);
   }
 
   /**
