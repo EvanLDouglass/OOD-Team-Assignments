@@ -1,5 +1,6 @@
 package edu.neu.khoury.cs5004.assignment7.problem1;
 
+import com.sun.javaws.exceptions.InvalidArgumentException;
 import edu.neu.khoury.cs5004.assignment7.problem1.exceptions.NullObjectException;
 import java.util.List;
 
@@ -23,7 +24,7 @@ public class Movie extends AbstractFilmMedia {
    */
   public Movie(String alias, String title, Integer yearOfRelease,
       List<Name> directors,
-      List<Name> mainActors) throws NullObjectException {
+      List<Name> mainActors) throws NullObjectException, InvalidArgumentException {
     super(alias, title, yearOfRelease, directors, mainActors);
   }
 
