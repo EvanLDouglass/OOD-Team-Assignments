@@ -1,15 +1,16 @@
 package edu.neu.khoury.cs5004.assignment7.problem1;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertTrue;
+
 import com.sun.javaws.exceptions.InvalidArgumentException;
 import edu.neu.khoury.cs5004.assignment7.problem1.exceptions.EmptyNameException;
 import edu.neu.khoury.cs5004.assignment7.problem1.exceptions.NullObjectException;
-
 import java.util.ArrayList;
 import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class AbstractFilmMediaTest {
 

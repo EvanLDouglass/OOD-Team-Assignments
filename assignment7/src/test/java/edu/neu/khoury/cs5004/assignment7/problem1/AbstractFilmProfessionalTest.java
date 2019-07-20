@@ -1,10 +1,10 @@
 package edu.neu.khoury.cs5004.assignment7.problem1;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 import edu.neu.khoury.cs5004.assignment7.problem1.exceptions.EmptyNameException;
 import edu.neu.khoury.cs5004.assignment7.problem1.exceptions.NullObjectException;
-
 import org.junit.Before;
 import org.junit.Test;
 
