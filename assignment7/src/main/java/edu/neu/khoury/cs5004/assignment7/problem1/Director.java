@@ -19,8 +19,8 @@ public class Director extends AbstractFilmProfessional {
   }
 
   /**
-   * Basic constructor for {@code Director} with only a name parameter. Initializes
-   * the movies and tv series as empty {@code ArrayList}s.
+   * Basic constructor for {@code Director} with only a name parameter. Initializes the movies and
+   * tv series as empty {@code ArrayList}s.
    *
    * @param name the name of this professional
    */

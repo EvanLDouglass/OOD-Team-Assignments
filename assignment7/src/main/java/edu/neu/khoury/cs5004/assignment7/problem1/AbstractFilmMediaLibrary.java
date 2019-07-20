@@ -12,7 +12,7 @@ import java.util.TreeSet;
 /**
  * Implementation of the {@code IFilmMediaLibrary} interface.
  *
- * Note: Currently only supports creation of an empty media library, cannot import items.
+ * <p>Note: Currently only supports creation of an empty media library, cannot import items.
  *
  * @author evandouglass
  */
@@ -42,8 +42,8 @@ public abstract class AbstractFilmMediaLibrary implements IFilmMediaLibrary {
 
   @Override
   public void add(IFilmMedia media) throws AliasAlreadyExistsException {
-    // Again, ideally these methods should be updates to a database. As the specs are now, individual
-    // methods must be added for each type of data.
+    // Again, ideally these methods should be updates to a database. As the specs are now,
+    // individual methods must be added for each type of data.
     addToMediaSearch(media);
     addToDirectorSearch(media);
   }
@@ -53,8 +53,8 @@ public abstract class AbstractFilmMediaLibrary implements IFilmMediaLibrary {
    *
    * @param media the media to add
    * @throws AliasAlreadyExistsException if the media's alias is already used in the map. Client
-   *   programs will be creating the media objects, so will need to check if their alias causes
-   *   an exception.
+   *     programs will be creating the media objects, so will need to check if their alias causes an
+   *     exception.
    */
   private void addToMediaSearch(IFilmMedia media) throws AliasAlreadyExistsException {
     if (aliasToMedia.containsKey(media.getAlias())) {

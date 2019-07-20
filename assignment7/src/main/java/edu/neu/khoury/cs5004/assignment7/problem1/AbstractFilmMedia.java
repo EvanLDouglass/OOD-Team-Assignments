@@ -5,7 +5,6 @@ import static edu.neu.khoury.cs5004.assignment7.problem1.Validator.validateNotNu
 
 import com.sun.javaws.exceptions.InvalidArgumentException;
 import edu.neu.khoury.cs5004.assignment7.problem1.exceptions.NullObjectException;
-
 import java.util.List;
 import java.util.Objects;
 
@@ -83,17 +82,16 @@ public abstract class AbstractFilmMedia implements IFilmMedia {
 
   /**
    * Compares this object with the specified object for order.  Returns a negative integer, zero, or
-   * a positive integer as this object is less than, equal to, or greater than the specified
-   * object.
+   * a positive integer as this object is less than, equal to, or greater than the specified object.
    * Note: this class has a natural ordering that is inconsistent with equals. It is based on the
    * release date of the movie, with more recent release dates classified as less than others.
    *
    * @param other the object to be compared.
    * @return a negative integer, zero, or a positive integer as this object is less than, equal to,
-   * or greater than the specified object.
+   *     or greater than the specified object.
    * @throws NullPointerException if the specified object is null
    * @throws ClassCastException if the specified object's type prevents it from being compared to
-   * this object.
+   *     this object.
    */
   @Override
   public int compareTo(IFilmMedia other) {
