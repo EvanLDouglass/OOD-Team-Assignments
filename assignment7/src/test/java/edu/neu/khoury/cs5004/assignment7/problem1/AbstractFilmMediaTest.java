@@ -4,7 +4,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertTrue;
 
-import com.sun.javaws.exceptions.InvalidArgumentException;
 import edu.neu.khoury.cs5004.assignment7.problem1.exceptions.EmptyNameException;
 import edu.neu.khoury.cs5004.assignment7.problem1.exceptions.NullObjectException;
 import java.util.ArrayList;
@@ -32,42 +31,42 @@ public class AbstractFilmMediaTest {
   }
 
   @Test(expected = NullObjectException.class)
-  public void nullAlias() throws NullObjectException, InvalidArgumentException {
+  public void nullAlias() throws NullObjectException, IllegalArgumentException {
     media = new ConcreteFilmMedia(null, "Title", 1990, dirList, actList);
   }
 
   @Test(expected = NullObjectException.class)
-  public void nullTitle() throws NullObjectException, InvalidArgumentException {
+  public void nullTitle() throws NullObjectException, IllegalArgumentException {
     media = new ConcreteFilmMedia("alias", null, 1990, dirList, actList);
   }
 
   @Test(expected = NullObjectException.class)
-  public void nullYear() throws NullObjectException, InvalidArgumentException {
+  public void nullYear() throws NullObjectException, IllegalArgumentException {
     media = new ConcreteFilmMedia("alias", "Title", null, dirList, actList);
   }
 
-  @Test(expected = InvalidArgumentException.class)
-  public void yearLessThanFourDigits() throws NullObjectException, InvalidArgumentException {
+  @Test(expected = IllegalArgumentException.class)
+  public void yearLessThanFourDigits() throws NullObjectException, IllegalArgumentException {
     media = new ConcreteFilmMedia("alias", "Title", 13, dirList, actList);
   }
 
-  @Test(expected = InvalidArgumentException.class)
-  public void yearGreaterThanFourDigits() throws NullObjectException, InvalidArgumentException {
+  @Test(expected = IllegalArgumentException.class)
+  public void yearGreaterThanFourDigits() throws NullObjectException, IllegalArgumentException {
     media = new ConcreteFilmMedia("alias", "Title", 20000, dirList, actList);
   }
 
   @Test(expected = NullObjectException.class)
-  public void nullDirectors() throws NullObjectException, InvalidArgumentException {
+  public void nullDirectors() throws NullObjectException, IllegalArgumentException {
     media = new ConcreteFilmMedia("alias", "Title", 1990, null, actList);
   }
 
   @Test(expected = NullObjectException.class)
-  public void nullActors() throws NullObjectException, InvalidArgumentException {
+  public void nullActors() throws NullObjectException, IllegalArgumentException {
     media = new ConcreteFilmMedia(null, "Title", 1990, dirList, null);
   }
 
   @Test
-  public void compareTo() throws NullObjectException, EmptyNameException, InvalidArgumentException {
+  public void compareTo() throws NullObjectException, EmptyNameException, IllegalArgumentException {
     // Make actors
     actList = new ArrayList<>();
     actList.add(new Name("Actor", "Number", "1"));
@@ -86,7 +85,7 @@ public class AbstractFilmMediaTest {
 
   @Test
   public void compareToSameYear()
-      throws NullObjectException, EmptyNameException, InvalidArgumentException {
+      throws NullObjectException, EmptyNameException, IllegalArgumentException {
     // Shows that in this case, media object does not have to be equal, just the year
     // Make actors
     actList = new ArrayList<>();
@@ -110,7 +109,7 @@ public class AbstractFilmMediaTest {
   }
 
   @Test
-  public void toStringEmptyList() throws NullObjectException, InvalidArgumentException {
+  public void toStringEmptyList() throws NullObjectException, IllegalArgumentException {
     media = new ConcreteFilmMedia("movie", "Movie Title", 1990, new ArrayList<>(), actList);
     String expected = "alias:'movie', title:'Movie Title', released:1990, directors:[], "
         + "actors:[Actor Number 1, Actor Number 2]";
@@ -118,7 +117,7 @@ public class AbstractFilmMediaTest {
   }
 
   @Test
-  public void equalsBasic() throws NullObjectException, InvalidArgumentException {
+  public void equalsBasic() throws NullObjectException, IllegalArgumentException {
     assertEquals(media, media);
     ConcreteFilmMedia media1 = new ConcreteFilmMedia("movie", "Movie Title", 1990, dirList,
         actList);
@@ -126,7 +125,7 @@ public class AbstractFilmMediaTest {
   }
 
   @Test
-  public void notEqualsMain() throws NullObjectException, InvalidArgumentException {
+  public void notEqualsMain() throws NullObjectException, IllegalArgumentException {
     ConcreteFilmMedia media1 = new ConcreteFilmMedia("M", "Movie Title", 1990, dirList, actList);
     assertNotEquals(media1, media);
     media1 = new ConcreteFilmMedia("movie", "Title", 1990, dirList, actList);
@@ -146,7 +145,7 @@ public class AbstractFilmMediaTest {
   }
 
   @Test
-  public void hashCodeEquals() throws NullObjectException, InvalidArgumentException {
+  public void hashCodeEquals() throws NullObjectException, IllegalArgumentException {
     ConcreteFilmMedia media1 = new ConcreteFilmMedia("movie", "Movie Title", 1990, dirList,
         actList);
     assertEquals(media1.hashCode(), media.hashCode());
@@ -154,7 +153,7 @@ public class AbstractFilmMediaTest {
   }
 
   @Test
-  public void hashCodeNotEquals() throws NullObjectException, InvalidArgumentException {
+  public void hashCodeNotEquals() throws NullObjectException, IllegalArgumentException {
     ConcreteFilmMedia media1 = new ConcreteFilmMedia("M", "Movie Title", 1990, dirList, actList);
     assertNotEquals(media1.hashCode(), media.hashCode());
     media1 = new ConcreteFilmMedia("movie", "Title", 1990, dirList, actList);
@@ -211,7 +210,7 @@ public class AbstractFilmMediaTest {
 
     ConcreteFilmMedia(String alias, String title, Integer yearOfRelease,
         List<Name> directors, List<Name> mainActors)
-        throws NullObjectException, InvalidArgumentException {
+        throws NullObjectException, IllegalArgumentException {
       super(alias, title, yearOfRelease, directors, mainActors);
     }
   }

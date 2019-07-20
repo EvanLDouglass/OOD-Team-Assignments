@@ -29,6 +29,10 @@ public class DriverViolationTest {
   public void equals1() {
     assertTrue(driverViolation1.equals(driverViolation1));
     assertFalse(driverViolation1.equals(driverViolation2));
+    assertNotEquals(driverViolation1, driverViolation2);
+    assertNotEquals(null, driverViolation1);
+    DriverViolation violation = new DriverViolation(MovingViolation.SPEEDING);
+    assertEquals(driverViolation1, violation);
   }
 
   @Test

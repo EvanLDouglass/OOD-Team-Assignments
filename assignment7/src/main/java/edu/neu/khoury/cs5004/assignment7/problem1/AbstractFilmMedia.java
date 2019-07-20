@@ -3,8 +3,8 @@ package edu.neu.khoury.cs5004.assignment7.problem1;
 import static edu.neu.khoury.cs5004.assignment7.problem1.Validator.validateIntegerLength;
 import static edu.neu.khoury.cs5004.assignment7.problem1.Validator.validateNotNull;
 
-import com.sun.javaws.exceptions.InvalidArgumentException;
 import edu.neu.khoury.cs5004.assignment7.problem1.exceptions.NullObjectException;
+
 import java.util.List;
 import java.util.Objects;
 
@@ -34,7 +34,7 @@ public abstract class AbstractFilmMedia implements IFilmMedia {
    */
   public AbstractFilmMedia(String alias, String title, Integer yearOfRelease,
       List<Name> directors, List<Name> mainActors)
-      throws NullObjectException, InvalidArgumentException {
+      throws NullObjectException, IllegalArgumentException {
     validateConstructor(alias, title, yearOfRelease, directors, mainActors);
     this.alias = alias;
     this.title = title;
@@ -58,7 +58,7 @@ public abstract class AbstractFilmMedia implements IFilmMedia {
    */
   private void validateConstructor(String alias, String title, Integer yearOfRelease,
       List<Name> directors, List<Name> mainActors)
-      throws NullObjectException, InvalidArgumentException {
+      throws NullObjectException, IllegalArgumentException {
     String notNull = "cannot be null";
     validateNotNull(alias, "alias " + notNull);
     validateNotNull(title, "title " + notNull);
@@ -72,9 +72,9 @@ public abstract class AbstractFilmMedia implements IFilmMedia {
    * Ensures that the given year is four digits.
    *
    * @param year a year to test
-   * @throws InvalidArgumentException if the given year is not four digits
+   * @throws IllegalArgumentException if the given year is not four digits
    */
-  private void validateYearFourDigits(Integer year) throws InvalidArgumentException {
+  private void validateYearFourDigits(Integer year) throws IllegalArgumentException {
     validateIntegerLength(year, 4);
   }
 

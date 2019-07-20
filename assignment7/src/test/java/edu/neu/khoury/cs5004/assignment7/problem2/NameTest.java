@@ -27,6 +27,9 @@ public class NameTest {
   public void equals1() {
     assertTrue(name.equals(name));
     assertFalse(name.equals(null));
+
+    Name name1 = new Name("a", "b");
+    assertEquals(name1, name);
   }
 
 

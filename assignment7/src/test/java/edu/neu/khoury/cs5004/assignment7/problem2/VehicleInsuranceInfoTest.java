@@ -42,6 +42,9 @@ public class VehicleInsuranceInfoTest {
   public void equals1() {
     assertTrue(vehicleInsuranceInfo.equals(vehicleInsuranceInfo));
     assertFalse(vehicleInsuranceInfo.equals(null));
+
+    VehicleInsuranceInfo info = new VehicleInsuranceInfo(name1, names, new Date(1,1,1));
+    assertEquals(info, vehicleInsuranceInfo);
   }
 
   @Test

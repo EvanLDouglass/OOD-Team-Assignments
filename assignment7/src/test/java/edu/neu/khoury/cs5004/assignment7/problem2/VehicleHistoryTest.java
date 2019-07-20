@@ -38,6 +38,9 @@ public class VehicleHistoryTest {
   public void equals1() {
     assertTrue(vehicleHistory.equals(vehicleHistory));
     assertFalse(vehicleHistory.equals(null));
+
+    VehicleHistory history = new VehicleHistory(vehicleCrashes, vehicleViolations);
+    assertEquals(history, vehicleHistory);
   }
 
 

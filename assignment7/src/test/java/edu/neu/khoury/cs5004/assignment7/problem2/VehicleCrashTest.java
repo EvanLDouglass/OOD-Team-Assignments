@@ -32,6 +32,9 @@ public class VehicleCrashTest {
   public void equals1() {
     assertTrue(vehicleCrash.equals(vehicleCrash));
     assertFalse(vehicleCrash.equals(null));
+
+    VehicleCrash vehicleCrash1 = new VehicleCrash(new Name("a", "a"), new Date(1, 2, 3), Crash.CRASHWITHIINJURIES);
+    assertEquals(vehicleCrash1, vehicleCrash);
   }
 
   @Test

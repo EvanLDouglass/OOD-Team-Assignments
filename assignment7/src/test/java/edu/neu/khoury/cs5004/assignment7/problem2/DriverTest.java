@@ -101,6 +101,13 @@ public class DriverTest {
   public void equals1() {
     assertTrue(driver.equals(driver));
     assertFalse(driver.equals(null));
+
+    Driver driver1 = new Driver(driverName, driverBirthday,
+        driverLicenseInformation,
+        vehicleInformation,
+        vehicleInsuranceInformation,
+        driverHistory,
+        vehicleHistory);
   }
 
   @Test

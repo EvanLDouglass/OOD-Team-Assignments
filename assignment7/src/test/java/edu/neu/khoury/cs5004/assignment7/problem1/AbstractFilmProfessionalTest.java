@@ -32,7 +32,7 @@ public class AbstractFilmProfessionalTest {
   @Test
   public void notEqualsBasic() throws NullObjectException, EmptyNameException {
     assertNotEquals(null, prof);
-    assertNotEquals("prof", prof);
+    assertNotEquals(new Name("Evan"), prof);
 
     ConcreteFilmProfessional prof1 = new ConcreteFilmProfessional(new Name("Not", "The", "Same"));
     assertNotEquals(prof1, prof);

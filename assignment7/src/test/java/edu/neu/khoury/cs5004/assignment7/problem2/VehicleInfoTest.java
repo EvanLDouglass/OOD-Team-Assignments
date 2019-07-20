@@ -37,6 +37,9 @@ public class VehicleInfoTest {
   public void equals1() {
     assertTrue(vehicleInfo.equals(vehicleInfo));
     assertFalse(vehicleInfo.equals(null));
+
+    VehicleInfo vehicleInfo1 = new VehicleInfo("a", "a", new Date(1,1,1), new Name("a", "b"));
+    assertEquals(vehicleInfo1, vehicleInfo);
   }
 
 

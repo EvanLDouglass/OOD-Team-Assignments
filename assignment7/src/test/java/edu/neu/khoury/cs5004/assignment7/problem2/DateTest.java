@@ -38,6 +38,9 @@ public class DateTest {
   public void equals1() {
     assertTrue(date.equals(date));
     assertFalse(date.equals(null));
+
+    Date date1 = new Date(1, 1, 2019);
+    assertEquals(date1, date);
   }
 
 

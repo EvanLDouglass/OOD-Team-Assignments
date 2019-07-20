@@ -28,6 +28,9 @@ public class DriverHistoryTest {
   public void equals1() {
     assertTrue(driverHistory.equals(driverHistory));
     assertFalse(driverHistory.equals(null));
+
+    DriverHistory history = new DriverHistory(violations);
+    assertEquals(history, driverHistory);
   }
 
 

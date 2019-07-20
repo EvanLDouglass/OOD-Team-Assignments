@@ -1,6 +1,5 @@
 package edu.neu.khoury.cs5004.assignment7.problem1;
 
-import com.sun.javaws.exceptions.InvalidArgumentException;
 import edu.neu.khoury.cs5004.assignment7.problem1.exceptions.NullObjectException;
 
 /**
@@ -29,15 +28,15 @@ public class Validator {
    *
    * @param num the integer to test
    * @param length the number of digits num should have
-   * @throws InvalidArgumentException if the absolute value of the given integer does not have the
+   * @throws IllegalArgumentException if the absolute value of the given integer does not have the
    *     number of digits given by length
    */
   public static void validateIntegerLength(Integer num, Integer length)
-      throws InvalidArgumentException {
+      throws IllegalArgumentException {
     String str = Integer.toString(Math.abs(num));
     if (str.length() != length) {
       String msg = "Integer " + num + ": expected " + length + " digits.";
-      throw new InvalidArgumentException(new String[]{msg});
+      throw new IllegalArgumentException(msg);
     }
   }
 }

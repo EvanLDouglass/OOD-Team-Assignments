@@ -1,7 +1,7 @@
 package edu.neu.khoury.cs5004.assignment7.problem1;
 
-import com.sun.javaws.exceptions.InvalidArgumentException;
 import edu.neu.khoury.cs5004.assignment7.problem1.exceptions.NullObjectException;
+
 import java.util.List;
 
 /**
@@ -24,7 +24,7 @@ public class TvSeries extends AbstractFilmMedia {
    */
   public TvSeries(String alias, String title, Integer yearOfRelease,
       List<Name> directors,
-      List<Name> mainActors) throws NullObjectException, InvalidArgumentException {
+      List<Name> mainActors) throws NullObjectException, IllegalArgumentException {
     super(alias, title, yearOfRelease, directors, mainActors);
   }
 

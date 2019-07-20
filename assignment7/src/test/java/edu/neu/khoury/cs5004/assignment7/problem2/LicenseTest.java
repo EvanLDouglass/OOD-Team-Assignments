@@ -48,6 +48,10 @@ public class LicenseTest {
   public void equals1() {
     assertTrue(license.equals(license));
     assertFalse(license.equals(null));
+
+    License license1 = new License(1, new Name("a", "b"), new Date(1, 1,1), "US",
+        new Date(1, 1, 1), new Date(1,1,1));
+    assertEquals(license1, license);
   }
 
   @Test
