@@ -1,12 +1,12 @@
 package edu.neu.khoury.cs5004.assignment7.problem1;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import edu.neu.khoury.cs5004.assignment7.problem1.exceptions.AliasAlreadyExistsException;
 import edu.neu.khoury.cs5004.assignment7.problem1.exceptions.AliasNotFoundException;
 import edu.neu.khoury.cs5004.assignment7.problem1.exceptions.EmptyNameException;
 import edu.neu.khoury.cs5004.assignment7.problem1.exceptions.NullObjectException;
-
 import java.util.ArrayList;
 import java.util.List;
 import org.junit.Before;
