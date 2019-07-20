@@ -5,7 +5,7 @@ import edu.neu.khoury.cs5004.assignment7.problem1.exceptions.NullObjectException
 import java.util.List;
 
 /**
- * Represents a movie, with fields for an alias, title, year of release, a list of directors, and
+ * Represents a series, with fields for an alias, title, year of release, a list of directors, and
  * a list of main actors.
  *
  * @author evandouglass
