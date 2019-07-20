@@ -87,8 +87,6 @@ public abstract class AbstractFilmMedia implements IFilmMedia {
     return null;
   }
 
-  // TODO: ensure year is in a reasonable range (i.e. from first film to current year)
-
   /* Methods */
 
   /**

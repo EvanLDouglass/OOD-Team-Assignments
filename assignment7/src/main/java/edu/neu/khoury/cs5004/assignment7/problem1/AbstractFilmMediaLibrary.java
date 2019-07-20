@@ -1,7 +1,7 @@
 package edu.neu.khoury.cs5004.assignment7.problem1;
 
 import edu.neu.khoury.cs5004.assignment7.problem1.exceptions.AliasAlreadyExistsException;
-
+import edu.neu.khoury.cs5004.assignment7.problem1.exceptions.AliasNotFoundException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -78,11 +78,16 @@ public abstract class AbstractFilmMediaLibrary implements IFilmMediaLibrary {
         dirNameToMediaSet.get(name).add(media);
       } else {
         // Make new set and add this media
-        Set<IFilmMedia> set = new TreeSet<>();
+        Set<IFilmMedia> set = new TreeSet<>();  // keeps media sorted newest to oldest
         set.add(media);
         dirNameToMediaSet.put(name, set);
       }
     }
+  }
+
+  @Override
+  public Boolean contains(String alias) {
+    return aliasToMedia.containsKey(alias);
   }
 
   @Override
@@ -92,8 +97,11 @@ public abstract class AbstractFilmMediaLibrary implements IFilmMediaLibrary {
   }
 
   @Override
-  public void streamMedia(String alias) {
+  public void streamMedia(String alias) throws AliasNotFoundException {
     IFilmMedia media = aliasToMedia.get(alias);
+    if (media == null) {
+      throw new AliasNotFoundException();
+    }
     media.incrementTimesStreamed();
     if (mostStreamed == null || media.getTimesStreamed() > mostStreamed.getTimesStreamed()) {
       mostStreamed = media;
@@ -103,5 +111,15 @@ public abstract class AbstractFilmMediaLibrary implements IFilmMediaLibrary {
   @Override
   public IFilmMedia getMostStreamed() {
     return mostStreamed;
+  }
+
+  @Override
+  public Integer getTimesStreamed(String alias) throws AliasNotFoundException {
+    IFilmMedia media = aliasToMedia.get(alias);
+    if (media == null) {
+      // Same expected behavior of a hash map
+      throw new AliasNotFoundException();
+    }
+    return media.getTimesStreamed();
   }
 }
