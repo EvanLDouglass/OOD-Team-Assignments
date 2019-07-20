@@ -3,11 +3,15 @@ package edu.neu.khoury.cs5004.assignment7.problem1;
 <<<<<<< HEAD
 import edu.neu.khoury.cs5004.assignment7.problem1.exceptions.AliasAlreadyExistsException;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 import edu.neu.khoury.cs5004.assignment7.problem1.Exceptions.AliasAlreadyExistsException;
 =======
 
 >>>>>>> Too many changes
+=======
+import edu.neu.khoury.cs5004.assignment7.problem1.exceptions.AliasNotFoundException;
+>>>>>>> Add tests for media library and refactor
 import java.util.ArrayList;
 >>>>>>> Update everything! Due to implementing MediaLibrary
 import java.util.HashMap;
@@ -85,11 +89,16 @@ public abstract class AbstractFilmMediaLibrary implements IFilmMediaLibrary {
         dirNameToMediaSet.get(name).add(media);
       } else {
         // Make new set and add this media
-        Set<IFilmMedia> set = new TreeSet<>();
+        Set<IFilmMedia> set = new TreeSet<>();  // keeps media sorted newest to oldest
         set.add(media);
         dirNameToMediaSet.put(name, set);
       }
     }
+  }
+
+  @Override
+  public Boolean contains(String alias) {
+    return aliasToMedia.containsKey(alias);
   }
 
   @Override
@@ -99,8 +108,11 @@ public abstract class AbstractFilmMediaLibrary implements IFilmMediaLibrary {
   }
 
   @Override
-  public void streamMedia(String alias) {
+  public void streamMedia(String alias) throws AliasNotFoundException {
     IFilmMedia media = aliasToMedia.get(alias);
+    if (media == null) {
+      throw new AliasNotFoundException();
+    }
     media.incrementTimesStreamed();
     if (mostStreamed == null || media.getTimesStreamed() > mostStreamed.getTimesStreamed()) {
       mostStreamed = media;
@@ -110,5 +122,15 @@ public abstract class AbstractFilmMediaLibrary implements IFilmMediaLibrary {
   @Override
   public IFilmMedia getMostStreamed() {
     return mostStreamed;
+  }
+
+  @Override
+  public Integer getTimesStreamed(String alias) throws AliasNotFoundException {
+    IFilmMedia media = aliasToMedia.get(alias);
+    if (media == null) {
+      // Same expected behavior of a hash map
+      throw new AliasNotFoundException();
+    }
+    return media.getTimesStreamed();
   }
 }
