@@ -43,7 +43,12 @@ public class DateTest {
     assertEquals(date1, date);
   }
 
-
+  @Test
+  public void hashCode1() {
+    assertEquals(date.hashCode(), date.hashCode());
+    Date date1 = new Date(1, 1, 2019);
+    assertEquals(date1.hashCode(), date.hashCode());
+  }
 
   @Test
   public void toString1() {

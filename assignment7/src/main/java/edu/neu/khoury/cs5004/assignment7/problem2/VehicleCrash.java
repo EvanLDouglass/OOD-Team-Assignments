@@ -68,6 +68,10 @@ public class VehicleCrash {
         crash == that.crash;
   }
 
+  @Override
+  public int hashCode() {
+    return Objects.hash(offendingDriver, offendingDate, crash);
+  }
 
   @Override
   public String toString() {

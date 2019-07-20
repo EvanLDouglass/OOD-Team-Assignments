@@ -72,7 +72,10 @@ public class Date {
     return Objects.equals(localDate, date.localDate);
   }
 
-
+  @Override
+  public int hashCode() {
+    return Objects.hash(localDate);
+  }
 
   @Override
   public String toString() {

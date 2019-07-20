@@ -43,7 +43,13 @@ public class VehicleHistoryTest {
     assertEquals(history, vehicleHistory);
   }
 
+  @Test
+  public void hashCode1() {
+    assertEquals(vehicleHistory.hashCode(), vehicleHistory.hashCode());
 
+    VehicleHistory history = new VehicleHistory(vehicleCrashes, vehicleViolations);
+    assertEquals(history.hashCode(), vehicleHistory.hashCode());
+  }
 
   @Test
   public void toString1() {
