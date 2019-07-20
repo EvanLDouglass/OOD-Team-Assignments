@@ -19,8 +19,8 @@ public class Actor extends AbstractFilmProfessional {
   }
 
   /**
-   * Basic constructor for {@code Actor} with only a name parameter. Initializes
-   * the movies and tv series as empty {@code ArrayList}s.
+   * Basic constructor for {@code Actor} with only a name parameter. Initializes the movies and tv
+   * series as empty {@code ArrayList}s.
    *
    * @param name the name of this actor
    */
