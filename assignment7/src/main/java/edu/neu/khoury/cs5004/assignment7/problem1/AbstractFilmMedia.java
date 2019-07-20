@@ -1,8 +1,9 @@
 package edu.neu.khoury.cs5004.assignment7.problem1;
 
+import static edu.neu.khoury.cs5004.assignment7.problem1.Validator.validateIntegerLength;
 import static edu.neu.khoury.cs5004.assignment7.problem1.Validator.validateNotNull;
 
-import edu.neu.khoury.cs5004.assignment7.problem1.exceptions.InvalidYearException;
+import com.sun.javaws.exceptions.InvalidArgumentException;
 import edu.neu.khoury.cs5004.assignment7.problem1.exceptions.NullObjectException;
 
 import java.util.List;
@@ -17,7 +18,6 @@ public abstract class AbstractFilmMedia implements IFilmMedia {
 
   private String alias;
   private String title;
-  // TODO: validate year is four digits
   private Integer yearOfRelease;
   private Integer timesStreamed;
   private List<Name> directors;
@@ -34,7 +34,8 @@ public abstract class AbstractFilmMedia implements IFilmMedia {
    * @throws NullObjectException if any of the parameters are null
    */
   public AbstractFilmMedia(String alias, String title, Integer yearOfRelease,
-      List<Name> directors, List<Name> mainActors) throws NullObjectException {
+      List<Name> directors, List<Name> mainActors)
+      throws NullObjectException, InvalidArgumentException {
     validateConstructor(alias, title, yearOfRelease, directors, mainActors);
     this.alias = alias;
     this.title = title;
@@ -57,11 +58,13 @@ public abstract class AbstractFilmMedia implements IFilmMedia {
    * @throws NullObjectException if any of the parameters are null
    */
   private void validateConstructor(String alias, String title, Integer yearOfRelease,
-      List<Name> directors, List<Name> mainActors) throws NullObjectException {
+      List<Name> directors, List<Name> mainActors)
+      throws NullObjectException, InvalidArgumentException {
     String notNull = "cannot be null";
     validateNotNull(alias, "alias " + notNull);
     validateNotNull(title, "title " + notNull);
     validateNotNull(yearOfRelease, "year of release " + notNull);
+    validateYearFourDigits(yearOfRelease);
     validateNotNull(directors, "directors list " + notNull);
     validateNotNull(mainActors, "actors list " + notNull);
   }
@@ -70,21 +73,10 @@ public abstract class AbstractFilmMedia implements IFilmMedia {
    * Ensures that the given year is four digits.
    *
    * @param year a year to test
-   * @throws InvalidYearException if the given year is not four digits
+   * @throws InvalidArgumentException if the given year is not four digits
    */
-  private void validateYearFourDigits(Integer year) throws InvalidYearException {
-    // TODO: Implement this
-  }
-
-  /**
-   * Counts the number of digits in a given number. Ignores the sign of the given integer.
-   *
-   * @param num an integer
-   * @return the number of digits in the integer
-   */
-  private Integer countNumDigits(Integer num) {
-    // TODO: Implement this
-    return null;
+  private void validateYearFourDigits(Integer year) throws InvalidArgumentException {
+    validateIntegerLength(year, 4);
   }
 
   /* Methods */
