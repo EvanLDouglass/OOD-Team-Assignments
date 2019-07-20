@@ -1,19 +1,9 @@
 package edu.neu.khoury.cs5004.assignment7.problem1;
 
-<<<<<<< HEAD
 import edu.neu.khoury.cs5004.assignment7.problem1.exceptions.AliasAlreadyExistsException;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-import edu.neu.khoury.cs5004.assignment7.problem1.Exceptions.AliasAlreadyExistsException;
-=======
-
->>>>>>> Too many changes
-=======
 import edu.neu.khoury.cs5004.assignment7.problem1.exceptions.AliasNotFoundException;
->>>>>>> Add tests for media library and refactor
+
 import java.util.ArrayList;
->>>>>>> Update everything! Due to implementing MediaLibrary
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
