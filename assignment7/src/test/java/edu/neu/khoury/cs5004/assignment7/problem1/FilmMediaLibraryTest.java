@@ -16,9 +16,9 @@ public class FilmMediaLibraryTest {
 
   private FilmMediaLibrary lib;
   private Movie movie1;
-  private TVSeries series1;
+  private TvSeries series1;
   private Movie movie2;
-  private TVSeries series2;
+  private TvSeries series2;
 
   @Before
   public void setUp() throws Exception {
@@ -32,9 +32,9 @@ public class FilmMediaLibraryTest {
     dirList2.add(new Name("Evan", "Douglass"));
 
     movie1 = new Movie("movie1", "Movie Title", 1990, dirList, actList);
-    series1 = new TVSeries("series1", "Series Title", 1995, dirList, actList);
+    series1 = new TvSeries("series1", "Series Title", 1995, dirList, actList);
     movie2 = new Movie("movie2", "Another Movie Title", 2000, dirList, actList);
-    series2 = new TVSeries("series2", "Another Series Title", 2005, dirList2, actList);
+    series2 = new TvSeries("series2", "Another Series Title", 2005, dirList2, actList);
 
     lib = new FilmMediaLibrary();
   }
