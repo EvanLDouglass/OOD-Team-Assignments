@@ -52,7 +52,7 @@ public class RegistrationValidatorTest {
     vehicleViolations.add(vehicleViolation);
     vehicleHistory = new VehicleHistory(vehicleCrashes, vehicleViolations);
     violations = new HashSet<>();
-    driverViolation = new DriverViolation(MovingViolation.SPEEDING);
+    driverViolation = new DriverViolation(MovingViolation.DISTRACTEDDRIVING);
     violations.add(driverViolation);
     driverHistory = new DriverHistory(violations);
     driver = new Driver(driverName, driverBirthday,
@@ -87,7 +87,7 @@ public class RegistrationValidatorTest {
             + " officialOwner=Name{firstName='a', lastName='a'}},"
             + " vehicleInsuranceInformation=VehicleInsuranceInfo{officialOwner=Name{firstName='a', lastName='a'},"
             + " peopleCoverd=[Name{firstName='a', lastName='a'}, Name{firstName='a', lastName='a'}], expirationDate=Date{localDate=2022-01-01}},"
-            + " driverHistory=DriverHistory{violations=[DriverViolation{movingViolation=SPEEDING, nonMovingViolation=null}]},"
+            + " driverHistory=DriverHistory{violations=[DriverViolation{movingViolation=DISTRACTEDDRIVING, nonMovingViolation=null}]},"
             + " vehicleHistory=VehicleHistory{crashes=[VehicleCrash{offendingDriver=Name{firstName='a', lastName='a'},"
             + " offendingDate=Date{localDate=2010-01-01}, crash=CRASHWITHIINJURIES}],"
             + " vehicleViolations=[VehicleViolation{offendingDriver=Name{firstName='a', lastName='a'},"
