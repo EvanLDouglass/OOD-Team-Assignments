@@ -3,6 +3,7 @@ package edu.neu.khoury.cs5004.assignment8;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Set;
 
 /**
  * Represents a single record from a table. Contains simple functionality to get data out of the
@@ -29,7 +30,8 @@ public class Record {
   /**
    * This constructor makes a new HashMap to store the field to value pairs. The given arrays are
    * expected to be the same length, and values are expected to have the same index as the field
-   * they belong to.
+   * they belong to. Further, if duplicate fields exist, they will be overwritten by the last one
+   * processed.
    *
    * @param fields an array of field names
    * @param values an array of values for each field name
@@ -77,6 +79,15 @@ public class Record {
    */
   public String getValue(String field) {
     return record.get(field);
+  }
+
+  /**
+   * Returns a set of the fields in this record.
+   *
+   * @return a set of the fields in this record.
+   */
+  public Set<String> getFields() {
+    return record.keySet();
   }
 
   @Override

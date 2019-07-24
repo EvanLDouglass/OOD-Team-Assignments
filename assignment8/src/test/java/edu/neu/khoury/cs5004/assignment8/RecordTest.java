@@ -4,7 +4,9 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -36,6 +38,21 @@ public class RecordTest {
   public void getValue() {
     assertEquals("Evan", rec1.getValue("first_name"));
     assertEquals("December 18 1990", rec2.getValue("birth_date"));
+  }
+
+  @Test
+  public void getFields() {
+    Set<String> set1 = new HashSet<>();
+    set1.add("first_name");
+    set1.add("last_name");
+    set1.add("email");
+
+    Set<String> set2 = new HashSet<>();
+    set2.add("name");
+    set2.add("birth_date");
+
+    assertEquals(set1, rec1.getFields());
+    assertEquals(set2, rec2.getFields());
   }
 
   @Test
