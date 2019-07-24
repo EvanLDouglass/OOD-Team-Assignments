@@ -69,10 +69,10 @@ public class RegistrationValidator {
 
   private boolean checkDriverHistory(Driver driver) {
     for (DriverViolation temp : driver.getDriverHistory().getViolations()) {
-      if (temp.equals(MovingViolation.RECKLESSDRIVING)
-          || temp.equals(MovingViolation.SPEEDING)
-          || temp.equals(MovingViolation.DRIVINGNUMBERINFLUENCE)
-          || temp.equals(MovingViolation.DRIVINGWITHOUTAVALIDLICENSEANDORINSURANCE)) {
+      if (temp.getMovingViolation().equals(MovingViolation.RECKLESSDRIVING)
+          || temp.getMovingViolation().equals(MovingViolation.SPEEDING)
+          || temp.getMovingViolation().equals(MovingViolation.DRIVINGNUMBERINFLUENCE)
+          || temp.getMovingViolation().equals(MovingViolation.DRIVINGWITHOUTAVALIDLICENSEANDORINSURANCE)) {
         return false;
       }
     }
