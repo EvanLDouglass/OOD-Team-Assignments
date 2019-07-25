@@ -1,4 +1,4 @@
-package edu.neu.khoury.cs5004.assignment8;
+package edu.neu.khoury.cs5004.assignment8.dataprocessor;
 
 import static org.junit.Assert.*;
 
