@@ -20,17 +20,17 @@ public interface TemplateProcessor {
    * BufferedWriter}.
    *
    * @param data the data with which to replace the template placeholders
-   * @param writer a BufferedWriter pointing to a write location
+   * @param outFile a String denoting a file to write to
    * @throws PlaceHolderNotAFieldException if the processor's template contains placeholder names
    * that are not fields in the given Record
    * @throws IOException if there is a problem writing
    */
-  void writeTemplate(Record data, BufferedWriter writer)
+  void writeTemplate(Record data, String outFile)
       throws PlaceHolderNotAFieldException, IOException;
 
   /**
    * Writes a processed template for each {@code Record} in the given list to the given output
-   * directory. Files are produced with the naming convention <type-of-template>N, where N is an
+   * directory. Files are produced with the naming convention <type-of-template>N.txt, where N is an
    * integer indicating which record's data has been inserted into the template. N = 1 is the first
    * {@code Record} and N is the last.
    *
