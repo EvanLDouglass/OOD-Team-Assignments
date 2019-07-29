@@ -1,4 +1,4 @@
-package edu.neu.khoury.cs5004.assignment8.dataprocessor;
+package edu.neu.khoury.cs5004.assignment8;
 
 /**
  * Hello world!
