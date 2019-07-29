@@ -2,10 +2,13 @@ package edu.neu.khoury.cs5004.assignment8.templateprocessor;
 
 import edu.neu.khoury.cs5004.assignment8.dataprocessor.Record;
 import edu.neu.khoury.cs5004.assignment8.exceptions.PlaceHolderNotAFieldException;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -18,7 +21,7 @@ import java.util.regex.Pattern;
 public abstract class AbstractTextTemplateProcessor implements TemplateProcessor {
 
   private static final String PTRN = "\\[\\[(.*?)\\]\\]";
-
+  protected String typeOfTemplate;
   private String template;
   private Pattern pattern;
 
@@ -60,20 +63,55 @@ public abstract class AbstractTextTemplateProcessor implements TemplateProcessor
   /* ===== Methods ===== */
 
   /**
+   * Writes a processed template for each {@code Record} in the given list to the given output
+   * directory. Files are produced with the naming convention [type-of-template]N.txt, where N is an
+   * integer indicating which record's data has been inserted into the template. N = 1 is the first
+   * {@code Record} and N is the last.
+   *
+   * @param records a list of records used for data in the templates
+   * @param outputDir a directory in which to write the finished templates
+   * @throws PlaceHolderNotAFieldException if any record does not contain fields matching any
+   *     placeholder in the template
+   * @throws IOException if there is a problem when writing
+   */
+  @Override
+  public void writeMany(List<Record> records, String outputDir)
+      throws PlaceHolderNotAFieldException, IOException {
+    // Make a new directory if needed
+    if (new File(outputDir).mkdirs()) {  // need if to avoid bug report warning
+      System.out.println("created new directory " + outputDir);
+    }
+    // Make a new file for each record in the given directory
+    for (int i = 0; i < records.size(); i++) {
+      String path = outputDir + "/" + typeOfTemplate + (i + 1) + ".txt";  // ex: "output/email1.txt"
+      File file = new File(path);
+      if (file.createNewFile()) {  // actually creates the new file
+        System.out.println("created new file " + file.toString());
+      }
+      // Write to the new file
+      // Done in this way to avoid a DM_DEFAULT_ENCODING warning in our maven bug report
+      // Solution found at:
+      // https://stackoverflow.com/questions/35132693/set-encoding-as-utf-8-for-a-filewriter
+      BufferedWriter writer = new BufferedWriter(new FileWriter(file));
+      writeTemplate(records.get(i), writer);
+    }
+  }
+
+  /**
    * Writes a processed template to the output location specified in the given {@code
-   * BufferedWriter}.
+   * BufferedWriter}. Closes the writer after writing.
    *
    * @param data the data with which to replace the template placeholders
-   * @param outFile a String denoting a file to write to
+   * @param writer a String denoting a file to write to
    * @throws PlaceHolderNotAFieldException if the processor's template contains placeholder names
    *     that are not fields in the given Record
    * @throws IOException if there is a problem writing
    */
   @Override
-  public void writeTemplate(Record data, String outFile)
+  public void writeTemplate(Record data, BufferedWriter writer)
       throws PlaceHolderNotAFieldException, IOException {
-    BufferedWriter writer = new BufferedWriter(new FileWriter(outFile));
     writer.write(findAndReplace(data));
+    writer.close();
   }
 
   /**

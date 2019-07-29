@@ -14,17 +14,17 @@ import java.util.Set;
  */
 public class Record {
 
-  private Map<String, String> record;
+  private Map<String, String> data;
 
   /* ===== Constructors ===== */
 
   /**
    * Constructor allowing choice of map type.
    *
-   * @param record a map containing field names to values for the record
+   * @param data a map containing field names to values for the record
    */
-  public Record(Map<String, String> record) {
-    this.record = record;
+  public Record(Map<String, String> data) {
+    this.data = data;
   }
 
   /**
@@ -41,7 +41,7 @@ public class Record {
     if (!isSameLength(fields, values)) {
       throw new IllegalArgumentException("Given arrays must be the same length");
     }
-    record = new HashMap<>();
+    data = new HashMap<>();
     populateRecord(fields, values);
   }
 
@@ -65,7 +65,7 @@ public class Record {
    */
   private void populateRecord(String[] keys, String[] values) {
     for (int i = 0; i < keys.length; i++) {
-      record.put(keys[i], values[i]);
+      data.put(keys[i], values[i]);
     }
   }
 
@@ -78,7 +78,7 @@ public class Record {
    * @return the value paired with the given field, as a string
    */
   public String getValue(String field) {
-    return record.get(field);
+    return data.get(field);
   }
 
   /**
@@ -87,7 +87,7 @@ public class Record {
    * @return a set of the fields in this record.
    */
   public Set<String> getFields() {
-    return record.keySet();
+    return data.keySet();
   }
 
   @Override
@@ -99,16 +99,16 @@ public class Record {
       return false;
     }
     Record record1 = (Record) obj;
-    return record.equals(record1.record);
+    return data.equals(record1.data);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(record);
+    return Objects.hash(data);
   }
 
   @Override
   public String toString() {
-    return "Record" + record.toString();
+    return "Record" + data.toString();
   }
 }
