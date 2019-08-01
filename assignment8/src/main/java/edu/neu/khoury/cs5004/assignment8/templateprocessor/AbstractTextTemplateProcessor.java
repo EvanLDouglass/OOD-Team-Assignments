@@ -89,9 +89,11 @@ public abstract class AbstractTextTemplateProcessor implements TemplateProcessor
         System.out.println("created new file " + file.toString());
       }
       // Write to the new file
-      // Done in this way to avoid a DM_DEFAULT_ENCODING warning in our maven bug report
-      // Solution found at:
+      // This causes a DM_DEFAULT_ENCODING warning in our maven bug report
+      // However, the solution, found at:
       // https://stackoverflow.com/questions/35132693/set-encoding-as-utf-8-for-a-filewriter
+      // causes a test to fail when building with Maven, though not when testing directly in
+      // IntelliJ. I decided it is better to have a non-empty bug report than a failed build.
       BufferedWriter writer = new BufferedWriter(new FileWriter(file));
       writeTemplate(records.get(i), writer);
     }
