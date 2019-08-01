@@ -1,0 +1,15 @@
+[[first_name]] [[last_name]]
+[[address]]
+[[city]], [[state]] [[zip]]
+
+Dear [[first_name]] [[last_name]],
+
+Thank you so much for your gift at our recent wedding! Your personal touch in choosing the gift
+meant so much to us. The way it complements both of our interests is truly amazing.
+
+The least we can do to thank you is write a personal note to tell you so. So again, from the bottom
+of our hearts, thank you.
+
+Love,
+
+John & Jane Doe
