@@ -18,12 +18,12 @@ public interface TemplateProcessor {
 
   /**
    * Writes a processed template to the output location specified in the given {@code
-   * BufferedWriter}.
+   * BufferedWriter}*.
    *
    * @param data the data with which to replace the template placeholders
    * @param writer a String denoting a file to write to
    * @throws PlaceHolderNotAFieldException if the processor's template contains placeholder names
-   *     that are not fields in the given Record
+   * that are not fields in the given Record
    * @throws IOException if there is a problem writing
    */
   void writeTemplate(Record data, BufferedWriter writer)
@@ -38,7 +38,7 @@ public interface TemplateProcessor {
    * @param records a list of records used for data in the templates
    * @param outputDir a directory in which to write the finished templates
    * @throws PlaceHolderNotAFieldException if any record does not contain fields matching any
-   *     placeholder in the template
+   * placeholder in the template
    * @throws IOException if there is a problem when writing
    */
   void writeMany(List<Record> records, String outputDir)

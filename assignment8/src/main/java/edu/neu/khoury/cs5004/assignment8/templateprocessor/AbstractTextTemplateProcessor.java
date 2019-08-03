@@ -21,6 +21,9 @@ import java.util.regex.Pattern;
 public abstract class AbstractTextTemplateProcessor implements TemplateProcessor {
 
   private static final String PTRN = "\\[\\[(.*?)\\]\\]";
+  /**
+   * The Type of template.
+   */
   protected String typeOfTemplate;
   private String template;
   private Pattern pattern;

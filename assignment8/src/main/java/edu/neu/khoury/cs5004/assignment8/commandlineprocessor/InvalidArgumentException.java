@@ -1,4 +1,4 @@
-package edu.neu.khoury.cs5004.assignment8.CommandLineProcessor;
+package edu.neu.khoury.cs5004.assignment8.commandlineprocessor;
 
 public class InvalidArgumentException extends RuntimeException {
 

@@ -1,5 +1,4 @@
-package edu.neu.khoury.cs5004.assignment8.CommandLineProcessor;
-
+package edu.neu.khoury.cs5004.assignment8.commandlineprocessor;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -12,7 +11,7 @@ import java.util.Objects;
 /**
  * Command line processor should check whether a argument passed is validate.
  * There are 4 fields: outputType, outputDir, csvfileName and template.
- * I use map to store arg pairs like: <--csv-file MengtianAndEvan.csv>.
+ * I use map to store arg pairs like: csvfile MengtianAndEvan.csv.
  * Besides, I got a bunch of checkers to check every part.
  */
 public class CommandLineProcessor {
@@ -58,7 +57,7 @@ public class CommandLineProcessor {
       // any given template must be matched with the given type.
       List<String> templatelist = new ArrayList<>();
       List<String> keylist = new ArrayList<>(this.argpair.keySet());
-      for (int i =  0; i< keylist.size(); i++){
+      for (int i =  0; i < keylist.size(); i++) {
         if (keylist.get(i).startsWith(type)) {
           templatelist.add(keylist.get(i));
         }
@@ -99,7 +98,7 @@ public class CommandLineProcessor {
    * @throws InvalidArgumentException the invalid argument exception
    */
   public void checkTemplate(List<String> giventemplate) throws InvalidArgumentException {
-    if(giventemplate.isEmpty()) {
+    if (giventemplate.isEmpty()) {
       errorExplanation();
       throw new InvalidArgumentException("Error:the template is not matched with the type");
     } else {
@@ -113,7 +112,7 @@ public class CommandLineProcessor {
    * @throws InvalidArgumentException the invalid argument exception
    */
   public void checkCsvfile() throws InvalidArgumentException {
-    if (!argpair.containsKey("--csv-file")){
+    if (!argpair.containsKey("--csv-file")) {
       errorExplanation();
       throw new InvalidArgumentException("Error:csv file is required");
     } else {
@@ -127,7 +126,7 @@ public class CommandLineProcessor {
    * @throws InvalidArgumentException the invalid argument exception
    */
   public void checkOutputDir() throws InvalidArgumentException {
-    if (!argpair.containsKey("--output-dir")){
+    if (!argpair.containsKey("--output-dir")) {
       errorExplanation();
       throw new InvalidArgumentException("Error:output dictionary is required");
     } else {
@@ -220,7 +219,8 @@ public class CommandLineProcessor {
     System.out.println("--letter only generate letters");
     System.out.println("--letter-template <file> accept a filename that holds the email template.");
     System.out.println("Required if --letter is used");
-    System.out.println("--output-dir <path> accept the name of a folder, all output is placed in this folder");
+    System.out.println("--output-dir <path> accept the name of a folder, "
+        + "all output is placed in this folder");
     System.out.println("--csv-file <path> accept the name of the csv file to process");
     System.out.println("Examples:");
     System.out.println("--email --email-template email-template.txt --output-dir"
@@ -230,18 +230,22 @@ public class CommandLineProcessor {
   }
 
   @Override
-  public boolean equals(Object o) {
-    if (this == o) {
+  public boolean equals(Object other) {
+    if (this == other) {
       return true;
     }
-    if (o == null || getClass() != o.getClass()) {
+    if (other == null || getClass() != other.getClass()) {
       return false;
     }
-    CommandLineProcessor that = (CommandLineProcessor) o;
-    return Objects.equals(outputType, that.outputType) &&
-        Objects.equals(outputDir, that.outputDir) &&
-        Objects.equals(csvfileName, that.csvfileName) &&
-        Objects.equals(template, that.template) &&
+    CommandLineProcessor that = (CommandLineProcessor) other;
+    return Objects.equals(outputType, that.outputType)
+        &&
+        Objects.equals(outputDir, that.outputDir)
+        &&
+        Objects.equals(csvfileName, that.csvfileName)
+        &&
+        Objects.equals(template, that.template)
+        &&
         Objects.equals(argpair, that.argpair);
   }
 
@@ -252,12 +256,27 @@ public class CommandLineProcessor {
 
   @Override
   public String toString() {
-    return "CommandLineProcessor{" +
-        "outputType='" + outputType + '\'' +
-        ", outputDir='" + outputDir + '\'' +
-        ", csvfileName='" + csvfileName + '\'' +
-        ", template='" + template + '\'' +
-        ", argpair=" + argpair +
+    return "commandlineprocessor{"
+        +
+        "outputType='"
+        + outputType
+        + '\''
+        +
+        ", outputDir='"
+        + outputDir
+        + '\''
+        +
+        ", csvfileName='"
+        + csvfileName
+        + '\''
+        +
+        ", template='"
+        + template
+        + '\''
+        +
+        ", argpair="
+        + argpair
+        +
         '}';
   }
 }
