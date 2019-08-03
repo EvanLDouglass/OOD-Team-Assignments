@@ -49,8 +49,7 @@ public class App {
       System.out.println("Error on file IO:");
       System.out.println(e.getMessage());
     } catch (PlaceHolderNotAFieldException e) {
-      System.out.println("One of the template fields does not match the data given:");
-      System.out.println(e.getMessage());
+      System.out.println("One of the template fields does not exist in the given data file.");
     }
   }
 }
