@@ -23,7 +23,11 @@ public class App {
   public static void main(String[] args) {
     CommandLineProcessor commandLineProcessor = new CommandLineProcessor();
     commandLineProcessor.processArgument(args);
-    // Init buffered readers for try/catch
+    // Readers cause a DM_DEFAULT_ENCODING warning in our maven bug report
+    // There are solutions, found at:
+    // https://stackoverflow.com/questions/35132693/set-encoding-as-utf-8-for-a-filewriter
+    // however, using the suggested stream readers causes issues with Maven, so the bug has not
+    // been fixed.
     try (BufferedReader templateReader = new BufferedReader(
         new FileReader(commandLineProcessor.getTemplate()));
          BufferedReader csvReader = new BufferedReader(

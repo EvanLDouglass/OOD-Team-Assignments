@@ -1,4 +1,4 @@
 From:insuranceCompany@ic.com
 To:testing@1234.com
-Subject: Insurance company â€“ information about recent data breach
+Subject: Insurance company – information about recent data breach
 Dear Joe Blow,
