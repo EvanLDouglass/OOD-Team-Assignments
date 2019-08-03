@@ -87,6 +87,8 @@ public abstract class AbstractTextTemplateProcessor implements TemplateProcessor
       File file = new File(path);
       if (file.createNewFile()) {  // actually creates the new file
         System.out.println("created new file " + file.toString());
+      } else {
+        System.out.println("modified file " + file.toString());
       }
       // Write to the new file
       // This causes a DM_DEFAULT_ENCODING warning in our maven bug report
