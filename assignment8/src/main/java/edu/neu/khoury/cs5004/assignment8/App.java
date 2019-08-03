@@ -21,7 +21,7 @@ public class App {
     BufferedReader csvReader = new BufferedReader(new FileReader(commandLineProcessor.getCsvfileName()));
     CsvProcessor csvProcessor = new CsvProcessor(csvReader);
 
-    if (commandLineProcessor.getTemplate() == "--email") {
+    if (commandLineProcessor.getOutputType().equals("--email")) {
       EmailTemplateProcessor emailTemplateProcessor = new EmailTemplateProcessor(templateReader);
       emailTemplateProcessor.writeMany(csvProcessor.processAll(), commandLineProcessor.getOutputDir());
     } else {

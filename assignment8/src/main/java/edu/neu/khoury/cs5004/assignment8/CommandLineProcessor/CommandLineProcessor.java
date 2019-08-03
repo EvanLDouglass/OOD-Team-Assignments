@@ -16,7 +16,7 @@ import java.util.Objects;
  * Besides, I got a bunch of checkers to check every part.
  */
 public class CommandLineProcessor {
-  private static final int ARGS_LENGTH = 6;
+  private static final int ARGS_LENGTH = 7;
   private static final String EMAIL_TYPE = "--email";
   private static final String LETTER_TYPE = "--letter";
   private String outputType;
