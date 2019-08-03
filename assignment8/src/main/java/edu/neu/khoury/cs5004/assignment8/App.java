@@ -17,6 +17,7 @@ public class App {
   public static void main(String[] args) {
     CommandLineProcessor commandLineProcessor = new CommandLineProcessor();
     commandLineProcessor.processArgument(args);
+    // Init buffered readers for try/catch
     try (BufferedReader templateReader = new BufferedReader(new FileReader(commandLineProcessor.getTemplate()));
          BufferedReader csvReader = new BufferedReader(new FileReader(commandLineProcessor.getCsvfileName()))) {
       // Start try block
