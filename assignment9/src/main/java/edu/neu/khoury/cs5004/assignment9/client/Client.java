@@ -1,5 +1,6 @@
 package edu.neu.khoury.cs5004.assignment9.client;
 
+import edu.neu.khoury.cs5004.assignment9.datatypes.MsgSigPair;
 import edu.neu.khoury.cs5004.assignment9.datatypes.PrivateKey;
 import edu.neu.khoury.cs5004.assignment9.datatypes.PublicKey;
 
@@ -26,6 +27,19 @@ public class Client {
   }
 
   /* ===== Methods ===== */
+
+  /**
+   * Produce a message (e.g. a request for a withdrawal or deposit) with a digital signature
+   * used by a signature validator to determine if the message is valid or not. The message
+   * represents a dollar amount with the exception of the last digit, which is used to determine if
+   * the amount should be a withdrawal or deposit (0-4 is a deposit, 5-9 a withdrawal).
+   *
+   * @param msg the message/request
+   * @return a message-signature pair
+   */
+  public MsgSigPair requestTransaction(Integer msg) {
+    return null;
+  }
 
   /* ===== Getters ===== */
 
