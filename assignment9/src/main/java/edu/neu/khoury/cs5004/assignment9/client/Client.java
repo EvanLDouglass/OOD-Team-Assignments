@@ -1,8 +1,7 @@
 package edu.neu.khoury.cs5004.assignment9.client;
 
-import edu.neu.khoury.cs5004.assignment9.datatypes.MsgSigPair;
-import edu.neu.khoury.cs5004.assignment9.datatypes.PrivateKey;
-import edu.neu.khoury.cs5004.assignment9.datatypes.PublicKey;
+import edu.neu.khoury.cs5004.assignment9.rsa.KeyPair;
+import edu.neu.khoury.cs5004.assignment9.rsa.MsgSigPair;
 
 /**
  * A basic client for the banking system. This class represents the actual client, who has access
@@ -13,8 +12,7 @@ public class Client {
   private static Long idCounter = 0L;  // L to denote type long
 
   private Long id;
-  private PrivateKey secretKey;
-  private PublicKey publicKey;
+  private KeyPair keys;
 
   /**
    * Constructor for a {@code Client}. Assigns a unique ID and generates the client's public and
@@ -57,7 +55,7 @@ public class Client {
    *
    * @return a public key
    */
-  public PublicKey getPublicKey() {
-    return publicKey;
+  public KeyPair getKeyPair() {
+    return keys;
   }
 }

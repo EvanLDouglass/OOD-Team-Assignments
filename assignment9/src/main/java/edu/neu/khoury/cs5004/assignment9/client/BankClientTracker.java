@@ -1,6 +1,6 @@
 package edu.neu.khoury.cs5004.assignment9.client;
 
-import edu.neu.khoury.cs5004.assignment9.datatypes.PublicKey;
+import edu.neu.khoury.cs5004.assignment9.rsa.PublicKey;
 
 /**
  * A {@code BankClientTracker} keeps track of {@code Client}s of a bank, however, it does not have
