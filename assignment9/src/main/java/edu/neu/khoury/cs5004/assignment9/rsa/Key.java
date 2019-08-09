@@ -57,8 +57,8 @@ public abstract class Key {
    *
    * @return the exponent
    */
-  public BigInteger getExponent() {
-    return exponent;
+  public  BigInteger getExponent() {
+    return this.exponent;
   }
 
   /**
@@ -66,7 +66,7 @@ public abstract class Key {
    *
    * @return the modulus
    */
-  public BigInteger getModulus() {
-    return modulus;
+  public  BigInteger getModulus() {
+    return this.modulus;
   }
 }

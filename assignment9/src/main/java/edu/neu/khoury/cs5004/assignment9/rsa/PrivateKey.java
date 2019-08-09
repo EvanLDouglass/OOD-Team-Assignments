@@ -24,14 +24,4 @@ public class PrivateKey extends Key {
     return "PrivateKey{" + super.toString() + "}";
   }
 
-  /**
-   * Computes a digital signature using this private key, given an integer message.
-   *
-   * @param message the message to make a signature for
-   * @return the computed digital signature
-   */
-  public BigInteger generateSignature(Integer message) {
-    BigInteger msgBig = new BigInteger(message.toString());
-    return msgBig.modPow(getExponent(), getModulus());
-  }
 }

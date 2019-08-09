@@ -6,8 +6,7 @@ import java.math.BigInteger;
 import org.junit.Before;
 import org.junit.Test;
 
-public class PrivateKeyTest {
-
+public class RsaSignatureGeneratorTest {
   private PrivateKey key;
 
   @Before
@@ -16,9 +15,8 @@ public class PrivateKeyTest {
   }
 
   @Test
-  public void testToString() {
-    String expected = "PrivateKey{exponent=1234567890, modulus=9876543210}";
-    assertEquals(expected, key.toString());
+  public void testGenerateSignature() {
+    BigInteger result = RsaSignatureGenerator.generateSignature(1000, key);
+    assertEquals(new BigInteger("3939836590"), result);
   }
-
 }

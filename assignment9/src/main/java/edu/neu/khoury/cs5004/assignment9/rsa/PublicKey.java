@@ -23,4 +23,5 @@ public class PublicKey extends Key {
   public String toString() {
     return "PublicKey{" + super.toString() + "}";
   }
+
 }

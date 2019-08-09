@@ -13,7 +13,6 @@ public class Client {
 
   private Long id;
   private KeyPair keys;
-
   /**
    * Constructor for a {@code Client}. Assigns a unique ID and generates the client's public and
    * private key via the RSA algorithm.
@@ -58,4 +57,5 @@ public class Client {
   public KeyPair getKeyPair() {
     return keys;
   }
+
 }

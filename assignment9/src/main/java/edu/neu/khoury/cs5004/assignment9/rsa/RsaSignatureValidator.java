@@ -4,7 +4,7 @@ public class RsaSignatureValidator {
 
   /* ===== Methods ===== */
 
-  public Boolean validateSignature(MsgSigPair msgSigPair) {
+  public static Boolean validateSignature(MsgSigPair msgSigPair) {
     return null;
   }
 
