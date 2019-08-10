@@ -1,6 +1,5 @@
 package edu.neu.khoury.cs5004.assignment9.bank;
 
-import edu.neu.khoury.cs5004.assignment9.client.Client;
 import edu.neu.khoury.cs5004.assignment9.rsa.PublicKey;
 import java.util.Objects;
 

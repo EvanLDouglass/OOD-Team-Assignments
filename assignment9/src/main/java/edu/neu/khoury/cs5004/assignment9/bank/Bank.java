@@ -58,7 +58,7 @@ public class Bank {
    * @return the boolean
    */
   public boolean verifyMsgSigPair(MsgSigPair msgSigPair) {
-    return RsaSignatureValidator.validateSignature(msgSigPair);
+    return RsaSignatureValidator.validate(msgSigPair);
   }
 
   @Override
