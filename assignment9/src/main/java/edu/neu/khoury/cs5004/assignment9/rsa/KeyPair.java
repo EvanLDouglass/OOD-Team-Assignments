@@ -3,7 +3,7 @@ package edu.neu.khoury.cs5004.assignment9.rsa;
 import java.util.Objects;
 
 /**
- * The type Key pair.It has two parts, the public key and private key.
+ * The type Key pair. It has two parts, the public key and private key.
  */
 public class KeyPair {
   private PrivateKey privateKey;
@@ -47,8 +47,8 @@ public class KeyPair {
       return false;
     }
     KeyPair keyPair = (KeyPair) o;
-    return Objects.equals(privateKey, keyPair.privateKey) &&
-        Objects.equals(publicKey, keyPair.publicKey);
+    return Objects.equals(privateKey, keyPair.privateKey)
+        && Objects.equals(publicKey, keyPair.publicKey);
   }
 
   @Override
@@ -58,9 +58,6 @@ public class KeyPair {
 
   @Override
   public String toString() {
-    return "KeyPair{" +
-        "privateKey=" + privateKey +
-        ", publicKey=" + publicKey +
-        '}';
+    return "KeyPair{" + privateKey + ", " + publicKey + '}';
   }
 }
