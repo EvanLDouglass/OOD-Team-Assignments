@@ -1,4 +1,4 @@
-package edu.neu.khoury.cs5004.assignment9.rsa;
+package edu.neu.khoury.cs5004.assignment9;
 
 import static org.junit.Assert.*;
 

@@ -2,8 +2,10 @@ package edu.neu.khoury.cs5004.assignment9.client;
 
 import edu.neu.khoury.cs5004.assignment9.rsa.KeyPair;
 import edu.neu.khoury.cs5004.assignment9.rsa.MsgSigPair;
+import edu.neu.khoury.cs5004.assignment9.rsa.PublicKey;
 import edu.neu.khoury.cs5004.assignment9.rsa.RsaKeyGenerator;
 import edu.neu.khoury.cs5004.assignment9.rsa.RsaSignatureGenerator;
+
 import java.math.BigInteger;
 
 /**
@@ -63,8 +65,8 @@ public class Client {
    *
    * @return a public key
    */
-  public KeyPair getKeyPair() {
-    return keys;
+  public PublicKey getPublicKey() {
+    return keys.getPublicKey();
   }
 
 }

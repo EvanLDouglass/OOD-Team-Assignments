@@ -107,36 +107,5 @@ public class ArgsValidator {
   public String getOutputFile() {
     return outputFile;
   }
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    ArgsValidator that = (ArgsValidator) o;
-    return Objects.equals(numberOfClients, that.numberOfClients) &&
-        Objects.equals(numberOfVerification, that.numberOfVerification) &&
-        Objects.equals(percentageOfInvalidMessage, that.percentageOfInvalidMessage) &&
-        Objects.equals(outputFile, that.outputFile);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects
-        .hash(numberOfClients, numberOfVerification, percentageOfInvalidMessage, outputFile);
-  }
-
-  @Override
-  public String toString() {
-    return "ArgsValidator{" +
-        "numberOfClients=" + numberOfClients +
-        ", numberOfVerification=" + numberOfVerification +
-        ", percentageOfInvalidMessage=" + percentageOfInvalidMessage +
-        ", outputFile='" + outputFile + '\'' +
-        '}';
-  }
 }
 
