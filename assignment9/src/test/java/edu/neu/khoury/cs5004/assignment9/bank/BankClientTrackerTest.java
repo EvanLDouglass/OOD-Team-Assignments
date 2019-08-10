@@ -53,20 +53,22 @@ public class BankClientTrackerTest {
 
   @Test
   public void equals1() {
-    PublicKey anotherTracker = new PublicKey(new BigInteger("9876543210"), new BigInteger("1234567890"));
+    PublicKey anotherPubKey = new PublicKey(new BigInteger("1234567890"), new BigInteger("9876543210"));
+    BankClientTracker anotherTracker = new BankClientTracker(anotherPubKey, 1000, 1000);
     assertTrue(bankClientTracker.equals(bankClientTracker));
     assertFalse(bankClientTracker.equals(null));
-    assertFalse(bankClientTracker.equals(anotherTracker));
+    assertTrue(bankClientTracker.equals(anotherTracker));
   }
 
   @Test
   public void hashCode1() {
-    assertEquals(11, bankClientTracker.hashCode());
+    assertEquals(688400886, bankClientTracker.hashCode());
   }
 
   @Test
   public void toString1() {
-    assertEquals("", bankClientTracker.toString());
+    assertEquals("BankClientTracker{publicKey=PublicKey{exponent=1234567890, modulus=9876543210},"
+        + " depositLimit=1000, withdrawLimit=1000}", bankClientTracker.toString());
   }
 
 }
