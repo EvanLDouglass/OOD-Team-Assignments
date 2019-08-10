@@ -2,6 +2,7 @@ package edu.neu.khoury.cs5004.assignment9.rsa;
 
 import static org.junit.Assert.*;
 
+import edu.neu.khoury.cs5004.assignment9.MessageGenerator;
 import org.junit.Test;
 
 public class MessageGeneratorTest {
