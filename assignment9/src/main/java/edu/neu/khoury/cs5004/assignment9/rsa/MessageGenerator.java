@@ -3,10 +3,10 @@ package edu.neu.khoury.cs5004.assignment9.rsa;
 import java.util.Random;
 
 /**
- * The type Message generator.
+ * Generates random messages for the secure bank simulator.
  */
 public class MessageGenerator {
-  private static final int MAX_NUMBER = 3000;
+  private static final int MAX_NUMBER = 3001;
 
   /**
    * Generate message integer.

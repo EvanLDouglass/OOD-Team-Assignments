@@ -38,11 +38,14 @@ public class RsaKeyGenerator {
     // Step 3
     BigInteger phiOfModulus = getPhiOfModulus(prime1, prime2);
     // Step 4
-    BigInteger coPrime = getACoPrime(prime1, prime2, rand);
+    BigInteger secretKeyExponent = getACoPrime(prime1, prime2, rand);
     // Step 5
-    // TODO: use modInverse method in BigInteger
-
-    return null;
+    BigInteger publicKeyExponent = secretKeyExponent.modInverse(phiOfModulus);
+    // Finally, make keys and return a KeyPair
+    PublicKey publicKey = new PublicKey(publicKeyExponent, modulus);
+    PrivateKey privateKey = new PrivateKey(secretKeyExponent, modulus);
+    KeyPair pair = new KeyPair(privateKey, publicKey);
+    return pair;
   }
 
   /**

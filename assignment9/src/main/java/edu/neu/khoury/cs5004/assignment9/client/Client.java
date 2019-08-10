@@ -2,12 +2,15 @@ package edu.neu.khoury.cs5004.assignment9.client;
 
 import edu.neu.khoury.cs5004.assignment9.rsa.KeyPair;
 import edu.neu.khoury.cs5004.assignment9.rsa.MsgSigPair;
+import edu.neu.khoury.cs5004.assignment9.rsa.RsaKeyGenerator;
 
 /**
  * A basic client for the banking system. This class represents the actual client, who has access
  * to their private key for RSA encryption.
  */
 public class Client {
+
+  private static final Integer PRIME_BIT_LEN = 512;
 
   private static Long idCounter = 0L;  // L to denote type long
 
@@ -20,7 +23,9 @@ public class Client {
   public Client() {
     // Assign id and increment static var for next instantiation
     id = idCounter++;
-    // TODO: put method for RSA alg here: private/public key
+    // Bit length
+    RsaKeyGenerator keyGenerator = new RsaKeyGenerator(PRIME_BIT_LEN);
+    keys = keyGenerator.generateKeyPair();
   }
 
   /* ===== Methods ===== */
@@ -35,6 +40,7 @@ public class Client {
    * @return a message-signature pair
    */
   public MsgSigPair requestTransaction(Integer msg) {
+
     return null;
   }
 

@@ -16,7 +16,7 @@ public class RsaSignatureGeneratorTest {
 
   @Test
   public void testGenerateSignature() {
-    BigInteger result = RsaSignatureGenerator.generateSignature(1000, key);
+    BigInteger result = RsaSignatureGenerator.signature(1000, key);
     assertEquals(new BigInteger("3939836590"), result);
   }
 }

@@ -8,6 +8,10 @@ public class MessageGeneratorTest {
 
   @Test
   public void generateMessage() {
-    assertTrue(MessageGenerator.generateMessage() < (Integer) 3000);
+    for (int i = 0; i < 1000; i++) {
+      Integer msg = MessageGenerator.generateMessage();
+      assertTrue(msg <= (Integer) 3000);
+      assertTrue(msg >= (Integer) 0);
+    }
   }
 }
