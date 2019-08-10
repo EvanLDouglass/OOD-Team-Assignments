@@ -44,8 +44,7 @@ public class RsaKeyGenerator {
     // Finally, make keys and return a KeyPair
     PublicKey publicKey = new PublicKey(publicKeyExponent, modulus);
     PrivateKey privateKey = new PrivateKey(secretKeyExponent, modulus);
-    KeyPair pair = new KeyPair(privateKey, publicKey);
-    return pair;
+    return new KeyPair(privateKey, publicKey);
   }
 
   /**

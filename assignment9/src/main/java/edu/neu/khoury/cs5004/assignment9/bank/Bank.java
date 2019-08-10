@@ -1,6 +1,7 @@
 package edu.neu.khoury.cs5004.assignment9.bank;
 
 import edu.neu.khoury.cs5004.assignment9.rsa.MsgSigPair;
+import edu.neu.khoury.cs5004.assignment9.rsa.PublicKey;
 import edu.neu.khoury.cs5004.assignment9.rsa.RsaSignatureValidator;
 import java.util.Map;
 import java.util.Objects;
@@ -55,10 +56,11 @@ public class Bank {
    * Verify msg sig pair boolean.
    *
    * @param msgSigPair the msg sig pair
+   * @param key the public key
    * @return the boolean
    */
-  public boolean verifyMsgSigPair(MsgSigPair msgSigPair) {
-    return RsaSignatureValidator.validate(msgSigPair);
+  public boolean verifyMsgSigPair(MsgSigPair msgSigPair, PublicKey key) {
+    return RsaSignatureValidator.validate(msgSigPair, key);
   }
 
   @Override
