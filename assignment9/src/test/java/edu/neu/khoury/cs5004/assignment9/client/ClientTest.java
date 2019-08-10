@@ -54,4 +54,33 @@ public class ClientTest {
     key1 = nextClient.getPublicKey();
     assertNotEquals(key1, key);
   }
+
+  @Test
+  public void testEquals() {
+    // No two clients can be the same, due to id incrementer
+    assertEquals(client, client);
+  }
+
+  @Test
+  public void testNotEquals() {
+    assertNotEquals(null, client);
+    assertNotEquals(client, null);
+    assertNotEquals("String", client);
+    assertNotEquals(client, "String");
+    assertNotEquals(client, new Client());
+    assertNotEquals(new Client(), client);
+  }
+
+  @Test
+  public void testHashCode() {
+    assertEquals(client.hashCode(), client.hashCode());
+    assertNotEquals(new Client().hashCode(), client.hashCode());
+  }
+
+  @Test
+  public void testToString() {
+    String regex = "Client\\{id=[0-9]+}";
+    System.out.println(client.toString());
+    assertTrue(client.toString().matches(regex));
+  }
 }

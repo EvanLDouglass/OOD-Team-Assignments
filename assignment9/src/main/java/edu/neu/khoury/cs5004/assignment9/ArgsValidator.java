@@ -2,21 +2,22 @@ package edu.neu.khoury.cs5004.assignment9;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Objects;
-
 
 /**
- * The type Args validator.validate the four arguments, each have some requirements
- * and the length must be 4, the order can't be changed
+ * The type Args validator. Validate the four arguments, each have some requirements
+ * and the length must be 4, the order can't be changed.
  */
 public class ArgsValidator {
 
   private static final int ARGS_LENGTH = 4;
+  private static final int MAX_CLIENTS = 50000;
+  private static final int MAX_VERIFICATIONS = 10000;
+  private static final int MAX_PERCENT = 100;
+
   private Integer numberOfClients;
   private Integer numberOfVerification;
   private Integer percentageOfInvalidMessage;
   private String outputFile;
-
 
   /**
    * Instantiates a new Args validator.
@@ -34,8 +35,8 @@ public class ArgsValidator {
    * @param args the args
    * @throws InvalidArgumentException the invalid argument exception
    */
-  public void processArgument(String[] args) throws InvalidArgumentException{
-    checkArgLengh(args);
+  public void processArguments(String[] args) throws InvalidArgumentException{
+    checkArgLength(args);
     List<String> arglist = Arrays.asList(args);
     if (arglist.get(0) != null
         && arglist.get(1) != null
@@ -44,9 +45,9 @@ public class ArgsValidator {
       Integer argument1 = Integer.valueOf(arglist.get(0));
       Integer argument2 = Integer.valueOf(arglist.get(1));
       Integer argument3 = Integer.valueOf(arglist.get(2));
-      if (argument1 <= 50000
-          && argument2 <= 1000
-          && argument3 <= 100
+      if (argument1 <= MAX_CLIENTS
+          && argument2 <= MAX_VERIFICATIONS
+          && argument3 <= MAX_PERCENT
           && argument3 >= 0) {
         this.numberOfClients = argument1;
         this.numberOfVerification = argument2;
@@ -55,22 +56,22 @@ public class ArgsValidator {
       } else {
         throw new InvalidArgumentException("error: invalid arguments");
       }
+    } else {
+      throw new InvalidArgumentException("error: args can't be null");
     }
   }
 
-
   /**
-   * Check arg lengh.
+   * Check arg length.
    *
    * @param args the args
    * @throws InvalidArgumentException the invalid argument exception
    */
-  public void checkArgLengh(String[] args) throws InvalidArgumentException {
+  public void checkArgLength(String[] args) throws InvalidArgumentException {
     if (args.length != ARGS_LENGTH) {
       throw new InvalidArgumentException("Error:invalid argument length");
     }
   }
-
 
   /**
    * Gets number of clients.

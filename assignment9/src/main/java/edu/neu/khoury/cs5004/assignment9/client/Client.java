@@ -7,6 +7,7 @@ import edu.neu.khoury.cs5004.assignment9.rsa.RsaKeyGenerator;
 import edu.neu.khoury.cs5004.assignment9.rsa.RsaSignatureGenerator;
 
 import java.math.BigInteger;
+import java.util.Objects;
 
 /**
  * A basic client for the banking system. This class represents the actual client, who has access
@@ -47,6 +48,30 @@ public class Client {
   public MsgSigPair requestTransaction(Integer msg) {
     BigInteger signature = RsaSignatureGenerator.signature(msg, keys.getPrivateKey());
     return new MsgSigPair(msg, signature);
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (this == obj) {
+      return true;
+    }
+    if (obj == null || getClass() != obj.getClass()) {
+      return false;
+    }
+    Client client = (Client) obj;
+    return Objects.equals(id, client.id)
+        && Objects.equals(keys, client.keys);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(id, keys);
+  }
+
+  @Override
+  public String toString() {
+    String client = String.format("Client{id=%d}", id);
+    return client;
   }
 
   /* ===== Getters ===== */

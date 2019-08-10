@@ -24,7 +24,8 @@ public class BankClientTrackerTest {
 
   @Test
   public void setPublicKey() {
-    PublicKey expectedKey = new PublicKey(new BigInteger("9876543210"), new BigInteger("1234567890"));
+    PublicKey expectedKey = new PublicKey(new BigInteger("9876543210"),
+        new BigInteger("1234567890"));
     bankClientTracker.setPublicKey(expectedKey);
     assertEquals(expectedKey, bankClientTracker.getPublicKey());
   }

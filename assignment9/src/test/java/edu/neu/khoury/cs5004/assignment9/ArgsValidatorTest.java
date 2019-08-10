@@ -13,7 +13,7 @@ public class ArgsValidatorTest {
   public void setUp() throws Exception {
     givenArgs = new String[]{"10000", "500", "50", "outputfile"};
     argsValidator = new ArgsValidator();
-    argsValidator.processArgument(givenArgs);
+    argsValidator.processArguments(givenArgs);
   }
 
   @Test
@@ -40,7 +40,7 @@ public class ArgsValidatorTest {
   public void processArgument() {
     String[] wrongGivenArgs = new String[]{"1000000", "500", "50", "outputfile"};
     try {
-      argsValidator.processArgument(wrongGivenArgs);
+      argsValidator.processArguments(wrongGivenArgs);
     }catch (InvalidArgumentException e) {
     }
 
@@ -50,7 +50,7 @@ public class ArgsValidatorTest {
   public void checkArgLengh() {
     String[] wrongGivenArgs = new String[]{"100", "500", "50"};
     try {
-      argsValidator.processArgument(wrongGivenArgs);
+      argsValidator.processArguments(wrongGivenArgs);
     } catch (InvalidArgumentException e) {
     }
   }

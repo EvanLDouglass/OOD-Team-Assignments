@@ -93,9 +93,9 @@ public class BankClientTracker {
       return false;
     }
     BankClientTracker that = (BankClientTracker) o;
-    return Objects.equals(publicKey, that.publicKey) &&
-        Objects.equals(depositLimit, that.depositLimit) &&
-        Objects.equals(withdrawLimit, that.withdrawLimit);
+    return Objects.equals(publicKey, that.publicKey)
+        && Objects.equals(depositLimit, that.depositLimit)
+        && Objects.equals(withdrawLimit, that.withdrawLimit);
   }
 
   @Override
