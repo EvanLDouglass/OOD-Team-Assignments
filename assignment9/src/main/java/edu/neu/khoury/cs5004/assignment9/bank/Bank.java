@@ -6,11 +6,12 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * The type Bank.It only has one fields, which is the map of client ID and some other information about
- * thi client, for example, some transaction limits and public key. This is because bank only knows part
- * information of clients, and bank needs to find these information by the unique ID.
+ * The type Bank. It only has one fields, which is the map of client ID and some other information
+ * about the client, for example, some transaction limits and public key. This is because bank only
+ * knows part information of clients, and bank needs to find these information by the unique ID.
  */
 public class Bank {
+
   private Map<Long, BankClientTracker> idTracker;
 
   /**
@@ -18,8 +19,7 @@ public class Bank {
    *
    * @param idTracker the id tracker
    */
-  public Bank(
-      Map<Long, BankClientTracker> idTracker) {
+  public Bank(Map<Long, BankClientTracker> idTracker) {
     this.idTracker = idTracker;
   }
 
@@ -37,8 +37,7 @@ public class Bank {
    *
    * @param idTracker the id tracker
    */
-  public void setIdTracker(
-      Map<Long, BankClientTracker> idTracker) {
+  public void setIdTracker(Map<Long, BankClientTracker> idTracker) {
     this.idTracker = idTracker;
   }
 
@@ -48,7 +47,7 @@ public class Bank {
    * @param id the id
    * @return the bank client tracker
    */
-  public BankClientTracker getClientInfo(Long id){
+  public BankClientTracker getClientInfo(Long id) {
     return idTracker.get(id);
   }
 

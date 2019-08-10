@@ -3,6 +3,8 @@ package edu.neu.khoury.cs5004.assignment9.client;
 import edu.neu.khoury.cs5004.assignment9.rsa.KeyPair;
 import edu.neu.khoury.cs5004.assignment9.rsa.MsgSigPair;
 import edu.neu.khoury.cs5004.assignment9.rsa.RsaKeyGenerator;
+import edu.neu.khoury.cs5004.assignment9.rsa.RsaSignatureGenerator;
+import java.math.BigInteger;
 
 /**
  * A basic client for the banking system. This class represents the actual client, who has access
@@ -40,8 +42,8 @@ public class Client {
    * @return a message-signature pair
    */
   public MsgSigPair requestTransaction(Integer msg) {
-
-    return null;
+    BigInteger signature = RsaSignatureGenerator.signature(msg, keys.getPrivateKey());
+    return new MsgSigPair(msg, signature);
   }
 
   /* ===== Getters ===== */
