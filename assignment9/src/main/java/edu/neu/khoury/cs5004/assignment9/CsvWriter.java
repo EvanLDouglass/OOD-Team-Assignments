@@ -59,6 +59,10 @@ public class CsvWriter {
     writer.flush();
   }
 
+  public void closeCsv() throws IOException {
+    writer.close();
+  }
+
   /**
    * Writes the header line to the csv file. Used only in the constructor.
    *

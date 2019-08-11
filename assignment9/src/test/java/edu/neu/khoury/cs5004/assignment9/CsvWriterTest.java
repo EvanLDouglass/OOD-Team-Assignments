@@ -30,6 +30,7 @@ public class CsvWriterTest {
 
   @After
   public void tearDown() throws Exception {
+    writer.closeCsv();
     file.delete();
   }
 

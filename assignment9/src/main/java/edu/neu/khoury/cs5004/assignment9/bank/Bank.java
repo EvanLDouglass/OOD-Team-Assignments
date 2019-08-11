@@ -54,6 +54,25 @@ public class Bank {
     return RsaSignatureValidator.validate(msgSigPair, key);
   }
 
+  /**
+   * Verify message is within bounds for withdrawal/deposit.
+   *
+   * @param id a client id
+   * @param message the message
+   * @return true if the amount is within the client's info, else false
+   */
+  public Boolean transactionInLimits(Long id, Integer message) {
+    int withdrawalStart = 5;
+    BankClientTracker tracker = getClientInfo(id);
+    int type = message % 10;
+    int amount = message / 10;
+    if (type < withdrawalStart) {
+      return amount <= tracker.getDepositLimit();
+    } else {
+      return amount <= tracker.getWithdrawLimit();
+    }
+  }
+
   @Override
   public boolean equals(Object other) {
     if (this == other) {
