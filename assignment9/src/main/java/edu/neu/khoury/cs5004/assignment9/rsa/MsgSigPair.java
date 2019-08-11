@@ -28,14 +28,14 @@ public class MsgSigPair {
   /* ===== Methods ===== */
 
   @Override
-  public boolean equals(Object o) {
-    if (this == o) {
+  public boolean equals(Object obj) {
+    if (this == obj) {
       return true;
     }
-    if (o == null || getClass() != o.getClass()) {
+    if (obj == null || getClass() != obj.getClass()) {
       return false;
     }
-    MsgSigPair that = (MsgSigPair) o;
+    MsgSigPair that = (MsgSigPair) obj;
     return message.equals(that.message)
         && signature.equals(that.signature);
   }

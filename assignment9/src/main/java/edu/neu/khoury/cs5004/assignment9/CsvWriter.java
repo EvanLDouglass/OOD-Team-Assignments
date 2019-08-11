@@ -38,18 +38,19 @@ public class CsvWriter {
    * Writes a single line of data, a single transaction, to the csv file.
    *
    * @param transactionNumber the transaction number
-   * @param clientID the client's unique ID
+   * @param timestamp the current date/time as a Date class
+   * @param clientId the client's unique ID
    * @param message the message
    * @param signature the signature
    * @param verified a boolean (true if transaction accepted, else false)
    * @throws IOException if there is a problem writing to the file
    */
-  public void writeLine(Long transactionNumber, Date timestamp, Long clientID, Integer message,
+  public void writeLine(Long transactionNumber, Date timestamp, Long clientId, Integer message,
       BigInteger signature, Boolean verified) throws IOException {
     String line = String.format("%d,%s,%d,%d,%d,%s,%s",
         transactionNumber,
         timestamp,
-        clientID,
+        clientId,
         message,
         signature,
         chooseVerifiedString(verified),

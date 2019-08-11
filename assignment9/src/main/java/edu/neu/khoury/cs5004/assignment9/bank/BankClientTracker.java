@@ -86,14 +86,14 @@ public class BankClientTracker {
   }
 
   @Override
-  public boolean equals(Object o) {
-    if (this == o) {
+  public boolean equals(Object obj) {
+    if (this == obj) {
       return true;
     }
-    if (o == null || getClass() != o.getClass()) {
+    if (obj == null || getClass() != obj.getClass()) {
       return false;
     }
-    BankClientTracker that = (BankClientTracker) o;
+    BankClientTracker that = (BankClientTracker) obj;
     return Objects.equals(publicKey, that.publicKey)
         && Objects.equals(depositLimit, that.depositLimit)
         && Objects.equals(withdrawLimit, that.withdrawLimit);

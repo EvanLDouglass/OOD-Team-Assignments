@@ -27,5 +27,7 @@ public class SimulatorRandom {
     return random.nextInt(MAX_WITHDRAW);
   }
 
-  public static Integer generateDepositLimit() { return random.nextInt(MAX_DEPOSIT); }
+  public static Integer generateDepositLimit() {
+    return random.nextInt(MAX_DEPOSIT);
+  }
 }

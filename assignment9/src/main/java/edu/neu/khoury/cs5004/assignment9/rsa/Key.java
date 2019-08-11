@@ -28,14 +28,14 @@ public abstract class Key {
   /* ===== Methods ===== */
 
   @Override
-  public boolean equals(Object o) {
-    if (this == o) {
+  public boolean equals(Object obj) {
+    if (this == obj) {
       return true;
     }
-    if (o == null || getClass() != o.getClass()) {
+    if (obj == null || getClass() != obj.getClass()) {
       return false;
     }
-    Key key = (Key) o;
+    Key key = (Key) obj;
     return Objects.equals(exponent, key.exponent)
         && Objects.equals(modulus, key.modulus);
   }

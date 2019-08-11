@@ -11,6 +11,7 @@ public class RsaSignatureGenerator {
    * Computes a digital signature using this private key, given an integer message.
    *
    * @param message the message to make a signature for
+   * @param key a public key
    * @return the computed digital signature
    */
   public static BigInteger signature(Integer message, PrivateKey key) {

@@ -25,22 +25,11 @@ public class ClientTest {
 
   @Test
   public void getId() {
-    assertEquals(0L, (long) client.getId());
+    Client client1 = new Client();
+    Client client2 = new Client();
 
-    Client nextClient = new Client();
-    assertEquals(1L, (long) nextClient.getId());
-
-    nextClient = new Client();
-    assertEquals(2L, (long) nextClient.getId());
-
-    nextClient = new Client();
-    assertEquals(3L, (long) nextClient.getId());
-
-    nextClient = new Client();
-    assertEquals(4L, (long) nextClient.getId());
-
-    nextClient = new Client();
-    assertEquals(5L, (long) nextClient.getId());
+    assertTrue(client.getId() < client1.getId());
+    assertTrue(client1.getId() < client2.getId());
   }
 
   @Test

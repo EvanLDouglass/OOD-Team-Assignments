@@ -40,14 +40,14 @@ public class KeyPair {
   }
 
   @Override
-  public boolean equals(Object o) {
-    if (this == o) {
+  public boolean equals(Object obj) {
+    if (this == obj) {
       return true;
     }
-    if (o == null || getClass() != o.getClass()) {
+    if (obj == null || getClass() != obj.getClass()) {
       return false;
     }
-    KeyPair keyPair = (KeyPair) o;
+    KeyPair keyPair = (KeyPair) obj;
     return Objects.equals(privateKey, keyPair.privateKey)
         && Objects.equals(publicKey, keyPair.publicKey);
   }
