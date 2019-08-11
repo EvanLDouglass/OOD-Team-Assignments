@@ -68,9 +68,9 @@ public class Bank {
     int type = message % 10;
     int amount = message / 10;
     if (type < withdrawalStart) {
-      return amount <= tracker.getDepositLimit();
+      return amount <= tracker.getDepositLimit() && amount > 0;
     } else {
-      return amount <= tracker.getWithdrawLimit();
+      return amount <= tracker.getWithdrawLimit() && amount > 0;
     }
   }
 
