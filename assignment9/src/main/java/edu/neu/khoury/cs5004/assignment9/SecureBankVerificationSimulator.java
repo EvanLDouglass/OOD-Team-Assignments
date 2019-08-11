@@ -58,19 +58,19 @@ public class SecureBankVerificationSimulator {
       MsgSigPair msgSigPair = chooseMsgSig(percentInvalid, message, client);
 
       // Get Bank's client info and verify the signature
-      BankClientTracker tracker = bank.getClientInfo(client.getId());
+      BankClientTracker tracker = bank.getClientInfo(client.getClientId());
       // RSA verification
       boolean verified = bank.verifyMsgSigPair(msgSigPair, tracker.getPublicKey());
       // Check if transaction is in limits
       // This will cause the actual invalid percentage to be greater than specified
-      if (!bank.transactionInLimits(client.getId(), message)) {
+      if (!bank.transactionInLimits(client.getClientId(), message)) {
         verified = false;
       }
 
       // Record transaction
       Date now = new Date();
       try {
-        out.writeLine(i, now, client.getId(), message, msgSigPair.getSignature(), verified);
+        out.writeLine(i, now, client.getClientId(), message, msgSigPair.getSignature(), verified);
       } catch (IOException e) {
         System.out.println("Problem with output file initialization. Transaction skipped.");
         System.out.println(e.getMessage());
@@ -98,7 +98,7 @@ public class SecureBankVerificationSimulator {
       BankClientTracker tracker = new BankClientTracker(client.getPublicKey(), depositLimit,
           withdrawLimit);
       // Add to map
-      bank.getIdTracker().put(client.getId(), tracker);
+      bank.getIdTracker().put(client.getClientId(), tracker);
     }
     return bank;
   }

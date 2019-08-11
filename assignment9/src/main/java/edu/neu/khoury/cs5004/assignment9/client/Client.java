@@ -8,6 +8,7 @@ import edu.neu.khoury.cs5004.assignment9.rsa.RsaSignatureGenerator;
 
 import java.math.BigInteger;
 import java.util.Objects;
+import java.util.concurrent.atomic.AtomicLong;
 
 /**
  * A basic client for the banking system. This class represents the actual client, who has access to
@@ -17,9 +18,9 @@ public class Client {
 
   private static final Integer PRIME_BIT_LEN = 512;
 
-  private static Long idCounter = 0L;  // L to denote type long
+  private static AtomicLong idCounter = new AtomicLong(0);  // L to denote type long
 
-  private Long id;
+  private Long clientId;
   private KeyPair keys;
 
   /**
@@ -28,7 +29,7 @@ public class Client {
    */
   public Client() {
     // Assign id and increment static var for next instantiation
-    id = idCounter++;
+    clientId = idCounter.getAndIncrement();
     // Bit length
     RsaKeyGenerator keyGenerator = new RsaKeyGenerator(PRIME_BIT_LEN);
     keys = keyGenerator.generateKeyPair();
@@ -59,18 +60,18 @@ public class Client {
       return false;
     }
     Client client = (Client) obj;
-    return Objects.equals(id, client.id)
+    return Objects.equals(clientId, client.clientId)
         && Objects.equals(keys, client.keys);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, keys);
+    return Objects.hash(clientId, keys);
   }
 
   @Override
   public String toString() {
-    return String.format("Client{id=%d}", id);
+    return String.format("Client{id=%d}", clientId);
   }
 
   /* ===== Getters ===== */
@@ -80,8 +81,8 @@ public class Client {
    *
    * @return a unique ID
    */
-  public Long getId() {
-    return id;
+  public Long getClientId() {
+    return clientId;
   }
 
   /**

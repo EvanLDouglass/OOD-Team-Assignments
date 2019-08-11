@@ -75,7 +75,7 @@ public class BankTest {
     Client client = new Client();
     BankClientTracker tracker = new BankClientTracker(client.getPublicKey(), 10000, 30000);
     Map<Long, BankClientTracker> map = new HashMap<>();
-    map.put(client.getId(), tracker);
+    map.put(client.getClientId(), tracker);
     bank = new Bank(map);
 
     Integer msg = 1000;
@@ -88,13 +88,13 @@ public class BankTest {
     Client client = new Client();
     BankClientTracker tracker = new BankClientTracker(client.getPublicKey(), 10000, 30000);
     Map<Long, BankClientTracker> map = new HashMap<>();
-    map.put(client.getId(), tracker);
+    map.put(client.getClientId(), tracker);
     bank = new Bank(map);
 
     Integer msg = 99990;
-    assertTrue(bank.transactionInLimits(client.getId(), msg));
+    assertTrue(bank.transactionInLimits(client.getClientId(), msg));
     msg = 10;
-    assertTrue(bank.transactionInLimits(client.getId(), msg));
+    assertTrue(bank.transactionInLimits(client.getClientId(), msg));
   }
 
   @Test
@@ -102,13 +102,13 @@ public class BankTest {
     Client client = new Client();
     BankClientTracker tracker = new BankClientTracker(client.getPublicKey(), 10000, 30000);
     Map<Long, BankClientTracker> map = new HashMap<>();
-    map.put(client.getId(), tracker);
+    map.put(client.getClientId(), tracker);
     bank = new Bank(map);
 
     Integer msg = 100010;
-    assertFalse(bank.transactionInLimits(client.getId(), msg));
+    assertFalse(bank.transactionInLimits(client.getClientId(), msg));
     msg = 0;
-    assertFalse(bank.transactionInLimits(client.getId(), msg));
+    assertFalse(bank.transactionInLimits(client.getClientId(), msg));
   }
 
   @Test
@@ -116,13 +116,13 @@ public class BankTest {
     Client client = new Client();
     BankClientTracker tracker = new BankClientTracker(client.getPublicKey(), 10000, 30000);
     Map<Long, BankClientTracker> map = new HashMap<>();
-    map.put(client.getId(), tracker);
+    map.put(client.getClientId(), tracker);
     bank = new Bank(map);
 
     Integer msg = 299999;
-    assertTrue(bank.transactionInLimits(client.getId(), msg));
+    assertTrue(bank.transactionInLimits(client.getClientId(), msg));
     msg = 19;
-    assertTrue(bank.transactionInLimits(client.getId(), msg));
+    assertTrue(bank.transactionInLimits(client.getClientId(), msg));
   }
 
   @Test
@@ -130,12 +130,12 @@ public class BankTest {
     Client client = new Client();
     BankClientTracker tracker = new BankClientTracker(client.getPublicKey(), 10000, 30000);
     Map<Long, BankClientTracker> map = new HashMap<>();
-    map.put(client.getId(), tracker);
+    map.put(client.getClientId(), tracker);
     bank = new Bank(map);
 
     Integer msg = 300019;
-    assertFalse(bank.transactionInLimits(client.getId(), msg));
+    assertFalse(bank.transactionInLimits(client.getClientId(), msg));
     msg = 0;
-    assertFalse(bank.transactionInLimits(client.getId(), msg));
+    assertFalse(bank.transactionInLimits(client.getClientId(), msg));
   }
 }

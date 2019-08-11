@@ -24,10 +24,10 @@ public class ClientGeneratorTest {
 
   @Test
   public void checkIds() {
-    assertNotEquals(list.get(0).getId(), list.get(1).getId());
-    assertNotEquals(list.get(1).getId(), list.get(2).getId());
-    assertNotEquals(list.get(2).getId(), list.get(3).getId());
-    assertNotEquals(list.get(3).getId(), list.get(4).getId());
+    assertNotEquals(list.get(0).getClientId(), list.get(1).getClientId());
+    assertNotEquals(list.get(1).getClientId(), list.get(2).getClientId());
+    assertNotEquals(list.get(2).getClientId(), list.get(3).getClientId());
+    assertNotEquals(list.get(3).getClientId(), list.get(4).getClientId());
   }
 
   @Test

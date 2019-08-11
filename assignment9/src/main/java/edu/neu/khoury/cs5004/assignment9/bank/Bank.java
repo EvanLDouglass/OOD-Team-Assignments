@@ -38,11 +38,11 @@ public class Bank {
   /**
    * Get client info bank client tracker.
    *
-   * @param id the id
+   * @param clientId the id
    * @return the bank client tracker
    */
-  public BankClientTracker getClientInfo(Long id) {
-    return idTracker.get(id);
+  public BankClientTracker getClientInfo(Long clientId) {
+    return idTracker.get(clientId);
   }
 
   /**
@@ -59,13 +59,13 @@ public class Bank {
   /**
    * Verify message is within bounds for withdrawal/deposit.
    *
-   * @param id a client id
+   * @param clientId a client id
    * @param message the message
    * @return true if the amount is within the client's info, else false
    */
-  public Boolean transactionInLimits(Long id, Integer message) {
+  public Boolean transactionInLimits(Long clientId, Integer message) {
     int withdrawalStart = 5;
-    BankClientTracker tracker = getClientInfo(id);
+    BankClientTracker tracker = getClientInfo(clientId);
     int type = message % 10;
     int amount = message / 10;
     if (type < withdrawalStart) {

@@ -28,8 +28,8 @@ public class ClientTest {
     Client client1 = new Client();
     Client client2 = new Client();
 
-    assertTrue(client.getId() < client1.getId());
-    assertTrue(client1.getId() < client2.getId());
+    assertTrue(client.getClientId() < client1.getClientId());
+    assertTrue(client1.getClientId() < client2.getClientId());
   }
 
   @Test

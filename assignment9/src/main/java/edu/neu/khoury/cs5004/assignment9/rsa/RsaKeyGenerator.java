@@ -58,9 +58,8 @@ public class RsaKeyGenerator {
   private BigInteger getPhiOfModulus(BigInteger prime1, BigInteger prime2) {
     BigInteger num1;
     BigInteger num2;
-    BigInteger one = new BigInteger("1");
-    num1 = prime1.subtract(one);
-    num2 = prime2.subtract(one);
+    num1 = prime1.subtract(BigInteger.ONE);
+    num2 = prime2.subtract(BigInteger.ONE);
     return lcm(num1, num2);
   }
 
