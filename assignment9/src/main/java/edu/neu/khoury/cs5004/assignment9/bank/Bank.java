@@ -12,6 +12,7 @@ import java.util.Objects;
  * knows part information of clients, and bank needs to find these information by the unique ID.
  */
 public class Bank {
+
   private Map<Long, BankClientTracker> idTracker;
 
   /**

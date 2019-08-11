@@ -5,13 +5,12 @@ import edu.neu.khoury.cs5004.assignment9.rsa.MsgSigPair;
 import edu.neu.khoury.cs5004.assignment9.rsa.PublicKey;
 import edu.neu.khoury.cs5004.assignment9.rsa.RsaKeyGenerator;
 import edu.neu.khoury.cs5004.assignment9.rsa.RsaSignatureGenerator;
-
 import java.math.BigInteger;
 import java.util.Objects;
 
 /**
- * A basic client for the banking system. This class represents the actual client, who has access
- * to their private key for RSA encryption.
+ * A basic client for the banking system. This class represents the actual client, who has access to
+ * their private key for RSA encryption.
  */
 public class Client {
 
@@ -37,10 +36,10 @@ public class Client {
   /* ===== Methods ===== */
 
   /**
-   * Produce a message (e.g. a request for a withdrawal or deposit) with a digital signature
-   * used by a signature validator to determine if the message is valid or not. The message
-   * represents a dollar amount with the exception of the last digit, which is used to determine if
-   * the amount should be a withdrawal or deposit (0-4 is a deposit, 5-9 a withdrawal).
+   * Produce a message (e.g. a request for a withdrawal or deposit) with a digital signature used by
+   * a signature validator to determine if the message is valid or not. The message represents a
+   * dollar amount with the exception of the last digit, which is used to determine if the amount
+   * should be a withdrawal or deposit (0-4 is a deposit, 5-9 a withdrawal).
    *
    * @param msg the message/request
    * @return a message-signature pair

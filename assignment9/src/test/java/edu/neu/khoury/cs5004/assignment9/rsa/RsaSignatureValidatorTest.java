@@ -1,8 +1,8 @@
 package edu.neu.khoury.cs5004.assignment9.rsa;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
-import org.junit.Before;
 import org.junit.Test;
 
 // This class tests all of the RSA algorithm classes together, as the other parts are necessary

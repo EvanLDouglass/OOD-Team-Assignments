@@ -6,6 +6,7 @@ import java.util.Objects;
  * The type Key pair. It has two parts, the public key and private key.
  */
 public class KeyPair {
+
   private PrivateKey privateKey;
   private PublicKey publicKey;
 

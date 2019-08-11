@@ -3,7 +3,6 @@ package edu.neu.khoury.cs5004.assignment9.rsa;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
-import edu.neu.khoury.cs5004.assignment9.rsa.MsgSigPair;
 import java.math.BigInteger;
 import org.junit.Before;
 import org.junit.Test;

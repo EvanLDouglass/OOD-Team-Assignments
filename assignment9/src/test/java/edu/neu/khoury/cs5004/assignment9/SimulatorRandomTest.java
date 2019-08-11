@@ -1,10 +1,11 @@
 package edu.neu.khoury.cs5004.assignment9;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
 public class SimulatorRandomTest {
+
   private static final int MAX_MSG = 30000;
   private static final int MAX_WITHDRAW = 3000;
   private static final int MAX_DEPOSIT = 2000;

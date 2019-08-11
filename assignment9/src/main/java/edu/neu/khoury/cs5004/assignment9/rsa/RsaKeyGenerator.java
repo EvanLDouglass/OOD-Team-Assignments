@@ -48,9 +48,8 @@ public class RsaKeyGenerator {
   }
 
   /**
-   * The Carmichael's totient function as described on wikipedia at
-   * https://en.wikipedia.org/wiki/RSA_(cryptosystem)#Key_generation, represented in the assignment
-   * write up as the greek letter phi.
+   * The Carmichael's totient function as described on wikipedia at https://en.wikipedia.org/wiki/RSA_(cryptosystem)#Key_generation,
+   * represented in the assignment write up as the greek letter phi.
    *
    * @param prime1 a prime generated during the rsa key generation algorithm
    * @param prime2 a prime generated during the rsa key generation algorithm

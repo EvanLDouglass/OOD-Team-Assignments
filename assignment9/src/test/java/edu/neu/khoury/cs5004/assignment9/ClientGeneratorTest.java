@@ -1,6 +1,7 @@
 package edu.neu.khoury.cs5004.assignment9;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 import edu.neu.khoury.cs5004.assignment9.client.Client;
 import java.util.List;

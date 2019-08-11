@@ -7,6 +7,7 @@ import java.util.Random;
  * Generates random messages for the secure bank simulator.
  */
 public class SimulatorRandom {
+
   private static final int MAX_MSG = 30001;
   private static final int MAX_WITHDRAW = 3001;
   private static final int MAX_DEPOSIT = 2001;
@@ -18,7 +19,7 @@ public class SimulatorRandom {
    *
    * @return the integer
    */
-  public static Integer generateMessage(){
+  public static Integer generateMessage() {
     return random.nextInt(MAX_MSG);
   }
 

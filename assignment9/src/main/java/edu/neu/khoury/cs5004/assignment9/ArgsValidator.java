@@ -4,8 +4,8 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * The type Args validator. Validate the four arguments, each have some requirements
- * and the length must be 4, the order can't be changed.
+ * The type Args validator. Validate the four arguments, each have some requirements and the length
+ * must be 4, the order can't be changed.
  */
 public class ArgsValidator {
 
@@ -35,7 +35,7 @@ public class ArgsValidator {
    * @param args the args
    * @throws InvalidArgumentException the invalid argument exception
    */
-  public void processArguments(String[] args) throws InvalidArgumentException{
+  public void processArguments(String[] args) throws InvalidArgumentException {
     checkArgLength(args);
     List<String> arglist = Arrays.asList(args);
     if (arglist.get(0) != null

@@ -57,8 +57,8 @@ public class SecureBankVerificationSimulator {
       boolean verified = bank.verifyMsgSigPair(msgSigPair, tracker.getPublicKey());
       // Check if transaction is in limits
       // This will cause the actual invalid percentage to be greater than specified
-      if (! bank.transactionInLimits(client.getId(), message)) {
-          verified = false;
+      if (!bank.transactionInLimits(client.getId(), message)) {
+        verified = false;
       }
 
       // Record transaction

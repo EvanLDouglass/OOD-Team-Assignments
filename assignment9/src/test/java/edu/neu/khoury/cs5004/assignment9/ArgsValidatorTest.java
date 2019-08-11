@@ -1,11 +1,12 @@
 package edu.neu.khoury.cs5004.assignment9;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
 import org.junit.Test;
 
 public class ArgsValidatorTest {
+
   private ArgsValidator argsValidator;
   private String[] givenArgs;
 
@@ -18,17 +19,17 @@ public class ArgsValidatorTest {
 
   @Test
   public void getNumberOfClients() {
-    assertEquals((Integer)10000, argsValidator.getNumberOfClients());
+    assertEquals((Integer) 10000, argsValidator.getNumberOfClients());
   }
 
   @Test
   public void getNumberOfVerification() {
-    assertEquals((Integer)500, argsValidator.getNumberOfVerification());
+    assertEquals((Integer) 500, argsValidator.getNumberOfVerification());
   }
 
   @Test
   public void getPercentageOfInvalidMessage() {
-    assertEquals((Integer)50, argsValidator.getPercentageOfInvalidMessage());
+    assertEquals((Integer) 50, argsValidator.getPercentageOfInvalidMessage());
   }
 
   @Test
@@ -41,7 +42,7 @@ public class ArgsValidatorTest {
     String[] wrongGivenArgs = new String[]{"1000000", "500", "50", "outputfile"};
     try {
       argsValidator.processArguments(wrongGivenArgs);
-    }catch (InvalidArgumentException e) {
+    } catch (InvalidArgumentException e) {
     }
 
   }

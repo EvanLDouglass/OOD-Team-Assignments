@@ -1,6 +1,8 @@
 package edu.neu.khoury.cs5004.assignment9.bank;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import edu.neu.khoury.cs5004.assignment9.rsa.PublicKey;
 import java.math.BigInteger;
@@ -8,6 +10,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class BankClientTrackerTest {
+
   private PublicKey publicKey;
   private BankClientTracker bankClientTracker;
 
@@ -43,18 +46,19 @@ public class BankClientTrackerTest {
 
   @Test
   public void getWithdrawLimit() {
-    assertEquals((Integer)1000, bankClientTracker.getWithdrawLimit());
+    assertEquals((Integer) 1000, bankClientTracker.getWithdrawLimit());
   }
 
   @Test
   public void setWithdrawLimit() {
     bankClientTracker.setWithdrawLimit(2000);
-    assertEquals((Integer)2000, bankClientTracker.getWithdrawLimit());
+    assertEquals((Integer) 2000, bankClientTracker.getWithdrawLimit());
   }
 
   @Test
   public void equals1() {
-    PublicKey anotherPubKey = new PublicKey(new BigInteger("1234567890"), new BigInteger("9876543210"));
+    PublicKey anotherPubKey = new PublicKey(new BigInteger("1234567890"),
+        new BigInteger("9876543210"));
     BankClientTracker anotherTracker = new BankClientTracker(anotherPubKey, 1000, 1000);
     assertTrue(bankClientTracker.equals(bankClientTracker));
     assertFalse(bankClientTracker.equals(null));

@@ -1,10 +1,11 @@
 package edu.neu.khoury.cs5004.assignment9.client;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertTrue;
 
 import edu.neu.khoury.cs5004.assignment9.rsa.MsgSigPair;
 import edu.neu.khoury.cs5004.assignment9.rsa.PublicKey;
-import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;

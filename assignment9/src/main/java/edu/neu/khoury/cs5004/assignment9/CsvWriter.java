@@ -15,8 +15,8 @@ public class CsvWriter {
   private BufferedWriter writer;
 
   /**
-   * Constructor for {@code CsvWriter}. Creates the given file if it doesn't exist and writes
-   * an initial header, overwriting any previous data in the file.
+   * Constructor for {@code CsvWriter}. Creates the given file if it doesn't exist and writes an
+   * initial header, overwriting any previous data in the file.
    *
    * @param outputFile a file name with the desired path
    * @throws IOException if there is a problem opening the file or writing the headers

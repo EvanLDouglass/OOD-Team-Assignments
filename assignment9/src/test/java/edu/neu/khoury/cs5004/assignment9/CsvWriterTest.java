@@ -1,11 +1,10 @@
 package edu.neu.khoury.cs5004.assignment9;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.math.BigInteger;
 import java.util.Date;
@@ -45,7 +44,7 @@ public class CsvWriterTest {
   @Test
   public void writeLineAcceptDeposit() throws IOException {
     Date now = new Date();
-    writer.writeLine((long) 1, now, (long) 0, 14, new BigInteger("1234"),true);
+    writer.writeLine((long) 1, now, (long) 0, 14, new BigInteger("1234"), true);
     String expected = "1," + now.toString() + ",0,14,1234,yes,deposit accepted";
 
     reader.readLine();  // discard header
@@ -55,7 +54,7 @@ public class CsvWriterTest {
   @Test
   public void writeLineRejectDeposit() throws IOException {
     Date now = new Date();
-    writer.writeLine((long) 1, now, (long) 0, 10, new BigInteger("1234"),false);
+    writer.writeLine((long) 1, now, (long) 0, 10, new BigInteger("1234"), false);
     String expected = "1," + now.toString() + ",0,10,1234,no,deposit rejected";
 
     reader.readLine();  // discard header
@@ -65,7 +64,7 @@ public class CsvWriterTest {
   @Test
   public void writeLineAcceptWithdrawal() throws IOException {
     Date now = new Date();
-    writer.writeLine((long) 1, now, (long) 0, 15, new BigInteger("1234"),true);
+    writer.writeLine((long) 1, now, (long) 0, 15, new BigInteger("1234"), true);
     String expected = "1," + now.toString() + ",0,15,1234,yes,withdrawal accepted";
 
     reader.readLine();  // discard header
@@ -75,7 +74,7 @@ public class CsvWriterTest {
   @Test
   public void writeLineRejectWithdrawal() throws IOException {
     Date now = new Date();
-    writer.writeLine((long) 1, now, (long) 0, 19, new BigInteger("1234"),false);
+    writer.writeLine((long) 1, now, (long) 0, 19, new BigInteger("1234"), false);
     String expected = "1," + now.toString() + ",0,19,1234,no,withdrawal rejected";
 
     reader.readLine();  // discard header

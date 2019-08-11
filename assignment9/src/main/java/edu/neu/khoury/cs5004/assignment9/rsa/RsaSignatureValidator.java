@@ -10,7 +10,8 @@ public class RsaSignatureValidator {
   /* ===== Methods ===== */
 
   /**
-   * Validates a {@code MsgSigPair} given a {@code PublicKey} based on the RSA decryption algorithm.
+   * Validates a {@code MsgSigPair} given a {@code PublicKey} based on the RSA decryption
+   * algorithm.
    *
    * @param msgSigPair a message-signature pair
    * @param key a public key
