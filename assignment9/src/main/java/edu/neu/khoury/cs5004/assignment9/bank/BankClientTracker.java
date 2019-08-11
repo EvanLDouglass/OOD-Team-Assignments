@@ -1,6 +1,7 @@
 package edu.neu.khoury.cs5004.assignment9.bank;
 
 import edu.neu.khoury.cs5004.assignment9.rsa.PublicKey;
+
 import java.util.Objects;
 
 /**
@@ -105,10 +106,10 @@ public class BankClientTracker {
 
   @Override
   public String toString() {
-    return "BankClientTracker{" +
-        "publicKey=" + publicKey +
-        ", depositLimit=" + depositLimit +
-        ", withdrawLimit=" + withdrawLimit +
-        '}';
+    return "BankClientTracker{"
+        + "publicKey=" + publicKey
+        + ", depositLimit=" + depositLimit
+        + ", withdrawLimit=" + withdrawLimit
+        + '}';
   }
 }

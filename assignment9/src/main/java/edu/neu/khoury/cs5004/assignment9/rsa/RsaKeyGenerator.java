@@ -56,7 +56,8 @@ public class RsaKeyGenerator {
    * @return the result of phi(prime1 * prime2) == phi(modulus)
    */
   private BigInteger getPhiOfModulus(BigInteger prime1, BigInteger prime2) {
-    BigInteger num1, num2;
+    BigInteger num1;
+    BigInteger num2;
     BigInteger one = new BigInteger("1");
     num1 = prime1.subtract(one);
     num2 = prime2.subtract(one);
@@ -80,7 +81,7 @@ public class RsaKeyGenerator {
   }
 
   /**
-   * Produces a verified coPrime to the product of the two given primes
+   * Produces a verified coPrime to the product of the two given primes.
    *
    * @param prime1 a prime number
    * @param prime2 a prime number

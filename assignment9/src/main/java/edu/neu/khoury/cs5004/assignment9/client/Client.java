@@ -5,6 +5,7 @@ import edu.neu.khoury.cs5004.assignment9.rsa.MsgSigPair;
 import edu.neu.khoury.cs5004.assignment9.rsa.PublicKey;
 import edu.neu.khoury.cs5004.assignment9.rsa.RsaKeyGenerator;
 import edu.neu.khoury.cs5004.assignment9.rsa.RsaSignatureGenerator;
+
 import java.math.BigInteger;
 import java.util.Objects;
 
@@ -69,8 +70,7 @@ public class Client {
 
   @Override
   public String toString() {
-    String client = String.format("Client{id=%d}", id);
-    return client;
+    return String.format("Client{id=%d}", id);
   }
 
   /* ===== Getters ===== */

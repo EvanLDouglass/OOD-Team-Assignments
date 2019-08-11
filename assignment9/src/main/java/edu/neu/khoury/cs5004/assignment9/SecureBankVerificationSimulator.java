@@ -4,6 +4,7 @@ import edu.neu.khoury.cs5004.assignment9.bank.Bank;
 import edu.neu.khoury.cs5004.assignment9.bank.BankClientTracker;
 import edu.neu.khoury.cs5004.assignment9.client.Client;
 import edu.neu.khoury.cs5004.assignment9.rsa.MsgSigPair;
+
 import java.io.IOException;
 import java.math.BigInteger;
 import java.security.SecureRandom;
@@ -21,6 +22,11 @@ public class SecureBankVerificationSimulator {
 
   private static Random rand = new SecureRandom();
 
+  /**
+   * The main method.
+   *
+   * @param args command line arguments
+   */
   public static void main(String[] args) {
     // Validate and store arguments
     ArgsValidator validator = new ArgsValidator();

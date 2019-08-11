@@ -36,8 +36,8 @@ public abstract class Key {
       return false;
     }
     Key key = (Key) o;
-    return Objects.equals(exponent, key.exponent) &&
-        Objects.equals(modulus, key.modulus);
+    return Objects.equals(exponent, key.exponent)
+        && Objects.equals(modulus, key.modulus);
   }
 
   @Override
